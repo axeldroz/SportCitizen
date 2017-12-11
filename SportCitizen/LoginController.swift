@@ -7,13 +7,19 @@
 //
 
 import UIKit
+import FBSDKLoginKit
+import Firebase
 
-class LoginController: UIViewController {
+class LoginController: UIViewController, FBSDKLoginButtonDelegate {
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        let loginButton: FBSDKLoginButton = FBSDKLoginButton()
+        view.addSubview(loginButton)
+        loginButton.center = self.view.center
+        loginButton.readPermissions = ["public_profile", "email"]
+        loginButton.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,4 +27,23 @@ class LoginController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
+        print("Logged out")
+    }
+    
+    func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
+        if error != nil {
+            print(error)
+            return
+        }
+        let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
+        Auth.auth().signIn(with: credential) { (user, error) in
+            if let error = error {
+                print(error)
+                return
+            }
+            print("successfully firebased")
+        }
+        print("successfully logged")
+    }
 }
