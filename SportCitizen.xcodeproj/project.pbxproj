@@ -16,6 +16,7 @@
 		2173078A1FDEB55F007B213B /* SportCitizenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217307891FDEB55F007B213B /* SportCitizenTests.swift */; };
 		217307951FDEB55F007B213B /* SportCitizenUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217307941FDEB55F007B213B /* SportCitizenUITests.swift */; };
 		217307A31FDEBB2F007B213B /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217307A21FDEBB2F007B213B /* LoginController.swift */; };
+		2EAF56CE1FDEBE14000AED30 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAF56CD1FDEBE14000AED30 /* RegisterViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		217307941FDEB55F007B213B /* SportCitizenUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportCitizenUITests.swift; sourceTree = "<group>"; };
 		217307961FDEB55F007B213B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		217307A21FDEBB2F007B213B /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		2EAF56CD1FDEBE14000AED30 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				217307801FDEB55F007B213B /* Info.plist */,
 				217307781FDEB55F007B213B /* SportCitizen.xcdatamodeld */,
 				217307A21FDEBB2F007B213B /* LoginController.swift */,
+				2EAF56CD1FDEBE14000AED30 /* RegisterViewController.swift */,
 			);
 			path = SportCitizen;
 			sourceTree = "<group>";
@@ -266,6 +269,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				217307741FDEB55F007B213B /* ViewController.swift in Sources */,
+				2EAF56CE1FDEBE14000AED30 /* RegisterViewController.swift in Sources */,
 				217307A31FDEBB2F007B213B /* LoginController.swift in Sources */,
 				2173077A1FDEB55F007B213B /* SportCitizen.xcdatamodeld in Sources */,
 				217307721FDEB55F007B213B /* AppDelegate.swift in Sources */,
