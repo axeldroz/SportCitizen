@@ -57,7 +57,7 @@
 		217307941FDEB55F007B213B /* SportCitizenUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportCitizenUITests.swift; sourceTree = "<group>"; };
 		217307961FDEB55F007B213B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		217307A21FDEBB2F007B213B /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
-		217307A41FDEBE55007B213B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		217307A41FDEBE55007B213B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		60AC1B7EFA6219C1FB71C72D /* Pods-SportCitizen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SportCitizen.release.xcconfig"; path = "Pods/Target Support Files/Pods-SportCitizen/Pods-SportCitizen.release.xcconfig"; sourceTree = "<group>"; };
 		656344B7BFDEE0FAFD831B26 /* Pods-SportCitizenUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SportCitizenUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SportCitizenUITests/Pods-SportCitizenUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		7150B8D17B85935E005BCEC3 /* Pods-SportCitizenUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SportCitizenUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SportCitizenUITests/Pods-SportCitizenUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -471,7 +471,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				217307741FDEB55F007B213B /* ViewController.swift in Sources */,
-				2EAF56CE1FDEBE14000AED30 /* RegisterViewController.swift in Sources */,
 				217307A31FDEBB2F007B213B /* LoginController.swift in Sources */,
 				2173077A1FDEB55F007B213B /* SportCitizen.xcdatamodeld in Sources */,
 				217307721FDEB55F007B213B /* AppDelegate.swift in Sources */,
