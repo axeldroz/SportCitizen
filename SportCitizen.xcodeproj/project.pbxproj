@@ -471,6 +471,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				217307741FDEB55F007B213B /* ViewController.swift in Sources */,
+				2EAF56CE1FDEBE14000AED30 /* RegisterViewController.swift in Sources */,
 				217307A31FDEBB2F007B213B /* LoginController.swift in Sources */,
 				2173077A1FDEB55F007B213B /* SportCitizen.xcdatamodeld in Sources */,
 				217307721FDEB55F007B213B /* AppDelegate.swift in Sources */,
