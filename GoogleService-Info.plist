@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>216110951776-p055bsbgp9pr0at1km45stq46uvmeq8m.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.216110951776-p055bsbgp9pr0at1km45stq46uvmeq8m</string>
+	<key>API_KEY</key>
+	<string>AIzaSyB7IKN_BtYpiIkozcx2xae_i3AQ-GIfO8I</string>
+	<key>GCM_SENDER_ID</key>
+	<string>216110951776</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>Simon.SportCitizen</string>
+	<key>PROJECT_ID</key>
+	<string>sportcitizen</string>
+	<key>STORAGE_BUCKET</key>
+	<string>sportcitizen.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true></true>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false></false>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:216110951776:ios:65bdf82eda2f63f5</string>
+	<key>DATABASE_URL</key>
+	<string>https://sportcitizen.firebaseio.com</string>
+</dict>
+</plist>
