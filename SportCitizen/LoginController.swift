@@ -11,15 +11,17 @@ import FBSDKLoginKit
 import Firebase
 
 class LoginController: UIViewController, FBSDKLoginButtonDelegate {
-
+    @IBOutlet weak var facebookLoginButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let loginButton: FBSDKLoginButton = FBSDKLoginButton()
-        view.addSubview(loginButton)
-        loginButton.center = self.view.center
-        loginButton.readPermissions = ["public_profile", "email"]
+       let loginButton: FBSDKLoginButton = FBSDKLoginButton()
+       loginButton.center = self.view.center
+       view.addSubview(loginButton)
+       loginButton.readPermissions = ["public_profile", "email"]
         loginButton.delegate = self
+        view.addSubview(facebookLoginButton)
+        facebookLoginButton.addTarget(self, action: #selector(customFacebookLogin), for: .touchUpInside)
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,6 +29,44 @@ class LoginController: UIViewController, FBSDKLoginButtonDelegate {
         // Dispose of any resources that can be recreated.
     }
 
+    @objc func customFacebookLogin(sender: UIButton!) {
+        FBSDKLoginManager().logIn(withReadPermissions: ["email", "public_profile"], from: self) {
+            (result, error) in
+            if error != nil {
+                print("Custom login failed: ", error)
+                return
+            }
+            let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
+            Auth.auth().signIn(with: credential) { (user, error) in
+                if error != nil {
+                    print(error.debugDescription)
+                    return
+                }
+                print("successfully firebased")
+            }
+            print("successfully logged")
+            let databaseRoot = Database.database().reference()
+            let userInfo = Auth.auth().currentUser
+            let userRef = databaseRoot.child("users").child((userInfo?.uid)!)
+            let values = ["email": userInfo?.email]
+            userRef.updateChildValues(values, withCompletionBlock: {(err, ref) in
+                if error != nil {
+                    print(error.debugDescription)
+                    return
+                }
+            })
+            let values2 = ["email": "swaag", "last_name": "posey"]
+            userRef.updateChildValues(values2, withCompletionBlock: {(err, ref) in
+                if error != nil {
+                    print(error.debugDescription)
+                    return
+                }
+            })
+        }
+        
+
+    }
+    
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
         print("Logged out")
     }
@@ -39,11 +79,11 @@ class LoginController: UIViewController, FBSDKLoginButtonDelegate {
         let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
         Auth.auth().signIn(with: credential) { (user, error) in
             if let error = error {
-                print(error)
-                return
+                   print(error)
+                   return
+               }
+                print("successfully firebased")
             }
-            print("successfully firebased")
-        }
         print("successfully logged")
     }
 }

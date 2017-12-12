@@ -32,13 +32,55 @@
                     <view key="view" contentMode="scaleToFill" id="VJ2-g7-MRm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GdQ-uK-iqf">
+                                <rect key="frame" x="119" y="213" width="176" height="57"/>
+                                <color key="backgroundColor" red="0.29037097096443176" green="0.40113371610641479" blue="0.67848223447799683" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="176" id="1fO-M9-qHL"/>
+                                    <constraint firstAttribute="height" constant="57" id="bKf-R4-cWT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Login with facebook">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.93638414144515991" green="0.90633124113082886" blue="0.87841475009918213" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="GdQ-uK-iqf" firstAttribute="top" secondItem="TRv-Mz-4NO" secondAttribute="top" constant="193" id="geU-Ra-8nF"/>
+                            <constraint firstItem="GdQ-uK-iqf" firstAttribute="centerX" secondItem="VJ2-g7-MRm" secondAttribute="centerX" id="nBH-VB-tWF"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="TRv-Mz-4NO"/>
                     </view>
+                    <connections>
+                        <outlet property="facebookLoginButton" destination="GdQ-uK-iqf" id="XQa-yb-DbB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="acI-6a-Ox5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1197.1014492753625" y="132.88043478260872"/>
+            <point key="canvasLocation" x="1195.6521739130435" y="132.06521739130434"/>
+        </scene>
+        <!--myView-->
+        <scene sceneID="Gjo-FR-m3h">
+            <objects>
+                <viewController title="myView" id="EfT-eX-St9" customClass="NewView" customModule="SportCitizen" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="AWi-ht-qhS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9GJ-8d-yA2">
+                                <rect key="frame" x="184" y="299" width="49" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </switch>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="3RS-Gg-Eox"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yw6-TQ-AGQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2077" y="130"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="R3W-Ux-5ei">

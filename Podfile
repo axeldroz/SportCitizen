@@ -20,7 +20,7 @@ target 'SportCitizen' do
 end
 pod 'Firebase/Core'
 pod 'Firebase/Auth'
-
+pod 'Firebase/Database'
 pod 'Bolts'
 pod 'FBSDKCoreKit'
 pod 'FBSDKLoginKit'
