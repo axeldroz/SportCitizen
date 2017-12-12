@@ -39,7 +39,7 @@ class LoginController: UIViewController, FBSDKLoginButtonDelegate {
             let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
             Auth.auth().signIn(with: credential) { (user, error) in
                 if error != nil {
-                    print(error.debugDescription)
+                    print("Erreur de firebase ===== ", error.debugDescription)
                     return
                 }
                 print("successfully firebased")
