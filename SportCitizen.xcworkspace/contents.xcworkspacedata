@@ -2,9 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/simbrams/Desktop/SportCitizen/SportCitizen/HomeController.swift">
-   </FileRef>
-   <FileRef
       location = "group:SportCitizen.xcodeproj">
    </FileRef>
    <FileRef
