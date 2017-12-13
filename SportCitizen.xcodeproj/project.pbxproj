@@ -17,7 +17,10 @@
 		217307951FDEB55F007B213B /* SportCitizenUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217307941FDEB55F007B213B /* SportCitizenUITests.swift */; };
 		217307A31FDEBB2F007B213B /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217307A21FDEBB2F007B213B /* LoginController.swift */; };
 		217307A51FDEBE56007B213B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 217307A41FDEBE55007B213B /* GoogleService-Info.plist */; };
-		217307B11FDFE4DD007B213B /* NewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217307B01FDFE4DD007B213B /* NewView.swift */; };
+		217307B51FE15712007B213B /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217307B41FE15712007B213B /* HomeController.swift */; };
+		217307B71FE15EA8007B213B /* ChallengesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217307B61FE15EA8007B213B /* ChallengesController.swift */; };
+		217307B91FE15EFC007B213B /* FeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217307B81FE15EFC007B213B /* FeedController.swift */; };
+		217307BB1FE1604C007B213B /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217307BA1FE1604C007B213B /* ProfileController.swift */; };
 		25E1AF876DD9E7B83EB4E0AD /* Pods_SportCitizenUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E619206787B36C2ACD80058 /* Pods_SportCitizenUITests.framework */; };
 		6821CCC9DAA0EE36EF08E665 /* Pods_SportCitizen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE8EE975B9839560CBF7B389 /* Pods_SportCitizen.framework */; };
 		DF1E8A7174AB6EE98AA0E99F /* Pods_SportCitizenTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D4D70439688851AE1723DFC /* Pods_SportCitizenTests.framework */; };
@@ -59,7 +62,10 @@
 		217307961FDEB55F007B213B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		217307A21FDEBB2F007B213B /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		217307A41FDEBE55007B213B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../GoogleService-Info.plist"; sourceTree = "<group>"; };
-		217307B01FDFE4DD007B213B /* NewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewView.swift; sourceTree = "<group>"; };
+		217307B41FE15712007B213B /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeController.swift; path = /Users/simbrams/Desktop/SportCitizen/SportCitizen/HomeController.swift; sourceTree = "<absolute>"; };
+		217307B61FE15EA8007B213B /* ChallengesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengesController.swift; sourceTree = "<group>"; };
+		217307B81FE15EFC007B213B /* FeedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedController.swift; sourceTree = "<group>"; };
+		217307BA1FE1604C007B213B /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 		60AC1B7EFA6219C1FB71C72D /* Pods-SportCitizen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SportCitizen.release.xcconfig"; path = "Pods/Target Support Files/Pods-SportCitizen/Pods-SportCitizen.release.xcconfig"; sourceTree = "<group>"; };
 		656344B7BFDEE0FAFD831B26 /* Pods-SportCitizenUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SportCitizenUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SportCitizenUITests/Pods-SportCitizenUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		7150B8D17B85935E005BCEC3 /* Pods-SportCitizenUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SportCitizenUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SportCitizenUITests/Pods-SportCitizenUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -139,9 +145,12 @@
 				2173077D1FDEB55F007B213B /* LaunchScreen.storyboard */,
 				217307801FDEB55F007B213B /* Info.plist */,
 				217307781FDEB55F007B213B /* SportCitizen.xcdatamodeld */,
+				217307B41FE15712007B213B /* HomeController.swift */,
 				217307A21FDEBB2F007B213B /* LoginController.swift */,
 				217307A41FDEBE55007B213B /* GoogleService-Info.plist */,
-				217307B01FDFE4DD007B213B /* NewView.swift */,
+				217307B61FE15EA8007B213B /* ChallengesController.swift */,
+				217307B81FE15EFC007B213B /* FeedController.swift */,
+				217307BA1FE1604C007B213B /* ProfileController.swift */,
 			);
 			path = SportCitizen;
 			sourceTree = "<group>";
@@ -486,8 +495,11 @@
 				217307741FDEB55F007B213B /* ViewController.swift in Sources */,
 				217307A31FDEBB2F007B213B /* LoginController.swift in Sources */,
 				2173077A1FDEB55F007B213B /* SportCitizen.xcdatamodeld in Sources */,
-				217307B11FDFE4DD007B213B /* NewView.swift in Sources */,
+				217307B71FE15EA8007B213B /* ChallengesController.swift in Sources */,
 				217307721FDEB55F007B213B /* AppDelegate.swift in Sources */,
+				217307B51FE15712007B213B /* HomeController.swift in Sources */,
+				217307B91FE15EFC007B213B /* FeedController.swift in Sources */,
+				217307BB1FE1604C007B213B /* ProfileController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

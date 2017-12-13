@@ -33,7 +33,7 @@ class LoginController: UIViewController, FBSDKLoginButtonDelegate {
         FBSDKLoginManager().logIn(withReadPermissions: ["email", "public_profile"], from: self) {
             (result, error) in
             if error != nil {
-                print("Custom login failed: ", error)
+                print("Custom login failed: ", error.debugDescription)
                 return
             }
             let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
@@ -50,13 +50,6 @@ class LoginController: UIViewController, FBSDKLoginButtonDelegate {
             let userRef = databaseRoot.child("users").child((userInfo?.uid)!)
             let values = ["email": userInfo?.email]
             userRef.updateChildValues(values, withCompletionBlock: {(err, ref) in
-                if error != nil {
-                    print(error.debugDescription)
-                    return
-                }
-            })
-            let values2 = ["email": "swaag", "last_name": "posey"]
-            userRef.updateChildValues(values2, withCompletionBlock: {(err, ref) in
                 if error != nil {
                     print(error.debugDescription)
                     return
