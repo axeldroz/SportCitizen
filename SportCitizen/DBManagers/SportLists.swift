@@ -7,20 +7,30 @@
 //
 
 import Foundation
+import Firebase
 
 /* sport list which describ sports */
 class SportList {
     var sports = [Sport]()
+    let databaseRoot = Database.database().reference()
     
     init(){
-        self.sports = getListOfSport()
+        self.sports = getData()
     }
     
     /* get sports list from Firebase Database */
-    func getListOfSport() -> [Sport] {
+    func getData() -> [Sport] {
         var list = [Sport]()
+        let sportsRef = databaseRoot.child("sports")
         
-        list.append(Sport()) // instanciate object Sport and append into list
+        sportsRef.observeSingleEvent(of: .value, with: { snapshot in
+            var i : Int = 1
+            for child in snapshot.children {
+                let snap = child as! DataSnapshot
+                let name = snap.value as! String
+                list.append((Sport(_id : i, _name : name, _logo : "")))
+                i += 1
+            } })
         return list
     }
 }
