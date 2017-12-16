@@ -46,51 +46,11 @@
             </objects>
             <point key="canvasLocation" x="1290" y="267"/>
         </scene>
-        <!--Challenges Controller-->
-        <scene sceneID="8eb-rV-00K">
-            <objects>
-                <viewController title="Challenges Controller" id="Yz1-6l-tag" customClass="ChallengesController" customModule="SportCitizen" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="oAr-PM-jhS">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.93638414140000004" green="0.90633124109999996" blue="0.87841475010000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        <viewLayoutGuide key="safeArea" id="5q4-T2-Gzd"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="" image="idea" id="tgE-1H-nxI"/>
-                    <navigationItem key="navigationItem" title="Challenges" id="gvE-Xa-pFN"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5Lh-EO-ni9" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5454" y="-227"/>
-        </scene>
-        <!--Challenges Controller-->
-        <scene sceneID="MbS-xs-uBB">
-            <objects>
-                <navigationController id="yun-fb-O0C" customClass="ChallengesController" customModule="SportCitizen" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" id="RPB-5r-tRg"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ytg-Wo-7J7">
-                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <textAttributes key="titleTextAttributes">
-                            <color key="textColor" name="systemOrangeColor" catalog="System" colorSpace="catalog"/>
-                        </textAttributes>
-                    </navigationBar>
-                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="kT3-DJ-Dan">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </toolbar>
-                    <connections>
-                        <segue destination="Yz1-6l-tag" kind="relationship" relationship="rootViewController" id="AV7-n7-MM6"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vqm-Wt-S0y" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4441" y="-227"/>
-        </scene>
         <!--Feed Controller-->
         <scene sceneID="iz1-6O-I4O">
             <objects>
                 <navigationController id="mlv-r7-Lue" customClass="FeedController" customModule="SportCitizen" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" id="tDe-Nf-Wg7"/>
+                    <tabBarItem key="tabBarItem" title="" image="menu" id="tDe-Nf-Wg7"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="NLz-I3-lab">
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -99,51 +59,50 @@
                         </textAttributes>
                     </navigationBar>
                     <connections>
-                        <segue destination="Ioe-Eu-4a0" kind="relationship" relationship="rootViewController" id="wbc-SF-MZp"/>
+                        <segue destination="PoH-7P-QFp" kind="relationship" relationship="rootViewController" id="rvi-Ta-5uK"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="88M-i1-755" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4442" y="455"/>
         </scene>
-        <!--Feed Controller-->
-        <scene sceneID="i90-iD-eCy">
+        <!--Feed-->
+        <scene sceneID="aDG-La-4QJ">
             <objects>
-                <viewController title="Feed Controller" id="Ioe-Eu-4a0" customClass="FeedController" customModule="SportCitizen" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="7CA-8g-12H">
+                <viewController id="PoH-7P-QFp" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fVC-EW-74r">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93638414140000004" green="0.90633124109999996" blue="0.87841475010000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        <viewLayoutGuide key="safeArea" id="SUM-oX-PvH"/>
+                        <viewLayoutGuide key="safeArea" id="wcM-q3-W2G"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="menu" id="RSP-O3-Dtt"/>
-                    <navigationItem key="navigationItem" title="Feed" id="UfG-9p-7rd">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="pek-xv-QSd">
+                    <navigationItem key="navigationItem" title="Feed" id="NKG-EJ-JP3">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="mVl-My-TeJ">
                             <color key="tintColor" name="systemOrangeColor" catalog="System" colorSpace="catalog"/>
                             <connections>
-                                <segue destination="iac-45-mhV" kind="show" id="dyY-8S-ghG"/>
+                                <segue destination="kK6-jt-vjG" kind="show" id="LHc-0O-ZTT"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="35n-Cs-fCR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="P2a-X1-3aO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5454" y="455"/>
+            <point key="canvasLocation" x="5433" y="511"/>
         </scene>
         <!--View Controller-->
-        <scene sceneID="vFt-5a-uma">
+        <scene sceneID="Eq8-3E-M8b">
             <objects>
-                <viewController id="iac-45-mhV" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="QBn-Px-Ahg">
+                <viewController id="kK6-jt-vjG" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JfI-Z0-wpD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.93638414140000004" green="0.90633124109999996" blue="0.87841475010000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        <viewLayoutGuide key="safeArea" id="BqO-5o-vVW"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Lgu-g7-kMn"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HSP-zA-9Cd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nn2-rZ-3m7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6276" y="460"/>
+            <point key="canvasLocation" x="6159" y="413"/>
         </scene>
         <!--Profile Controller-->
         <scene sceneID="WBG-14-mpc">
@@ -206,7 +165,7 @@
         <!--Home-->
         <scene sceneID="ceG-Uv-jMA">
             <objects>
-                <tabBarController title="Home" id="c5s-Kn-cYM" customClass="HomeController" customModule="SportCitizen" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController title="Home" automaticallyAdjustsScrollViewInsets="NO" id="c5s-Kn-cYM" customClass="HomeController" customModule="SportCitizen" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="uZN-tr-3g2"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="g3D-mw-tKu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
@@ -215,7 +174,7 @@
                         <color key="selectedImageTintColor" name="systemOrangeColor" catalog="System" colorSpace="catalog"/>
                     </tabBar>
                     <connections>
-                        <segue destination="yun-fb-O0C" kind="relationship" relationship="viewControllers" id="4Yc-9g-Y9V"/>
+                        <segue destination="v2X-jQ-lB8" kind="relationship" relationship="viewControllers" id="KKn-fZ-Ha7"/>
                         <segue destination="mlv-r7-Lue" kind="relationship" relationship="viewControllers" id="Rmn-QF-j1E"/>
                         <segue destination="cFL-sq-fuT" kind="relationship" relationship="viewControllers" id="DRg-ru-qzI"/>
                     </connections>
@@ -223,6 +182,47 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="09M-Ws-GGz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3462" y="455"/>
+        </scene>
+        <!--Challenges Controller-->
+        <scene sceneID="FZ4-Ev-sqr">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="v2X-jQ-lB8" customClass="ChallengesController" customModule="SportCitizen" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="idea" id="vnj-2C-dpM"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="lJE-0s-16Q">
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" name="systemOrangeColor" catalog="System" colorSpace="catalog"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0xe-6l-BE5">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="Amy-T6-Fyy" kind="relationship" relationship="rootViewController" id="4uE-4B-RY6"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v4w-oY-4hc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4441" y="-227"/>
+        </scene>
+        <!--Challenges-->
+        <scene sceneID="ZKj-yV-HUq">
+            <objects>
+                <viewController id="Amy-T6-Fyy" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nUf-gr-7UU">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.93638414140000004" green="0.90633124109999996" blue="0.87841475010000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <viewLayoutGuide key="safeArea" id="M9s-y2-S5n"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Challenges" id="U4I-d8-POX"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IVj-B5-nXa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5432" y="-227"/>
         </scene>
     </scenes>
     <resources>
