@@ -29,6 +29,11 @@ class HomeController: UITabBarController, UITabBarControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.delegate = self
+        let tabBarItems = tabBar.items! as [UITabBarItem]
+        tabBarItems[0].imageInsets = UIEdgeInsetsMake(6,0,-6,0)
+        tabBarItems[1].imageInsets = UIEdgeInsetsMake(6,0,-6,0)
+
+
         self.selectedIndex = 1
         // Do any additional setup after loading the view.
     }

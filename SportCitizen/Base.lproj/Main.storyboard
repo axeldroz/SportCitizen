@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="De5-4x-06G">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="De5-4x-06G">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -71,7 +71,7 @@
                         <color key="backgroundColor" red="0.93638414140000004" green="0.90633124109999996" blue="0.87841475010000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="5q4-T2-Gzd"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Challenges" id="tgE-1H-nxI"/>
+                    <tabBarItem key="tabBarItem" title="" image="sun" id="tgE-1H-nxI"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Lh-EO-ni9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -87,7 +87,7 @@
                         <color key="backgroundColor" red="0.93638414140000004" green="0.90633124109999996" blue="0.87841475010000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="SUM-oX-PvH"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Feed" id="RSP-O3-Dtt"/>
+                    <tabBarItem key="tabBarItem" title="" image="menu" id="RSP-O3-Dtt"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="35n-Cs-fCR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -197,5 +197,7 @@
     </scenes>
     <resources>
         <image name="default-image-profile" width="100" height="100"/>
+        <image name="menu" width="30" height="30"/>
+        <image name="sun" width="30" height="30"/>
     </resources>
 </document>
