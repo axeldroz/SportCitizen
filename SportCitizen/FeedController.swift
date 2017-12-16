@@ -8,11 +8,10 @@
 
 import UIKit
 
-class FeedController: UIViewController {
+class FeedController: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tabBarController?.title = "Feed"
         // Do any additional setup after loading the view.
     }
 

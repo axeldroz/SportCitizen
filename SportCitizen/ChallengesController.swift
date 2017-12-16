@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ChallengesController: UIViewController {
+class ChallengesController: UINavigationController{
 
     override func viewDidLoad() {
         super.viewDidLoad()
