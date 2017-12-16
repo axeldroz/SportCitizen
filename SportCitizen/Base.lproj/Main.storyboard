@@ -56,18 +56,18 @@
                         <color key="backgroundColor" red="0.93638414140000004" green="0.90633124109999996" blue="0.87841475010000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="5q4-T2-Gzd"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="sun" id="tgE-1H-nxI"/>
+                    <tabBarItem key="tabBarItem" title="" image="idea" id="tgE-1H-nxI"/>
                     <navigationItem key="navigationItem" title="Challenges" id="gvE-Xa-pFN"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Lh-EO-ni9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5454" y="-227"/>
         </scene>
-        <!--Item-->
+        <!--Challenges Controller-->
         <scene sceneID="MbS-xs-uBB">
             <objects>
                 <navigationController id="yun-fb-O0C" customClass="ChallengesController" customModule="SportCitizen" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="RPB-5r-tRg"/>
+                    <tabBarItem key="tabBarItem" title="" id="RPB-5r-tRg"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ytg-Wo-7J7">
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -75,6 +75,9 @@
                             <color key="textColor" name="systemOrangeColor" catalog="System" colorSpace="catalog"/>
                         </textAttributes>
                     </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="kT3-DJ-Dan">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="Yz1-6l-tag" kind="relationship" relationship="rootViewController" id="AV7-n7-MM6"/>
                     </connections>
@@ -83,11 +86,11 @@
             </objects>
             <point key="canvasLocation" x="4441" y="-227"/>
         </scene>
-        <!--Item-->
+        <!--Feed Controller-->
         <scene sceneID="iz1-6O-I4O">
             <objects>
-                <navigationController id="mlv-r7-Lue" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="tDe-Nf-Wg7"/>
+                <navigationController id="mlv-r7-Lue" customClass="FeedController" customModule="SportCitizen" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" id="tDe-Nf-Wg7"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="NLz-I3-lab">
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -224,7 +227,7 @@
     </scenes>
     <resources>
         <image name="default-image-profile" width="100" height="100"/>
+        <image name="idea" width="30" height="30"/>
         <image name="menu" width="30" height="30"/>
-        <image name="sun" width="30" height="30"/>
     </resources>
 </document>
