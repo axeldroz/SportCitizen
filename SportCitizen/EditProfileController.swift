@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class ProfileController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate{
+class EditProfileController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate{
 
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var bioDescr: UITextView!

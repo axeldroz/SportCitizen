@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="c5s-Kn-cYM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5v6-K9-Lsx">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -29,6 +29,9 @@
                                 <state key="normal" title="Login with facebook">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <segue destination="c5s-Kn-cYM" kind="show" id="Tht-Wf-igS"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.93638414144515991" green="0.90633124113082886" blue="0.87841475009918213" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -44,7 +47,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="acI-6a-Ox5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1290" y="267"/>
+            <point key="canvasLocation" x="2117" y="477"/>
         </scene>
         <!--Feed Nav Controller-->
         <scene sceneID="iz1-6O-I4O">
@@ -153,7 +156,7 @@
         <!--Profile Controller-->
         <scene sceneID="WBG-14-mpc">
             <objects>
-                <viewController title="Profile Controller" id="cFL-sq-fuT" customClass="ProfileController" customModule="SportCitizen" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Profile Controller" id="cFL-sq-fuT" customClass="EditProfileController" customModule="SportCitizen" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mhV-w2-VtX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -211,10 +214,10 @@
             </objects>
             <point key="canvasLocation" x="5454" y="1386"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Profile Nav Controller-->
         <scene sceneID="l61-dn-eet">
             <objects>
-                <navigationController id="Y0d-nT-U2s" sceneMemberID="viewController">
+                <navigationController id="Y0d-nT-U2s" customClass="ProfileNavController" customModule="SportCitizen" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="user_male" id="bse-7i-fos">
                         <color key="badgeColor" name="systemOrangeColor" catalog="System" colorSpace="catalog"/>
                     </tabBarItem>
@@ -236,7 +239,7 @@
         <!--Profile-->
         <scene sceneID="C3J-R4-rfE">
             <objects>
-                <viewController id="uve-Ol-gEj" sceneMemberID="viewController">
+                <viewController id="uve-Ol-gEj" customClass="ProfileViewController" customModule="SportCitizen" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ksM-ox-oRC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -246,41 +249,33 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Here your description" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="vb1-iR-ptU">
-                                <rect key="frame" x="80" y="319" width="240" height="98"/>
+                                <rect key="frame" x="70" y="318" width="240" height="98"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bio" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tnV-Bw-YHo">
-                                <rect key="frame" x="83" y="289" width="25" height="21"/>
+                                <rect key="frame" x="70" y="289" width="25" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Favorite Sport" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mFn-3Q-la0">
-                                <rect key="frame" x="114" y="416" width="108" height="21"/>
+                                <rect key="frame" x="70" y="424" width="108" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bzD-7O-udz">
-                                <rect key="frame" x="-39" y="431" width="414" height="162"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="cFL-sq-fuT" id="wFB-76-xZm"/>
-                                    <outlet property="delegate" destination="cFL-sq-fuT" id="GXC-at-ixb"/>
-                                </connections>
-                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="nNR-Bk-Whl"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="Vs1-f9-tCo"/>
                     <navigationItem key="navigationItem" title="Profile" id="WUq-fU-oEd">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="Bp6-1j-3gb">
+                        <barButtonItem key="rightBarButtonItem" springLoaded="YES" systemItem="edit" id="Bp6-1j-3gb">
                             <color key="tintColor" name="systemOrangeColor" catalog="System" colorSpace="catalog"/>
                             <connections>
                                 <segue destination="cFL-sq-fuT" kind="show" id="cf4-dR-RpF"/>
