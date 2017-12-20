@@ -7,12 +7,23 @@
 //
 
 import UIKit
+import Firebase
 
 class ProfileViewController: UIViewController {
 
+    @IBOutlet weak var nameView: UILabel!
+    @IBOutlet weak var pictureView: UIImageView!
+    
+    var uid : String?
+    let databaseRoot =
+        Database.database().reference()
+    var name : String = "Loading"
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        updateName()
+        updatePicture()
         // Do any additional setup after loading the view.
     }
 
@@ -22,6 +33,52 @@ class ProfileViewController: UIViewController {
     }
     
 
+    /* get the name in database and update it */
+    func updateName() {
+        let userInfo = Auth.auth().currentUser
+        let userRef = databaseRoot.child("users").child((userInfo?.uid)!)
+        print("UpdateName")
+        userRef.child("name").observeSingleEvent(of: .value, with: { snapshot in
+          
+                let snap = snapshot
+                let name = snap.value as! String
+                print("NEW key : ", name)
+                self.nameView.text = name
+            })
+    }
+    
+    /* get the name in database and update it */
+    func getDataFromUrl(url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            completion(data, response, error)
+            }.resume()
+    }
+    func downloadImage(url: URL) {
+        print("Download Started")
+        getDataFromUrl(url: url) { data, response, error in
+            guard let data = data, error == nil else { return }
+            print(response?.suggestedFilename ?? url.lastPathComponent)
+            print("Download Finished")
+            DispatchQueue.main.async() {
+                self.pictureView.image = UIImage(data: data)
+            }
+        }
+    }
+    func updatePicture() {
+        let userInfo = Auth.auth().currentUser
+        let userRef = databaseRoot.child("users").child((userInfo?.uid)!)
+        print("UpdateName")
+        userRef.child("photoURL").observeSingleEvent(of: .value, with: { snapshot in
+            let snap = snapshot
+            let name = snap.value as! String
+            print("NEW key : ", name)
+            if let url = URL(string: name) {
+                self.pictureView.contentMode = .scaleAspectFit
+                self.downloadImage(url: url)
+            }
+        })
+    }
+    
     /*
     // MARK: - Navigation
 
