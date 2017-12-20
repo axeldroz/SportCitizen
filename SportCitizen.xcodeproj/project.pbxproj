@@ -24,7 +24,7 @@
 		21AF3F5F1FEA8C09007DA98B /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AF3F5E1FEA8C09007DA98B /* FeedViewController.swift */; };
 		21AF3F611FEA8F38007DA98B /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AF3F601FEA8F38007DA98B /* ImageCollectionViewCell.swift */; };
 		25E1AF876DD9E7B83EB4E0AD /* Pods_SportCitizenUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E619206787B36C2ACD80058 /* Pods_SportCitizenUITests.framework */; };
-		2E9EAEEF1FE5564700F4AE8C /* SportLists.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9EAEEE1FE5564700F4AE8C /* SportLists.swift */; };
+		2E9EAEEF1FE5564700F4AE8C /* SportList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9EAEEE1FE5564700F4AE8C /* SportList.swift */; };
 		2EE68C841FE5780B0092AF75 /* Sport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE68C831FE5780B0092AF75 /* Sport.swift */; };
 		6821CCC9DAA0EE36EF08E665 /* Pods_SportCitizen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE8EE975B9839560CBF7B389 /* Pods_SportCitizen.framework */; };
 		DF1E8A7174AB6EE98AA0E99F /* Pods_SportCitizenTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D4D70439688851AE1723DFC /* Pods_SportCitizenTests.framework */; };
@@ -187,7 +187,7 @@
 		2E9EAEF01FE556CB00F4AE8C /* DBManagers */ = {
 			isa = PBXGroup;
 			children = (
-				2E9EAEEE1FE5564700F4AE8C /* SportLists.swift */,
+				2E9EAEEE1FE5564700F4AE8C /* SportList.swift */,
 				2EE68C831FE5780B0092AF75 /* Sport.swift */,
 			);
 			path = DBManagers;
@@ -514,7 +514,7 @@
 			files = (
 				2EE68C841FE5780B0092AF75 /* Sport.swift in Sources */,
 				217307741FDEB55F007B213B /* ViewController.swift in Sources */,
-				2E9EAEEF1FE5564700F4AE8C /* SportLists.swift in Sources */,
+				2E9EAEEF1FE5564700F4AE8C /* SportList.swift in Sources */,
 				21AF3F5D1FE182B2007DA98B /* HomeController.swift in Sources */,
 				217307A31FDEBB2F007B213B /* LoginController.swift in Sources */,
 				2173077A1FDEB55F007B213B /* SportCitizen.xcdatamodeld in Sources */,

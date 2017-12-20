@@ -22,4 +22,8 @@ class Sport {
         self.name = _name
         self.logoName = _logo
     }
+    
+    func toString() -> String {
+        return name
+    }
 }
