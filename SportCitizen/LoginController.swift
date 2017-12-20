@@ -48,7 +48,7 @@ class LoginController: UIViewController, FBSDKLoginButtonDelegate {
             let databaseRoot = Database.database().reference()
             let userInfo = Auth.auth().currentUser
             let userRef = databaseRoot.child("users").child((userInfo?.uid)!)
-            let values = ["email": userInfo?.email]
+            let values = ["email": userInfo?.email, "name": userInfo?.displayName]
             userRef.updateChildValues(values, withCompletionBlock: {(err, ref) in
                 if error != nil {
                     print(error.debugDescription)
