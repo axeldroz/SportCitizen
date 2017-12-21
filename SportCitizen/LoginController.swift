@@ -18,7 +18,7 @@ class LoginController: UIViewController, FBSDKLoginButtonDelegate {
        let loginButton: FBSDKLoginButton = FBSDKLoginButton()
        loginButton.center = self.view.center
        view.addSubview(loginButton)
-       loginButton.readPermissions = ["public_profile", "email"]
+       loginButton.readPermissions = ["public_profile", "email"  ]
         loginButton.delegate = self
         view.addSubview(facebookLoginButton)
         facebookLoginButton.addTarget(self, action: #selector(customFacebookLogin), for: .touchUpInside)
