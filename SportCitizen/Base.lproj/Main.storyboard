@@ -146,10 +146,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pcT-IH-0ca">
-                                <rect key="frame" x="0.0" y="86" width="414" height="162"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            </pickerView>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="peE-4O-soW">
                                 <rect key="frame" x="120" y="415" width="188" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -177,13 +173,21 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Create"/>
                             </button>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="opZ-qR-jve">
+                                <rect key="frame" x="0.0" y="79" width="414" height="162"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="kK6-jt-vjG" id="hfK-ME-VYb"/>
+                                    <outlet property="delegate" destination="kK6-jt-vjG" id="TxM-a5-1rY"/>
+                                </connections>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" red="0.91361916065216064" green="0.91379445791244507" blue="0.91360610723495483" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="Lgu-g7-kMn"/>
                     </view>
                     <connections>
                         <outlet property="datePickerView" destination="VPU-Bk-BhV" id="0Ui-Kp-o1c"/>
-                        <outlet property="sportPickerView" destination="pcT-IH-0ca" id="jQ4-66-9OT"/>
+                        <outlet property="pickerView" destination="opZ-qR-jve" id="Lht-xz-Qy6"/>
                         <outlet property="titleView" destination="peE-4O-soW" id="hxA-wF-Cvu"/>
                     </connections>
                 </viewController>
