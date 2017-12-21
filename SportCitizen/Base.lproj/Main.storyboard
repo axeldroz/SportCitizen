@@ -207,6 +207,7 @@
                     <connections>
                         <outlet property="favoriteSport" destination="wqI-DU-ujr" id="PgR-Wn-3gh"/>
                         <outlet property="profileImage" destination="VYG-fI-s0b" id="pKt-wT-GVt"/>
+                        <outlet property="saveButton" destination="q1Z-Ix-bB4" id="I2o-yX-BeM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ciz-pG-gkl" userLabel="First Responder" sceneMemberID="firstResponder"/>

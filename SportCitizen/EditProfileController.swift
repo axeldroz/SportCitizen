@@ -14,13 +14,17 @@ class EditProfileController: UIViewController, UIPickerViewDataSource, UIPickerV
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var bioDescr: UITextView!
     @IBOutlet weak var favoriteSport: UIPickerView!
+    @IBOutlet weak var saveButton: UIButton!
     
     var sports : [String] = ["loading ..."]
+    var favSport : String = "undefined"
+    let databaseRoot = Database.database().reference()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         getPickerData()
         // Do any additional setup after loading the view.
+        saveButton.addTarget(self, action: #selector(self.onClickButton), for: .touchUpInside)
     }
     
 
@@ -33,19 +37,15 @@ class EditProfileController: UIViewController, UIPickerViewDataSource, UIPickerV
      * following functions manage pickerview
      */
     func getPickerData() {
-        let databaseRoot = Database.database().reference()
         let sportsRef = databaseRoot.child("sports")
         
         sportsRef.observeSingleEvent(of: .value, with: { snapshot in
-            var i : Int = 1
             self.sports.removeAll()
             for child in snapshot.children {
                 let snap = child as! DataSnapshot
                 let name = snap.value as! String
                 print("new sport : ", name)
                 self.sports.append(name)
-                i += 1
-                
             }
             self.favoriteSport.reloadAllComponents()
         })
@@ -60,12 +60,25 @@ class EditProfileController: UIViewController, UIPickerViewDataSource, UIPickerV
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        
+        favSport = sports[row]
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
     
-
+    /* event Click func */
+    @objc private func onClickButton() {
+        print ("onClickButton")
+        let userInfo = Auth.auth().currentUser
+        let userRef = databaseRoot.child("users").child((userInfo?.uid)!)
+        let values = ["favoriteSport" : favSport]
+        
+        userRef.updateChildValues(values, withCompletionBlock: {(err, ref) in
+            if err != nil {
+                print(err.debugDescription)
+                return
+            }
+        })
+    }
 }
