@@ -15,6 +15,7 @@ class EditProfileController: UIViewController, UIPickerViewDataSource, UIPickerV
     @IBOutlet weak var bioDescr: UITextView!
     @IBOutlet weak var favoriteSport: UIPickerView!
     @IBOutlet weak var saveButton: UIButton!
+    @IBOutlet weak var bioField: UITextView!
     
     var sports : [String] = ["loading ..."]
     var favSport : String = "undefined"
@@ -23,6 +24,7 @@ class EditProfileController: UIViewController, UIPickerViewDataSource, UIPickerV
     override func viewDidLoad() {
         super.viewDidLoad()
         getPickerData()
+        getDataBio()
         // Do any additional setup after loading the view.
         saveButton.addTarget(self, action: #selector(self.onClickButton), for: .touchUpInside)
     }
@@ -33,8 +35,9 @@ class EditProfileController: UIViewController, UIPickerViewDataSource, UIPickerV
         // Dispose of any resources that can be recreated.
     }
     
+
     /*
-     * following functions manage pickerview
+     * Following functions get data from firebase and update content of the view
      */
     func getPickerData() {
         let sportsRef = databaseRoot.child("sports")
@@ -51,6 +54,22 @@ class EditProfileController: UIViewController, UIPickerViewDataSource, UIPickerV
         })
 
     }
+    func getDataBio() {
+        let userInfo = Auth.auth().currentUser
+        let userRef = databaseRoot.child("users").child((userInfo?.uid)!)
+        print("UpdateName")
+        userRef.child("bio").observe(DataEventType.value, with: { snapshot in
+            
+            let snap = snapshot
+            let value = snap.value as! String
+            print("NEW value : ", value)
+            self.bioField.text = value
+        })
+    }
+    
+    /*
+     * following functions manage pickerview
+     */
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return sports[row]
     }

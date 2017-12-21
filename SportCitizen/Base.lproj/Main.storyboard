@@ -192,19 +192,20 @@
                                 <rect key="frame" x="87" y="63" width="225" height="170"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CUB-jO-xUX">
-                                <rect key="frame" x="115" y="296" width="204" height="30"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ONA-ne-N9A">
+                                <rect key="frame" x="87" y="296" width="240" height="87"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" red="0.93638414140000004" green="0.90633124109999996" blue="0.87841475010000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="LSA-Jm-dXd"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" id="Syc-rS-pGE"/>
                     <connections>
+                        <outlet property="bioField" destination="ONA-ne-N9A" id="BgN-lH-Jyw"/>
                         <outlet property="favoriteSport" destination="wqI-DU-ujr" id="PgR-Wn-3gh"/>
                         <outlet property="profileImage" destination="VYG-fI-s0b" id="pKt-wT-GVt"/>
                         <outlet property="saveButton" destination="q1Z-Ix-bB4" id="I2o-yX-BeM"/>
