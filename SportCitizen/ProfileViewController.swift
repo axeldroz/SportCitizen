@@ -13,6 +13,8 @@ class ProfileViewController: UIViewController {
 
     @IBOutlet weak var nameView: UILabel!
     @IBOutlet weak var pictureView: UIImageView!
+    @IBOutlet weak var favSportView: UILabel!
+    @IBOutlet weak var refreshBarButton: UIBarButtonItem!
     
     var uid : String?
     let databaseRoot =
@@ -24,6 +26,7 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
         updateName()
         updatePicture()
+        updateFavoriteSport()
         // Do any additional setup after loading the view.
     }
 
@@ -38,7 +41,7 @@ class ProfileViewController: UIViewController {
         let userInfo = Auth.auth().currentUser
         let userRef = databaseRoot.child("users").child((userInfo?.uid)!)
         print("UpdateName")
-        userRef.child("name").observeSingleEvent(of: .value, with: { snapshot in
+        userRef.child("name").observe(DataEventType.value, with: { snapshot in
           
                 let snap = snapshot
                 let name = snap.value as! String
@@ -68,7 +71,7 @@ class ProfileViewController: UIViewController {
         let userInfo = Auth.auth().currentUser
         let userRef = databaseRoot.child("users").child((userInfo?.uid)!)
         print("UpdateName")
-        userRef.child("photoURL").observeSingleEvent(of: .value, with: { snapshot in
+        userRef.child("photoURL").observe(DataEventType.value, with: { snapshot in
             let snap = snapshot
             let name = snap.value as! String
             print("NEW key : ", name)
@@ -77,6 +80,26 @@ class ProfileViewController: UIViewController {
                 self.downloadImage(url: url)
             }
         })
+    }
+    
+    /* get favorite sport data from firebase */
+    func updateFavoriteSport() {
+        let userInfo = Auth.auth().currentUser
+        let userRef = databaseRoot.child("users").child((userInfo?.uid)!)
+        print("UpdateName")
+        userRef.child("favoriteSport").observe(DataEventType.value, with: { snapshot in
+            
+            let snap = snapshot
+            let sportValue = snap.value as! String
+            print("NEW value : ", sportValue)
+            self.favSportView.text = sportValue
+        })
+    }
+    
+    @objc private func onClickRefresh() {
+        updateName()
+        updatePicture()
+        updateFavoriteSport()
     }
     
     /*

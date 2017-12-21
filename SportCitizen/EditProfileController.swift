@@ -39,7 +39,7 @@ class EditProfileController: UIViewController, UIPickerViewDataSource, UIPickerV
     func getPickerData() {
         let sportsRef = databaseRoot.child("sports")
         
-        sportsRef.observeSingleEvent(of: .value, with: { snapshot in
+        sportsRef.observe(DataEventType.value, with: { snapshot in
             self.sports.removeAll()
             for child in snapshot.children {
                 let snap = child as! DataSnapshot

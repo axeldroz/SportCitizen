@@ -192,13 +192,13 @@
                                 <rect key="frame" x="87" y="63" width="225" height="170"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Here your description" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="6cD-HR-bZ1">
-                                <rect key="frame" x="72" y="296" width="240" height="98"/>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CUB-jO-xUX">
+                                <rect key="frame" x="115" y="296" width="204" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.93638414140000004" green="0.90633124109999996" blue="0.87841475010000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="LSA-Jm-dXd"/>
@@ -212,7 +212,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ciz-pG-gkl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5454" y="1386"/>
+            <point key="canvasLocation" x="5453.6231884057979" y="1385.8695652173915"/>
         </scene>
         <!--Profile Nav Controller-->
         <scene sceneID="l61-dn-eet">
@@ -266,7 +266,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SPORT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jvV-eJ-XdW">
-                                <rect key="frame" x="61" y="442" width="86" height="21"/>
+                                <rect key="frame" x="61" y="442" width="192" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -310,6 +310,9 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="Vs1-f9-tCo"/>
                     <navigationItem key="navigationItem" title="Profile" id="WUq-fU-oEd">
+                        <barButtonItem key="leftBarButtonItem" springLoaded="YES" systemItem="refresh" id="JZp-rc-cfo">
+                            <color key="tintColor" name="systemOrangeColor" catalog="System" colorSpace="catalog"/>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" springLoaded="YES" systemItem="edit" id="Bp6-1j-3gb">
                             <color key="tintColor" name="systemOrangeColor" catalog="System" colorSpace="catalog"/>
                             <connections>
@@ -318,8 +321,10 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="favSportView" destination="jvV-eJ-XdW" id="dsf-td-A9V"/>
                         <outlet property="nameView" destination="Hp5-xG-wG9" id="lj3-FB-iP8"/>
                         <outlet property="pictureView" destination="GF5-M2-FZD" id="Edg-hm-1CN"/>
+                        <outlet property="refreshBarButton" destination="JZp-rc-cfo" id="8gn-4r-kKV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rHz-QH-dOm" userLabel="First Responder" sceneMemberID="firstResponder"/>
