@@ -10,7 +10,11 @@ import Foundation
 import UIKit
 import Firebase
 
-/* class provide update of element content */
+/*
+ * Goal : Synchronise view element with database
+ * Example :    var sync : DBContentSync = DBContentSync()
+                sync.addUserRel(label : nameView, key : "name")
+ */
 class DBContentSync {
     let databaseRoot = Database.database().reference()
     let userInfo = Auth.auth().currentUser
