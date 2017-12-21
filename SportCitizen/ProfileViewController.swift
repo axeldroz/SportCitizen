@@ -27,6 +27,7 @@ class ProfileViewController: UIViewController {
         updateName()
         updatePicture()
         updateFavoriteSport()
+        print("ok")
         // Do any additional setup after loading the view.
     }
 
