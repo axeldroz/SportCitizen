@@ -25,7 +25,7 @@ class EditProfileController: UIViewController, UIPickerViewDataSource, UIPickerV
     override func viewDidLoad() {
         super.viewDidLoad()
         getPickerData()
-        sync.addUserRel(text: bioField, key: "view")
+        sync.addUserRel(text: bioField, key: "bio")
         saveButton.addTarget(self, action: #selector(self.onClickButton), for: .touchUpInside)
     }
     
