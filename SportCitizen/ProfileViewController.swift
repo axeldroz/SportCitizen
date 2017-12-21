@@ -15,6 +15,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var pictureView: UIImageView!
     @IBOutlet weak var favSportView: UILabel!
     @IBOutlet weak var refreshBarButton: UIBarButtonItem!
+    @IBOutlet weak var bioView: UITextView!
     
     var uid : String?
     let databaseRoot =
@@ -27,7 +28,7 @@ class ProfileViewController: UIViewController {
         updateName()
         updatePicture()
         updateFavoriteSport()
-        print("ok")
+        updateBio()
         // Do any additional setup after loading the view.
     }
 
@@ -36,7 +37,9 @@ class ProfileViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    /*
+     * Following function get data from firebase and update content of view
+     */
     /* get the name in database and update it */
     func updateName() {
         let userInfo = Auth.auth().currentUser
@@ -96,6 +99,20 @@ class ProfileViewController: UIViewController {
             self.favSportView.text = sportValue
         })
     }
+    
+    func updateBio() {
+        let userInfo = Auth.auth().currentUser
+        let userRef = databaseRoot.child("users").child((userInfo?.uid)!)
+        print("UpdateName")
+        userRef.child("bio").observe(DataEventType.value, with: { snapshot in
+            
+            let snap = snapshot
+            let value = snap.value as! String
+            print("NEW value : ", value)
+            self.bioView.text = value
+        })
+    }
+
     
     @objc private func onClickRefresh() {
         updateName()

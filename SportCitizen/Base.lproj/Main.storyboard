@@ -321,6 +321,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="bioView" destination="SDa-Va-uKn" id="nDd-HV-vKF"/>
                         <outlet property="favSportView" destination="jvV-eJ-XdW" id="dsf-td-A9V"/>
                         <outlet property="nameView" destination="Hp5-xG-wG9" id="lj3-FB-iP8"/>
                         <outlet property="pictureView" destination="GF5-M2-FZD" id="Edg-hm-1CN"/>
