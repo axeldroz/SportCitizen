@@ -74,6 +74,10 @@ class EditProfileController: UIViewController, UIPickerViewDataSource, UIPickerV
         return sports[row]
     }
     
+    /*
+     * following functions manage pickerview
+     */
+    
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return sports.count
     }
@@ -91,7 +95,7 @@ class EditProfileController: UIViewController, UIPickerViewDataSource, UIPickerV
         print ("onClickButton")
         let userInfo = Auth.auth().currentUser
         let userRef = databaseRoot.child("users").child((userInfo?.uid)!)
-        let values = ["favoriteSport" : favSport]
+        let values = ["favoriteSport" : favSport, "bio" : bioField.text!]
         
         userRef.updateChildValues(values, withCompletionBlock: {(err, ref) in
             if err != nil {
