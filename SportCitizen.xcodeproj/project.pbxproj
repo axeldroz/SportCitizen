@@ -26,6 +26,8 @@
 		25E1AF876DD9E7B83EB4E0AD /* Pods_SportCitizenUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E619206787B36C2ACD80058 /* Pods_SportCitizenUITests.framework */; };
 		2E11B5AF1FEAC35700227A8C /* ProfileNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E11B5AE1FEAC35700227A8C /* ProfileNavController.swift */; };
 		2E11B5B11FEAC37D00227A8C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E11B5B01FEAC37D00227A8C /* ProfileViewController.swift */; };
+		2E1443521FEC43CA006427C8 /* ChallengeEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1443511FEC43CA006427C8 /* ChallengeEditorViewController.swift */; };
+		2E1443551FEC4F8D006427C8 /* DBContentSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1443541FEC4F8D006427C8 /* DBContentSync.swift */; };
 		6821CCC9DAA0EE36EF08E665 /* Pods_SportCitizen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE8EE975B9839560CBF7B389 /* Pods_SportCitizen.framework */; };
 		DF1E8A7174AB6EE98AA0E99F /* Pods_SportCitizenTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D4D70439688851AE1723DFC /* Pods_SportCitizenTests.framework */; };
 /* End PBXBuildFile section */
@@ -74,6 +76,8 @@
 		21AF3F601FEA8F38007DA98B /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		2E11B5AE1FEAC35700227A8C /* ProfileNavController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileNavController.swift; sourceTree = "<group>"; };
 		2E11B5B01FEAC37D00227A8C /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		2E1443511FEC43CA006427C8 /* ChallengeEditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeEditorViewController.swift; sourceTree = "<group>"; };
+		2E1443541FEC4F8D006427C8 /* DBContentSync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBContentSync.swift; sourceTree = "<group>"; };
 		60AC1B7EFA6219C1FB71C72D /* Pods-SportCitizen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SportCitizen.release.xcconfig"; path = "Pods/Target Support Files/Pods-SportCitizen/Pods-SportCitizen.release.xcconfig"; sourceTree = "<group>"; };
 		656344B7BFDEE0FAFD831B26 /* Pods-SportCitizenUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SportCitizenUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SportCitizenUITests/Pods-SportCitizenUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		7150B8D17B85935E005BCEC3 /* Pods-SportCitizenUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SportCitizenUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SportCitizenUITests/Pods-SportCitizenUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -146,6 +150,7 @@
 		217307701FDEB55F007B213B /* SportCitizen */ = {
 			isa = PBXGroup;
 			children = (
+				2E1443531FEC4F38006427C8 /* DatabaseUtils */,
 				217307711FDEB55F007B213B /* AppDelegate.swift */,
 				217307731FDEB55F007B213B /* ViewController.swift */,
 				217307751FDEB55F007B213B /* Main.storyboard */,
@@ -163,6 +168,7 @@
 				21AF3F601FEA8F38007DA98B /* ImageCollectionViewCell.swift */,
 				2E11B5AE1FEAC35700227A8C /* ProfileNavController.swift */,
 				2E11B5B01FEAC37D00227A8C /* ProfileViewController.swift */,
+				2E1443511FEC43CA006427C8 /* ChallengeEditorViewController.swift */,
 			);
 			path = SportCitizen;
 			sourceTree = "<group>";
@@ -183,6 +189,14 @@
 				217307961FDEB55F007B213B /* Info.plist */,
 			);
 			path = SportCitizenUITests;
+			sourceTree = "<group>";
+		};
+		2E1443531FEC4F38006427C8 /* DatabaseUtils */ = {
+			isa = PBXGroup;
+			children = (
+				2E1443541FEC4F8D006427C8 /* DBContentSync.swift */,
+			);
+			path = DatabaseUtils;
 			sourceTree = "<group>";
 		};
 		48D8BBAADE34B3F9369504E6 /* Pods */ = {
@@ -510,8 +524,10 @@
 				2173077A1FDEB55F007B213B /* SportCitizen.xcdatamodeld in Sources */,
 				21AF3F611FEA8F38007DA98B /* ImageCollectionViewCell.swift in Sources */,
 				217307B71FE15EA8007B213B /* ChallengesController.swift in Sources */,
+				2E1443521FEC43CA006427C8 /* ChallengeEditorViewController.swift in Sources */,
 				2E11B5B11FEAC37D00227A8C /* ProfileViewController.swift in Sources */,
 				21AF3F5F1FEA8C09007DA98B /* FeedViewController.swift in Sources */,
+				2E1443551FEC4F8D006427C8 /* DBContentSync.swift in Sources */,
 				217307721FDEB55F007B213B /* AppDelegate.swift in Sources */,
 				2E11B5AF1FEAC35700227A8C /* ProfileNavController.swift in Sources */,
 				217307B91FE15EFC007B213B /* FeedNavController.swift in Sources */,

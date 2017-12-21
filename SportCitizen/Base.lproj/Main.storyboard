@@ -138,10 +138,10 @@
             </objects>
             <point key="canvasLocation" x="5431.884057971015" y="510.32608695652181"/>
         </scene>
-        <!--View Controller-->
+        <!--Challenge Editor View Controller-->
         <scene sceneID="Eq8-3E-M8b">
             <objects>
-                <viewController id="kK6-jt-vjG" sceneMemberID="viewController">
+                <viewController id="kK6-jt-vjG" customClass="ChallengeEditorViewController" customModule="SportCitizen" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JfI-Z0-wpD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -181,6 +181,11 @@
                         <color key="backgroundColor" red="0.91361916065216064" green="0.91379445791244507" blue="0.91360610723495483" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="Lgu-g7-kMn"/>
                     </view>
+                    <connections>
+                        <outlet property="datePickerView" destination="VPU-Bk-BhV" id="0Ui-Kp-o1c"/>
+                        <outlet property="sportPickerView" destination="pcT-IH-0ca" id="jQ4-66-9OT"/>
+                        <outlet property="titleView" destination="peE-4O-soW" id="hxA-wF-Cvu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nn2-rZ-3m7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

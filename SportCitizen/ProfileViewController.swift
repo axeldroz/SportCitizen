@@ -16,108 +16,22 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var favSportView: UILabel!
     @IBOutlet weak var refreshBarButton: UIBarButtonItem!
     @IBOutlet weak var bioView: UITextView!
-    
-    var uid : String?
-    let databaseRoot =
-        Database.database().reference()
+
     var name : String = "Loading"
+    var sync : DBContentSync = DBContentSync()
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        updateName()
-        updatePicture()
-        updateFavoriteSport()
-        updateBio()
-        // Do any additional setup after loading the view.
+        sync.addUserRel(label : nameView, key : "name")
+        sync.addUserRel(image: pictureView, key: "photoURL")
+        sync.addUserRel(label : favSportView, key : "favoriteSport")
+        sync.addUserRel(text: bioView, key : "bio")
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    /*
-     * Following function get data from firebase and update content of view
-     */
-    /* get the name in database and update it */
-    func updateName() {
-        let userInfo = Auth.auth().currentUser
-        let userRef = databaseRoot.child("users").child((userInfo?.uid)!)
-        print("UpdateName")
-        userRef.child("name").observe(DataEventType.value, with: { snapshot in
-          
-                let snap = snapshot
-                let name = snap.value as! String
-                print("NEW key : ", name)
-                self.nameView.text = name
-            })
-    }
-    
-    /* get the name in database and update it */
-    func getDataFromUrl(url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            completion(data, response, error)
-            }.resume()
-    }
-    func downloadImage(url: URL) {
-        print("Download Started")
-        getDataFromUrl(url: url) { data, response, error in
-            guard let data = data, error == nil else { return }
-            print(response?.suggestedFilename ?? url.lastPathComponent)
-            print("Download Finished")
-            DispatchQueue.main.async() {
-                self.pictureView.image = UIImage(data: data)
-            }
-        }
-    }
-    func updatePicture() {
-        let userInfo = Auth.auth().currentUser
-        let userRef = databaseRoot.child("users").child((userInfo?.uid)!)
-        print("UpdateName")
-        userRef.child("photoURL").observe(DataEventType.value, with: { snapshot in
-            let snap = snapshot
-            let name = snap.value as! String
-            print("NEW key : ", name)
-            if let url = URL(string: name) {
-                self.pictureView.contentMode = .scaleAspectFit
-                self.downloadImage(url: url)
-            }
-        })
-    }
-    
-    /* get favorite sport data from firebase */
-    func updateFavoriteSport() {
-        let userInfo = Auth.auth().currentUser
-        let userRef = databaseRoot.child("users").child((userInfo?.uid)!)
-        print("UpdateName")
-        userRef.child("favoriteSport").observe(DataEventType.value, with: { snapshot in
-            
-            let snap = snapshot
-            let sportValue = snap.value as! String
-            print("NEW value : ", sportValue)
-            self.favSportView.text = sportValue
-        })
-    }
-    
-    func updateBio() {
-        let userInfo = Auth.auth().currentUser
-        let userRef = databaseRoot.child("users").child((userInfo?.uid)!)
-        print("UpdateName")
-        userRef.child("bio").observe(DataEventType.value, with: { snapshot in
-            
-            let snap = snapshot
-            let value = snap.value as! String
-            print("NEW value : ", value)
-            self.bioView.text = value
-        })
-    }
-
-    
-    @objc private func onClickRefresh() {
-        updateName()
-        updatePicture()
-        updateFavoriteSport()
     }
     
     /*
