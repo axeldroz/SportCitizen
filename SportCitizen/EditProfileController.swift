@@ -20,12 +20,12 @@ class EditProfileController: UIViewController, UIPickerViewDataSource, UIPickerV
     var sports : [String] = ["loading ..."]
     var favSport : String = "undefined"
     let databaseRoot = Database.database().reference()
+    var sync : DBContentSync = DBContentSync()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         getPickerData()
-        getDataBio()
-        // Do any additional setup after loading the view.
+        sync.addUserRel(text: bioField, key: "view")
         saveButton.addTarget(self, action: #selector(self.onClickButton), for: .touchUpInside)
     }
     
@@ -54,18 +54,6 @@ class EditProfileController: UIViewController, UIPickerViewDataSource, UIPickerV
         })
 
     }
-    func getDataBio() {
-        let userInfo = Auth.auth().currentUser
-        let userRef = databaseRoot.child("users").child((userInfo?.uid)!)
-        print("UpdateName")
-        userRef.child("bio").observe(DataEventType.value, with: { snapshot in
-            
-            let snap = snapshot
-            let value = snap.value as! String
-            print("NEW value : ", value)
-            self.bioField.text = value
-        })
-    }
     
     /*
      * following functions manage pickerview
@@ -73,10 +61,6 @@ class EditProfileController: UIViewController, UIPickerViewDataSource, UIPickerV
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return sports[row]
     }
-    
-    /*
-     * following functions manage pickerview
-     */
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return sports.count
