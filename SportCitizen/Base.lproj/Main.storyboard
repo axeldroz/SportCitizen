@@ -186,7 +186,9 @@
                         <viewLayoutGuide key="safeArea" id="Lgu-g7-kMn"/>
                     </view>
                     <connections>
+                        <outlet property="createButton" destination="JnD-QS-4nt" id="xnQ-5d-nGi"/>
                         <outlet property="datePickerView" destination="VPU-Bk-BhV" id="0Ui-Kp-o1c"/>
+                        <outlet property="descrView" destination="iIX-Oe-6xv" id="EVo-ML-Jra"/>
                         <outlet property="pickerView" destination="opZ-qR-jve" id="Lht-xz-Qy6"/>
                         <outlet property="titleView" destination="peE-4O-soW" id="hxA-wF-Cvu"/>
                     </connections>

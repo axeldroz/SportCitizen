@@ -15,14 +15,18 @@ class ChallengeEditorViewController: UIViewController, UIPickerViewDataSource, U
     @IBOutlet weak var datePickerView: UIDatePicker!
     @IBOutlet weak var titleView: UITextField!
     @IBOutlet weak var pickerView: UIPickerView!
+    @IBOutlet weak var createButton: UIButton!
+    @IBOutlet weak var descrView: UITextView!
     
     var sports : [String] = ["loading ..."]
-    var favSport : String = "undefined"
+    var sportSelected : String = "undefined"
     let databaseRoot = Database.database().reference()
+    var dbw : DBWriter = DBWriter()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         getPickerData()
+        createButton.addTarget(self, action: #selector(self.onClickButton), for: .touchUpInside)
     }
     
     override func didReceiveMemoryWarning() {
@@ -60,11 +64,18 @@ class ChallengeEditorViewController: UIViewController, UIPickerViewDataSource, U
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        favSport = sports[row]
+        sportSelected = sports[row]
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
+    }
+    
+    /* event button create click func */
+    @objc private func onClickButton() {
+        let values = ["sport" : sportSelected, "title" : titleView.text!, "description" : descrView.text!]
+        
+        dbw.editFieldInfo(key: "challenges", values: values)
     }
 
 }
