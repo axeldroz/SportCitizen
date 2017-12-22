@@ -20,7 +20,7 @@ class EditProfileController: UIViewController, UIPickerViewDataSource, UIPickerV
     var sports : [String] = ["loading ..."]
     var favSport : String = "undefined"
     let databaseRoot = Database.database().reference()
-    var sync : DBContentSync = DBContentSync()
+    var sync : DBViewContentSync = DBViewContentSync()
     
     override func viewDidLoad() {
         super.viewDidLoad()

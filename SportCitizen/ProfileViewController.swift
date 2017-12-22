@@ -18,7 +18,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var bioView: UITextView!
 
     var name : String = "Loading"
-    var sync : DBContentSync = DBContentSync()
+    var sync : DBViewContentSync = DBViewContentSync()
 
     
     override func viewDidLoad() {

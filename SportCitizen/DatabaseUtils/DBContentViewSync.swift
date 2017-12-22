@@ -15,7 +15,7 @@ import Firebase
  * Example :    var sync : DBContentSync = DBContentSync()
                 sync.addUserRel(label : nameView, key : "name")
  */
-class DBContentSync {
+class DBViewContentSync {
     let databaseRoot = Database.database().reference()
     let userInfo = Auth.auth().currentUser
     
