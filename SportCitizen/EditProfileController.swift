@@ -21,6 +21,7 @@ class EditProfileController: UIViewController, UIPickerViewDataSource, UIPickerV
     var favSport : String = "undefined"
     let databaseRoot = Database.database().reference()
     var sync : DBViewContentSync = DBViewContentSync()
+    var dbw : DBWriter = DBWriter()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,16 +77,8 @@ class EditProfileController: UIViewController, UIPickerViewDataSource, UIPickerV
     
     /* event Click func */
     @objc private func onClickButton() {
-        print ("onClickButton")
-        let userInfo = Auth.auth().currentUser
-        let userRef = databaseRoot.child("users").child((userInfo?.uid)!)
         let values = ["favoriteSport" : favSport, "bio" : bioField.text!]
         
-        userRef.updateChildValues(values, withCompletionBlock: {(err, ref) in
-            if err != nil {
-                print(err.debugDescription)
-                return
-            }
-        })
+        dbw.editUserInfo(values: values)
     }
 }
