@@ -152,6 +152,7 @@
 		217307701FDEB55F007B213B /* SportCitizen */ = {
 			isa = PBXGroup;
 			children = (
+				2E90DB771FED7ED10097B15D /* ViewControllers */,
 				2E1443531FEC4F38006427C8 /* DatabaseUtils */,
 				217307711FDEB55F007B213B /* AppDelegate.swift */,
 				217307731FDEB55F007B213B /* ViewController.swift */,
@@ -160,17 +161,7 @@
 				2173077D1FDEB55F007B213B /* LaunchScreen.storyboard */,
 				217307801FDEB55F007B213B /* Info.plist */,
 				217307781FDEB55F007B213B /* SportCitizen.xcdatamodeld */,
-				21AF3F5C1FE182B2007DA98B /* HomeController.swift */,
-				217307A21FDEBB2F007B213B /* LoginController.swift */,
 				217307A41FDEBE55007B213B /* GoogleService-Info.plist */,
-				217307B61FE15EA8007B213B /* ChallengesController.swift */,
-				217307B81FE15EFC007B213B /* FeedNavController.swift */,
-				217307BA1FE1604C007B213B /* EditProfileController.swift */,
-				21AF3F5E1FEA8C09007DA98B /* FeedViewController.swift */,
-				21AF3F601FEA8F38007DA98B /* ImageCollectionViewCell.swift */,
-				2E11B5AE1FEAC35700227A8C /* ProfileNavController.swift */,
-				2E11B5B01FEAC37D00227A8C /* ProfileViewController.swift */,
-				2E1443511FEC43CA006427C8 /* ChallengeEditorViewController.swift */,
 			);
 			path = SportCitizen;
 			sourceTree = "<group>";
@@ -200,6 +191,23 @@
 				2E90DB751FED7AA50097B15D /* DBWriter.swift */,
 			);
 			path = DatabaseUtils;
+			sourceTree = "<group>";
+		};
+		2E90DB771FED7ED10097B15D /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				21AF3F5C1FE182B2007DA98B /* HomeController.swift */,
+				217307A21FDEBB2F007B213B /* LoginController.swift */,
+				217307B61FE15EA8007B213B /* ChallengesController.swift */,
+				217307B81FE15EFC007B213B /* FeedNavController.swift */,
+				217307BA1FE1604C007B213B /* EditProfileController.swift */,
+				21AF3F5E1FEA8C09007DA98B /* FeedViewController.swift */,
+				21AF3F601FEA8F38007DA98B /* ImageCollectionViewCell.swift */,
+				2E11B5AE1FEAC35700227A8C /* ProfileNavController.swift */,
+				2E11B5B01FEAC37D00227A8C /* ProfileViewController.swift */,
+				2E1443511FEC43CA006427C8 /* ChallengeEditorViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		48D8BBAADE34B3F9369504E6 /* Pods */ = {
