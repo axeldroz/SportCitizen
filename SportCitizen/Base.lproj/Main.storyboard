@@ -13,7 +13,7 @@
         <!--Login Controller-->
         <scene sceneID="h4T-Hc-4hz">
             <objects>
-                <viewController id="5v6-K9-Lsx" customClass="LoginController" customModule="SportCitizen" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Signin" id="5v6-K9-Lsx" customClass="LoginController" customModule="SportCitizen" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VJ2-g7-MRm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -120,6 +120,11 @@
                         <viewLayoutGuide key="safeArea" id="wcM-q3-W2G"/>
                     </view>
                     <navigationItem key="navigationItem" title="Feed" id="NKG-EJ-JP3">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="A0O-Lb-36Q">
+                            <connections>
+                                <action selector="LogoutAction:" destination="PoH-7P-QFp" id="GFS-jn-Z3a"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="mVl-My-TeJ">
                             <color key="tintColor" name="systemOrangeColor" catalog="System" colorSpace="catalog"/>
                             <connections>

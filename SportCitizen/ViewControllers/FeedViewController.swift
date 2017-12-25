@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class FeedViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
 
@@ -34,7 +35,7 @@ class FeedViewController: UIViewController, UICollectionViewDataSource, UICollec
         
         return cell
     }
-    
+
     func loadImages(){
         images.append(UIImage(named: "menu")!)
         images.append(UIImage(named: "menu")!)
@@ -44,4 +45,19 @@ class FeedViewController: UIViewController, UICollectionViewDataSource, UICollec
         self.collectionView.reloadData()
     }
     
+    /*
+    * Sign Out function that redirects to SignIn View controller.
+    */
+    @IBAction func LogoutAction(_ sender: Any) {
+        let firebaseAuth = Auth.auth()
+        do {
+            try firebaseAuth.signOut()
+        } catch let signOutError as NSError {
+            print ("Error signing out: %@", signOutError)
+        }
+        // If the user has well signed out, show the signIn view.
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "Signin")
+        self.present(controller, animated: true, completion: nil)
+    }
 }
