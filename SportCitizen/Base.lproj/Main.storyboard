@@ -29,9 +29,6 @@
                                 <state key="normal" title="Login with facebook">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
-                                <connections>
-                                    <segue destination="c5s-Kn-cYM" kind="show" id="Tht-Wf-igS"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.93638414144515991" green="0.90633124113082886" blue="0.87841475009918213" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -380,7 +377,7 @@
         <!--Home-->
         <scene sceneID="ceG-Uv-jMA">
             <objects>
-                <tabBarController title="Home" automaticallyAdjustsScrollViewInsets="NO" id="c5s-Kn-cYM" customClass="HomeController" customModule="SportCitizen" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="Home" title="Home" automaticallyAdjustsScrollViewInsets="NO" id="c5s-Kn-cYM" customClass="HomeController" customModule="SportCitizen" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="uZN-tr-3g2"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="g3D-mw-tKu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>

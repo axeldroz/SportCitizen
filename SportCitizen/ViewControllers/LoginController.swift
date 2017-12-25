@@ -10,25 +10,27 @@ import UIKit
 import FBSDKLoginKit
 import Firebase
 
-class LoginController: UIViewController, FBSDKLoginButtonDelegate {
+class LoginController: UIViewController {
     @IBOutlet weak var facebookLoginButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       let loginButton: FBSDKLoginButton = FBSDKLoginButton()
-       loginButton.center = self.view.center
-       view.addSubview(loginButton)
-       loginButton.readPermissions = ["public_profile", "email"  ]
-        loginButton.delegate = self
         view.addSubview(facebookLoginButton)
         facebookLoginButton.addTarget(self, action: #selector(customFacebookLogin), for: .touchUpInside)
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    func showHomeController(){
+        // If the user has well signed in, show the Home View.
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "Home") as! UITabBarController
+        self.present(controller, animated: true, completion: nil)
+    }
+    
     @objc func customFacebookLogin(sender: UIButton!) {
         FBSDKLoginManager().logIn(withReadPermissions: ["email", "public_profile"], from: self) {
             (result, error) in
@@ -37,47 +39,27 @@ class LoginController: UIViewController, FBSDKLoginButtonDelegate {
                 return
             }
             let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
+            print(credential)
             Auth.auth().signIn(with: credential) { (user, error) in
+                print("trying to sign in .....")
                 if error != nil {
                     print("Erreur de firebase ===== ", error.debugDescription)
                     return
                 }
-                print("successfully firebased")
-            }
-            print("successfully logged")
-            let databaseRoot = Database.database().reference()
-            let userInfo = Auth.auth().currentUser
-            let userRef = databaseRoot.child("users").child((userInfo?.uid)!)
-            let values = ["email": userInfo?.email , "name": userInfo?.displayName, "photoURL": userInfo?.photoURL?.absoluteString]
+                let databaseRoot = Database.database().reference()
+                let userInfo = Auth.auth().currentUser
+                let userRef = databaseRoot.child("users").child((userInfo?.uid)!)
+                let values = ["email": userInfo?.email, "name": userInfo?.displayName, "photoURL": userInfo?.photoURL?.absoluteString] as! [String : String]
                 
-            userRef.updateChildValues(values, withCompletionBlock: {(err, ref) in
-                if error != nil {
-                    print(error.debugDescription)
-                    return
-                }
-            })
-        }
-        
-
-    }
-    
-    func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
-        print("Logged out")
-    }
-    
-    func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
-        if error != nil {
-            print(error)
-            return
-        }
-        let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
-        Auth.auth().signIn(with: credential) { (user, error) in
-            if let error = error {
-                   print(error)
-                   return
-               }
+                userRef.updateChildValues(values, withCompletionBlock: {(error, ref) in
+                    if error != nil {
+                        print(error.debugDescription)
+                        return
+                    }
+                })
                 print("successfully firebased")
+                self.showHomeController()
             }
-        print("successfully logged")
+        }
     }
 }
