@@ -12,25 +12,27 @@ import Firebase
 
 class ChallengeEditorViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     @IBOutlet weak var titleView: UITextField!
-    @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var createButton: UIButton!
     @IBOutlet weak var descrView: UITextView!
     @IBOutlet weak var datePickerText: UITextField!
+    @IBOutlet weak var sportPickerText: UITextField!
+    
     
     var sports : [String] = ["loading ..."]
     var sportSelected : String = "undefined"
     let databaseRoot = Database.database().reference()
     var dbw : DBWriter = DBWriter()
     let edi : UIDatePickerCreator = UIDatePickerCreator()
-    
+    let custPicker : UISyncDataPickerCreator = UISyncDataPickerCreator()
+    var pickerView : UIPickerView = UIPickerView()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        getPickerData()
+        //getPickerData()
         createButton.addTarget(self, action: #selector(self.onClickButton), for: .touchUpInside)
         edi.create(field : self.datePickerText!, view : self.view!)
-        
+        custPicker.create(field : self.sportPickerText!, view : self.view!)
     }
     
     override func didReceiveMemoryWarning() {

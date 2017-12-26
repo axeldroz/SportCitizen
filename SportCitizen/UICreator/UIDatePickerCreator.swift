@@ -23,7 +23,7 @@ class UIDatePickerCreator {
     }
     
     /* create the datePickjer */
-    func create (field : UITextField!, view : UIView!) {
+    func create(field : UITextField!, view : UIView!) {
         self.datePickerText = field
         self.view = view
         
