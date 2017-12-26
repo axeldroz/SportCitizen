@@ -28,6 +28,7 @@
 		2E11B5B11FEAC37D00227A8C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E11B5B01FEAC37D00227A8C /* ProfileViewController.swift */; };
 		2E1443521FEC43CA006427C8 /* ChallengeEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1443511FEC43CA006427C8 /* ChallengeEditorViewController.swift */; };
 		2E1443551FEC4F8D006427C8 /* DBContentViewSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1443541FEC4F8D006427C8 /* DBContentViewSync.swift */; };
+		2E526AE01FF2565E005A59E9 /* UIDatePickerCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E526ADF1FF2565E005A59E9 /* UIDatePickerCreator.swift */; };
 		2E90DB761FED7AA50097B15D /* DBWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E90DB751FED7AA50097B15D /* DBWriter.swift */; };
 		6821CCC9DAA0EE36EF08E665 /* Pods_SportCitizen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE8EE975B9839560CBF7B389 /* Pods_SportCitizen.framework */; };
 		DF1E8A7174AB6EE98AA0E99F /* Pods_SportCitizenTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D4D70439688851AE1723DFC /* Pods_SportCitizenTests.framework */; };
@@ -79,6 +80,7 @@
 		2E11B5B01FEAC37D00227A8C /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		2E1443511FEC43CA006427C8 /* ChallengeEditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeEditorViewController.swift; sourceTree = "<group>"; };
 		2E1443541FEC4F8D006427C8 /* DBContentViewSync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBContentViewSync.swift; sourceTree = "<group>"; };
+		2E526ADF1FF2565E005A59E9 /* UIDatePickerCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDatePickerCreator.swift; sourceTree = "<group>"; };
 		2E90DB751FED7AA50097B15D /* DBWriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBWriter.swift; sourceTree = "<group>"; };
 		60AC1B7EFA6219C1FB71C72D /* Pods-SportCitizen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SportCitizen.release.xcconfig"; path = "Pods/Target Support Files/Pods-SportCitizen/Pods-SportCitizen.release.xcconfig"; sourceTree = "<group>"; };
 		656344B7BFDEE0FAFD831B26 /* Pods-SportCitizenUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SportCitizenUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SportCitizenUITests/Pods-SportCitizenUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 		217307701FDEB55F007B213B /* SportCitizen */ = {
 			isa = PBXGroup;
 			children = (
+				2E526ADE1FF2561F005A59E9 /* UICreator */,
 				2E90DB771FED7ED10097B15D /* ViewControllers */,
 				2E1443531FEC4F38006427C8 /* DatabaseUtils */,
 				217307711FDEB55F007B213B /* AppDelegate.swift */,
@@ -191,6 +194,14 @@
 				2E90DB751FED7AA50097B15D /* DBWriter.swift */,
 			);
 			path = DatabaseUtils;
+			sourceTree = "<group>";
+		};
+		2E526ADE1FF2561F005A59E9 /* UICreator */ = {
+			isa = PBXGroup;
+			children = (
+				2E526ADF1FF2565E005A59E9 /* UIDatePickerCreator.swift */,
+			);
+			path = UICreator;
 			sourceTree = "<group>";
 		};
 		2E90DB771FED7ED10097B15D /* ViewControllers */ = {
@@ -543,6 +554,7 @@
 				217307721FDEB55F007B213B /* AppDelegate.swift in Sources */,
 				2E11B5AF1FEAC35700227A8C /* ProfileNavController.swift in Sources */,
 				217307B91FE15EFC007B213B /* FeedNavController.swift in Sources */,
+				2E526AE01FF2565E005A59E9 /* UIDatePickerCreator.swift in Sources */,
 				217307BB1FE1604C007B213B /* EditProfileController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

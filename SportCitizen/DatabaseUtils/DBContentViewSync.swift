@@ -22,7 +22,7 @@ class DBViewContentSync {
     init () {
     }
     
-    func addUserRel(label : UILabel, key : String){
+    func addUserRel(label : UILabel, key : String) {
         let userRef = self.databaseRoot.child("users").child((userInfo?.uid)!)
         
         userRef.child(key).observe(DataEventType.value, with: { snapshot in
@@ -33,7 +33,7 @@ class DBViewContentSync {
         })
     }
     
-    func addUserRel(text : UITextView, key : String){
+    func addUserRel(text : UITextView, key : String) {
         let userRef = self.databaseRoot.child("users").child((userInfo?.uid)!)
         
         userRef.child(key).observe(DataEventType.value, with: { snapshot in
@@ -65,6 +65,7 @@ class DBViewContentSync {
             completion(data, response, error)
             }.resume()
     }
+    
     func downloadImage(url: URL, image : UIImageView) {
         print("Download Started")
         getDataFromUrl(url: url) { data, response, error in
