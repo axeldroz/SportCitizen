@@ -19,11 +19,15 @@ class UISyncDataPickerCreator : NSObject, UIPickerViewDataSource, UIPickerViewDe
     let pickerView = UIPickerView()
     var pickerText : UITextField!
     var view : UIView!
-    var sports : [String] = ["loading ..."]
-    var sportSelected : String = "undefined"
+    var values : [String] = ["loading ..."]
+    var valueSelected : String = "undefined"
     
     func getUserId() -> String? {
         return Auth.auth().currentUser?.uid
+    }
+    
+    func getValue() -> String? {
+        return valueSelected
     }
     
     /* creation of picker view display */
@@ -49,11 +53,11 @@ class UISyncDataPickerCreator : NSObject, UIPickerViewDataSource, UIPickerViewDe
         let sportsRef = databaseRoot.child("sports")
         
         sportsRef.observe(DataEventType.value, with: { snapshot in
-            self.sports.removeAll()
+            self.values.removeAll()
             for child in snapshot.children {
                 let snap = child as! DataSnapshot
                 let name = snap.value as! String
-                self.sports.append(name)
+                self.values.append(name)
             }
             self.pickerView.reloadAllComponents()
         })
@@ -64,15 +68,15 @@ class UISyncDataPickerCreator : NSObject, UIPickerViewDataSource, UIPickerViewDe
      * following functions manage pickerview
      */
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return sports[row]
+        return values[row]
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return sports.count
+        return values.count
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        sportSelected = sports[row]
+        valueSelected = values[row]
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -80,7 +84,7 @@ class UISyncDataPickerCreator : NSObject, UIPickerViewDataSource, UIPickerViewDe
     }
     
     @objc func donePressed1 () {
-        self.pickerText.text = sportSelected
+        self.pickerText.text = valueSelected
         print ("it's finally ok2")
         self.view.endEditing(true)
     }
