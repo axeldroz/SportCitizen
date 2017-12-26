@@ -12,21 +12,24 @@ import Firebase
 
 class ChallengeEditorViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
-    @IBOutlet weak var datePickerView: UIDatePicker!
     @IBOutlet weak var titleView: UITextField!
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var createButton: UIButton!
     @IBOutlet weak var descrView: UITextView!
+    @IBOutlet weak var datePickerText: UITextField!
     
     var sports : [String] = ["loading ..."]
     var sportSelected : String = "undefined"
     let databaseRoot = Database.database().reference()
+    let datePicker = UIDatePicker()
     var dbw : DBWriter = DBWriter()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         getPickerData()
         createButton.addTarget(self, action: #selector(self.onClickButton), for: .touchUpInside)
+        createDatePicker()
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -69,6 +72,33 @@ class ChallengeEditorViewController: UIViewController, UIPickerViewDataSource, U
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
+    }
+    
+    /*
+     * Following fct to create and manage DatePicker
+     */
+    func createDatePicker() {
+        
+        datePicker.datePickerMode = .date
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(donePressed))
+        toolbar.setItems([doneButton], animated: false)
+        
+        datePickerText.inputAccessoryView = toolbar
+        
+        datePickerText.inputView = datePicker
+    }
+    
+    @objc func donePressed () {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .short
+        dateFormatter.timeStyle = .none
+        
+        
+        datePickerText.text = "\(datePicker.date)"
+        self.view.endEditing(true)
     }
     
     /* event button create click func */

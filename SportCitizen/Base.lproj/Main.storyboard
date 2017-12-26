@@ -155,13 +155,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="VPU-Bk-BhV">
-                                <rect key="frame" x="0.0" y="231" width="414" height="162"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <date key="date" timeIntervalSinceReferenceDate="535577001.85835701">
-                                    <!--2017-12-21 19:23:21 +0000-->
-                                </date>
-                            </datePicker>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="iIX-Oe-6xv">
                                 <rect key="frame" x="94" y="474" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -183,13 +176,20 @@
                                     <outlet property="delegate" destination="kK6-jt-vjG" id="TxM-a5-1rY"/>
                                 </connections>
                             </pickerView>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TPq-ZI-HIR">
+                                <rect key="frame" x="120" y="309" width="214" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.91361916065216064" green="0.91379445791244507" blue="0.91360610723495483" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="Lgu-g7-kMn"/>
                     </view>
                     <connections>
                         <outlet property="createButton" destination="JnD-QS-4nt" id="xnQ-5d-nGi"/>
-                        <outlet property="datePickerView" destination="VPU-Bk-BhV" id="0Ui-Kp-o1c"/>
+                        <outlet property="datePickerText" destination="TPq-ZI-HIR" id="Hl6-Ql-BkJ"/>
                         <outlet property="descrView" destination="iIX-Oe-6xv" id="EVo-ML-Jra"/>
                         <outlet property="pickerView" destination="opZ-qR-jve" id="Lht-xz-Qy6"/>
                         <outlet property="titleView" destination="peE-4O-soW" id="hxA-wF-Cvu"/>
