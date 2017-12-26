@@ -2,14 +2,18 @@
 //  UIDatePickerCreator.swift
 //  SportCitizen
 //
-//  Created by Axel Droz on 26/12/2017.
-//  Copyright © 2017 Simon BRAMI. All rights reserved.
+//  Created by Axel Drozdzynski on 26/12/2017.
+//  Copyright © 2017 Axel Drozdzynski All rights reserved.
 //
 
 import Foundation
 import UIKit
 import Firebase
 
+/*
+ * UIDatePickerCreator
+ * Goal : display a data picker related with DateTextField
+ */
 class UIDatePickerCreator {
     
     let datePicker = UIDatePicker()

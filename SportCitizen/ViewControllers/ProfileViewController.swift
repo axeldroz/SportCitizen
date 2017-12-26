@@ -2,8 +2,8 @@
 //  ProfileViewController.swift
 //  SportCitizen
 //
-//  Created by Axel Droz on 20/12/2017.
-//  Copyright © 2017 Simon BRAMI. All rights reserved.
+//  Created by Axel Drozdzynski on 20/12/2017.
+//  Copyright © 2017 Axel Drozdzynski. All rights reserved.
 //
 
 import UIKit
