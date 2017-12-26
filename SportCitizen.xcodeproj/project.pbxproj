@@ -28,6 +28,7 @@
 		2E11B5B11FEAC37D00227A8C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E11B5B01FEAC37D00227A8C /* ProfileViewController.swift */; };
 		2E1443521FEC43CA006427C8 /* ChallengeEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1443511FEC43CA006427C8 /* ChallengeEditorViewController.swift */; };
 		2E1443551FEC4F8D006427C8 /* DBContentViewSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1443541FEC4F8D006427C8 /* DBContentViewSync.swift */; };
+		2E2ADC391FF2AC1500EC85BA /* UISyncDataPickerCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2ADC381FF2AC1500EC85BA /* UISyncDataPickerCreator.swift */; };
 		2E526AE01FF2565E005A59E9 /* UIDatePickerCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E526ADF1FF2565E005A59E9 /* UIDatePickerCreator.swift */; };
 		2E90DB761FED7AA50097B15D /* DBWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E90DB751FED7AA50097B15D /* DBWriter.swift */; };
 		6821CCC9DAA0EE36EF08E665 /* Pods_SportCitizen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE8EE975B9839560CBF7B389 /* Pods_SportCitizen.framework */; };
@@ -80,6 +81,7 @@
 		2E11B5B01FEAC37D00227A8C /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		2E1443511FEC43CA006427C8 /* ChallengeEditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeEditorViewController.swift; sourceTree = "<group>"; };
 		2E1443541FEC4F8D006427C8 /* DBContentViewSync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBContentViewSync.swift; sourceTree = "<group>"; };
+		2E2ADC381FF2AC1500EC85BA /* UISyncDataPickerCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISyncDataPickerCreator.swift; sourceTree = "<group>"; };
 		2E526ADF1FF2565E005A59E9 /* UIDatePickerCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDatePickerCreator.swift; sourceTree = "<group>"; };
 		2E90DB751FED7AA50097B15D /* DBWriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBWriter.swift; sourceTree = "<group>"; };
 		60AC1B7EFA6219C1FB71C72D /* Pods-SportCitizen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SportCitizen.release.xcconfig"; path = "Pods/Target Support Files/Pods-SportCitizen/Pods-SportCitizen.release.xcconfig"; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				2E526ADF1FF2565E005A59E9 /* UIDatePickerCreator.swift */,
+				2E2ADC381FF2AC1500EC85BA /* UISyncDataPickerCreator.swift */,
 			);
 			path = UICreator;
 			sourceTree = "<group>";
@@ -542,6 +545,7 @@
 			files = (
 				217307741FDEB55F007B213B /* ViewController.swift in Sources */,
 				21AF3F5D1FE182B2007DA98B /* HomeController.swift in Sources */,
+				2E2ADC391FF2AC1500EC85BA /* UISyncDataPickerCreator.swift in Sources */,
 				217307A31FDEBB2F007B213B /* LoginController.swift in Sources */,
 				2173077A1FDEB55F007B213B /* SportCitizen.xcdatamodeld in Sources */,
 				21AF3F611FEA8F38007DA98B /* ImageCollectionViewCell.swift in Sources */,

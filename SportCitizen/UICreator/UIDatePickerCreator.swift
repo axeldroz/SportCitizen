@@ -8,11 +8,10 @@
 
 import Foundation
 import UIKit
-import Firebase
 
 /*
  * UIDatePickerCreator
- * Goal : display a data picker related with DateTextField
+ * Goal : display a date picker related with DateTextField
  */
 class UIDatePickerCreator {
     
