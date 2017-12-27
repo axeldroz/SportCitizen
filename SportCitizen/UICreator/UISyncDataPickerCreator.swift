@@ -31,15 +31,14 @@ class UISyncDataPickerCreator : NSObject, UIPickerViewDataSource, UIPickerViewDe
     }
     
     /* creation of picker view display */
-    func create(field : UITextField!, view : UIView!) {
+    func create(field : UITextField!, view : UIView!, key : String!) {
         self.pickerText = field
         self.view = view
-        
         let toolbar = UIToolbar()
         let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(self.donePressed1))
         pickerView.delegate = self
         pickerView.dataSource = self
-        getPickerData()
+        getPickerData(key : key)
         toolbar.setItems([doneButton], animated: false)
         toolbar.sizeToFit()
         self.pickerText.inputAccessoryView = toolbar
@@ -49,8 +48,8 @@ class UISyncDataPickerCreator : NSObject, UIPickerViewDataSource, UIPickerViewDe
     /*
      * Following functions get data from firebase and update content of the view
      */
-    func getPickerData() {
-        let sportsRef = databaseRoot.child("sports")
+    func getPickerData(key : String!) {
+        let sportsRef = databaseRoot.child(key)
         
         sportsRef.observe(DataEventType.value, with: { snapshot in
             self.values.removeAll()
@@ -63,6 +62,24 @@ class UISyncDataPickerCreator : NSObject, UIPickerViewDataSource, UIPickerViewDe
         })
         
     }
+    
+    func syncWithUser(key : String!) {
+        let userRef = self.databaseRoot.child("users").child((getUserId())!)
+        
+        if (pickerText == nil) {
+            print("Error pickerText == nil")
+            return
+        }
+        userRef.child(key).observeSingleEvent(of: .value, with: { (snapshot) in
+            let snap = snapshot
+            let value = snap.value as? String
+            self.pickerText.text = value
+            self.valueSelected = value!
+        }) { (error) in
+            print(error.localizedDescription)
+        }
+    }
+    
     
     /*
      * following functions manage pickerview
