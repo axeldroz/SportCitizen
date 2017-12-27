@@ -50,9 +50,8 @@ class DBViewContentSync {
         print("UpdateName")
         userRef.child(key).observe(DataEventType.value, with: { snapshot in
             let snap = snapshot
-            let name = snap.value as! String
-            print("NEW key : ", name)
-            if let url = URL(string : name) {
+            let name = snap.value as? String
+            if let url = URL(string : name!) {
                 image.contentMode = .scaleAspectFit
                 self.downloadImage(url: url, image : image)
             }
