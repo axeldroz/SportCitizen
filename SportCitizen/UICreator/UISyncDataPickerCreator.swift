@@ -18,6 +18,7 @@ class UISyncDataPickerCreator : NSObject, UIPickerViewDataSource, UIPickerViewDe
     let databaseRoot = Database.database().reference()
     let pickerView = UIPickerView()
     var pickerText : UITextField!
+    var titleField : UITextField!
     var view : UIView!
     var values : [String] = ["loading ..."]
     var valueSelected : String = "undefined"
@@ -34,6 +35,22 @@ class UISyncDataPickerCreator : NSObject, UIPickerViewDataSource, UIPickerViewDe
     func create(field : UITextField!, view : UIView!, key : String!) {
         self.pickerText = field
         self.view = view
+        self.titleField = nil
+        let toolbar = UIToolbar()
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(self.donePressed1))
+        pickerView.delegate = self
+        pickerView.dataSource = self
+        getPickerData(key : key)
+        toolbar.setItems([doneButton], animated: false)
+        toolbar.sizeToFit()
+        self.pickerText.inputAccessoryView = toolbar
+        self.pickerText.inputView = self.pickerView
+    }
+    
+    func create(field : UITextField!, view : UIView!, key : String!, titleField : UITextField!) {
+        self.pickerText = field
+        self.view = view
+        self.titleField = titleField
         let toolbar = UIToolbar()
         let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(self.donePressed1))
         pickerView.delegate = self
@@ -102,6 +119,9 @@ class UISyncDataPickerCreator : NSObject, UIPickerViewDataSource, UIPickerViewDe
     
     @objc func donePressed1 () {
         self.pickerText.text = valueSelected
+        if (self.titleField != nil) {
+            self.titleField.text = valueSelected + " Challenge"
+        }
         print ("it's finally ok2")
         self.view.endEditing(true)
     }

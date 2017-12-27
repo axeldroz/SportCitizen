@@ -29,7 +29,7 @@ class ChallengeEditorViewController: UIViewController {
         //getPickerData()
         createButton.addTarget(self, action: #selector(self.onClickButton), for: .touchUpInside)
         edi.create(field : self.datePickerText!, view : self.view!)
-        custPicker.create(field : self.sportPickerText!, view : self.view!, key : "sports")
+        custPicker.create(field : self.sportPickerText!, view : self.view!, key : "sports", titleField : self.titleView)
     }
     
     override func didReceiveMemoryWarning() {
