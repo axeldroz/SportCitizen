@@ -37,6 +37,11 @@ class ChallengeEditorViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func showHomeController(){
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "Home") as! UITabBarController
+        self.present(controller, animated: true, completion: nil)
+    }
     
     /* event button create click func */
     @objc private func onClickButton() {
@@ -45,6 +50,7 @@ class ChallengeEditorViewController: UIViewController {
                       "location" : "Bordeaux", "creator-user" : dbw.getUserId()!]
         
         dbw.postWithId(key: "challenges", values: values)
+        self.showHomeController()
     }
 
 }
