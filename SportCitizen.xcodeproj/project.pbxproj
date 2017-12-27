@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2135D0611FF2B0BC00833C91 /* DBFeedCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2135D0601FF2B0BC00833C91 /* DBFeedCollection.swift */; };
 		217307721FDEB55F007B213B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217307711FDEB55F007B213B /* AppDelegate.swift */; };
 		217307741FDEB55F007B213B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217307731FDEB55F007B213B /* ViewController.swift */; };
 		217307771FDEB55F007B213B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 217307751FDEB55F007B213B /* Main.storyboard */; };
@@ -55,6 +56,7 @@
 /* Begin PBXFileReference section */
 		0D4D70439688851AE1723DFC /* Pods_SportCitizenTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SportCitizenTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E619206787B36C2ACD80058 /* Pods_SportCitizenUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SportCitizenUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2135D0601FF2B0BC00833C91 /* DBFeedCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBFeedCollection.swift; sourceTree = "<group>"; };
 		2173076E1FDEB55F007B213B /* SportCitizen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SportCitizen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		217307711FDEB55F007B213B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		217307731FDEB55F007B213B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 			children = (
 				2E1443541FEC4F8D006427C8 /* DBContentViewSync.swift */,
 				2E90DB751FED7AA50097B15D /* DBWriter.swift */,
+				2135D0601FF2B0BC00833C91 /* DBFeedCollection.swift */,
 			);
 			path = DatabaseUtils;
 			sourceTree = "<group>";
@@ -558,6 +561,7 @@
 				217307721FDEB55F007B213B /* AppDelegate.swift in Sources */,
 				2E11B5AF1FEAC35700227A8C /* ProfileNavController.swift in Sources */,
 				217307B91FE15EFC007B213B /* FeedNavController.swift in Sources */,
+				2135D0611FF2B0BC00833C91 /* DBFeedCollection.swift in Sources */,
 				2E526AE01FF2565E005A59E9 /* UIDatePickerCreator.swift in Sources */,
 				217307BB1FE1604C007B213B /* EditProfileController.swift in Sources */,
 			);

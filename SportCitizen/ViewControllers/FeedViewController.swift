@@ -11,10 +11,12 @@ import Firebase
 
 class FeedViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
 
-    var images = [UIImage]()
+    var Elements = DBFeedCollection()
     @IBOutlet weak var collectionView: UICollectionView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        Elements.Elements.removeAll()
         loadImages()
         // Do any additional setup after loading the view.
     }
@@ -25,24 +27,26 @@ class FeedViewController: UIViewController, UICollectionViewDataSource, UICollec
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return images.count
+        return self.Elements.Elements.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! ImageCollectionViewCell
         
-        let image = images[indexPath.row]
-        cell.imageView.image = image
-        
+        let elem = Elements.Elements[indexPath.row]
+        //cell.imageView.image = image
+        cell.titleLabel.text = elem["title"] as? String
+        cell.DescriptionLabel.text = elem["description"] as? String
+        cell.locationLabel.text = elem["location"] as? String
+        cell.imageView.layer.cornerRadius = cell.imageView.frame.height/2
+        cell.imageView.clipsToBounds = true
+
         return cell
     }
 
     func loadImages(){
-        images.append(UIImage(named: "menu")!)
-        images.append(UIImage(named: "menu")!)
-        images.append(UIImage(named: "menu")!)
-        images.append(UIImage(named: "menu")!)
-        images.append(UIImage(named: "menu")!)
-        self.collectionView.reloadData()
+       self.Elements.getFeedCollection() { bool in
+            self.collectionView.reloadData()
+        }
     }
     
     /*

@@ -93,20 +93,38 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ih5-7S-kkt">
-                                                    <rect key="frame" x="8" y="18" width="90" height="70"/>
+                                                    <rect key="frame" x="16.999999999999847" y="18" width="70" height="70"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" name="systemOrangeColor" catalog="System" colorSpace="catalog"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Lorem Ipsum chips oui bonjour à tous putain de merde" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jL0-xc-0Zj">
-                                                    <rect key="frame" x="124" y="20" width="281" height="21"/>
+                                                    <rect key="frame" x="114.99999999999984" y="20" width="281" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <color key="textColor" name="systemOrangeColor" catalog="System" colorSpace="catalog"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Location" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fxi-wN-d3S">
+                                                    <rect key="frame" x="4.9999999999998481" y="87" width="97" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="0.74947376939999999" green="0.74947376939999999" blue="0.74947376939999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Lorem Ipsum et les chips à l'ancienne qui font plaiz à tonton" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5yi-sQ-hfF">
+                                                    <rect key="frame" x="114.99999999999984" y="44" width="279" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="12"/>
+                                                    <color key="textColor" red="0.74947376943005184" green="0.74947376943005184" blue="0.74947376943005184" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </view>
                                         <connections>
+                                            <outlet property="DescriptionLabel" destination="5yi-sQ-hfF" id="eAi-SP-31i"/>
                                             <outlet property="imageView" destination="Ih5-7S-kkt" id="Fpa-K4-Dgc"/>
+                                            <outlet property="locationLabel" destination="Fxi-wN-d3S" id="19Q-EP-YVs"/>
+                                            <outlet property="titleLabel" destination="jL0-xc-0Zj" id="w7F-I7-WeV"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
