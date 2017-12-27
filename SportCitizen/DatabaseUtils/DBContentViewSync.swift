@@ -2,8 +2,8 @@
 //  DBContentUpdater.swift
 //  SportCitizen
 //
-//  Created by Axel Droz on 21/12/2017.
-//  Copyright © 2017 Simon BRAMI. All rights reserved.
+//  Created by Axel Drozdzynski on 21/12/2017.
+//  Copyright © 2017 Axel Drozdzynski. All rights reserved.
 //
 
 import Foundation
