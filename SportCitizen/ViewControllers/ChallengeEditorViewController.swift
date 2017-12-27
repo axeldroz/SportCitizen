@@ -40,9 +40,10 @@ class ChallengeEditorViewController: UIViewController {
     
     /* event button create click func */
     @objc private func onClickButton() {
-        let values = ["sport" : custPicker.getValue()!, "title" : titleView.text!, "description" : descrView.text!]
+        let values = ["sport" : custPicker.getValue()!, "title" : titleView.text!,
+                      "description" : descrView.text!, "time" : edi.getValue()!]
         
-        dbw.editFieldInfo(key: "challenges", values: values)
+        dbw.postWithId(key: "challenges-test", values: values)
     }
 
 }
