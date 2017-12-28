@@ -17,7 +17,6 @@ class DBFeedCollection {
     public var Location: String!
     public var Sport: String!
     public var Elements: [Dictionary<String, Any>] = [Dictionary<String, Any>]()
-    private var notifications : [Dictionary<String, Any>] = [Dictionary<String, Any>]()
     
     let databaseRoot: DatabaseReference!
     let userInfo: User!
@@ -50,9 +49,9 @@ class DBFeedCollection {
     
     /* sync all notifications of the user */
     func syncNotificationCollection(completionHandler: @escaping (Bool)-> ()){
-        let ref = self.databaseRoot.child("users").child((self.userInfo?.uid)!)
+        let ref = self.databaseRoot.child("users").child((self.userInfo?.uid)!).child("notifications")
         
-        self.notifications.removeAll()
+        //self.notifications.removeAll()
         ref.queryOrdered(byChild: "date").observe(DataEventType.value, with: { snapshot in
             for snap in snapshot.children {
                 let value = snap as! DataSnapshot
@@ -62,17 +61,16 @@ class DBFeedCollection {
                 newVal["chall_id"] = value.childSnapshot(forPath: "chall_id").value ?? ""
                 newVal["from_id"] = value.childSnapshot(forPath: "from_id").value ?? ""
                 newVal["date"] = value.childSnapshot(forPath: "date").value ?? ""
-                self.notifications.append(newVal)
+                self.Elements.append(newVal)
+                print("tab =", newVal)
             }
+            print("Handler = true ")
             completionHandler(true)
         }) { (error) in
+             print("Handler = false")
             print(error.localizedDescription)
             completionHandler(false)
         }
-    }
-    
-    func getNotifications() -> [Dictionary<String, Any>] {
-        return notifications
     }
     
 }
