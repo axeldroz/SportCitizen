@@ -38,6 +38,7 @@ class DBFeedCollection {
                 newVal["description"] = value.childSnapshot(forPath: "description").value ?? ""
                 newVal["location"] = value.childSnapshot(forPath: "location").value ?? ""
                 newVal["sport"] = value.childSnapshot(forPath: "sport").value ?? ""
+                newVal["creator-user"] = value.childSnapshot(forPath: "creator-user").value ?? ""
                 self.Elements.append(newVal)
             }
             completionHandler(true)
@@ -61,6 +62,7 @@ class DBFeedCollection {
                 newVal["chall_id"] = value.childSnapshot(forPath: "chall_id").value ?? ""
                 newVal["from_id"] = value.childSnapshot(forPath: "from_id").value ?? ""
                 newVal["date"] = value.childSnapshot(forPath: "date").value ?? ""
+                newVal["notif_id"] = value.childSnapshot(forPath: "notif_id").value ?? ""
                 self.Elements.append(newVal)
                 print("tab =", newVal)
             }
