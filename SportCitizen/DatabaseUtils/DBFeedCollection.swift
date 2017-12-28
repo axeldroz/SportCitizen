@@ -39,6 +39,7 @@ class DBFeedCollection {
                 newVal["location"] = value.childSnapshot(forPath: "location").value ?? ""
                 newVal["sport"] = value.childSnapshot(forPath: "sport").value ?? ""
                 newVal["creator-user"] = value.childSnapshot(forPath: "creator-user").value ?? ""
+                newVal["chall_id"] = value.childSnapshot(forPath: "chall_id").value ?? ""
                 self.Elements.append(newVal)
             }
             completionHandler(true)

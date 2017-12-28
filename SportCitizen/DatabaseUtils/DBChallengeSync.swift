@@ -23,15 +23,19 @@ class DBChallengeSync : DBViewContentSync {
         self.cRef = Database.database().reference().child("challenges").child(challengeID)
         super.init()
     }
-    /* sync ImageView with photoURL of challenge */
-    func addPicRel(image : UIImageView) {
-       cRef.child("photoURL").observe(DataEventType.value, with: { snapshot in
+    
+    init(ref : DatabaseReference) {
+        self.cRef = ref
+        super.init()
+    }
+    
+    /* sync ImageView with photoURL of creator */
+    func addPictureRel(image : UIImageView) {
+       cRef.child("creator-user").observe(DataEventType.value, with: { snapshot in
             let snap = snapshot
             let name = snap.value as? String
-            if let url = URL(string : name!) {
-                image.contentMode = .scaleAspectFit
-                self.downloadImage(url: url, image : image)
-            }
+        let usersync = DBUserSync(userID : name)
+        usersync.addPictureRel(image : image)
         })
     }
 
