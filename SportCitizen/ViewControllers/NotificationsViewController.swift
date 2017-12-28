@@ -40,7 +40,9 @@ class NotificationsViewController : UIViewController, UICollectionViewDataSource
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! ImageCollectionViewCell
         
         let elem = self.feedco.Elements[indexPath.row]
+        let sync = DBUserSync(userID : elem["from_id"] as! String!)
         //cell.imageView.image = image
+        sync.addPictureRel(image: cell.imageView)
         cell.titleLabel.text = elem["message"] as? String
         cell.DescriptionLabel.text = elem["message"] as? String
         //cell.locationLabel.text = elem["location"] as? String
