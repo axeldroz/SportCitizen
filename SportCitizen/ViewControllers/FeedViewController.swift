@@ -39,6 +39,9 @@ class FeedViewController: UIViewController, UICollectionViewDataSource, UICollec
         cell.locationLabel.text = elem["location"] as? String
         cell.imageView.layer.cornerRadius = cell.imageView.frame.height/2
         cell.imageView.clipsToBounds = true
+        
+        cell.layer.borderWidth = 1
+        cell.layer.borderColor = UIColor.black.cgColor
 
         return cell
     }
