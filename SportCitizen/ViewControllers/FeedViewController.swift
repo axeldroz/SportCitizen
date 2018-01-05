@@ -33,7 +33,9 @@ class FeedViewController: UIViewController, UICollectionViewDataSource, UICollec
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! ImageCollectionViewCell
         
         let elem = Elements.Elements[indexPath.row]
+        let sync = DBUserSync(userID : elem["creator-user"] as! String!)
         //cell.imageView.image = image
+        sync.addPictureRel(image : cell.imageView)
         cell.titleLabel.text = elem["title"] as? String
         cell.DescriptionLabel.text = elem["description"] as? String
         cell.locationLabel.text = elem["location"] as? String

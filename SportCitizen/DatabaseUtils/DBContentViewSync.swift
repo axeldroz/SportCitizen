@@ -2,8 +2,8 @@
 //  DBContentUpdater.swift
 //  SportCitizen
 //
-//  Created by Axel Droz on 21/12/2017.
-//  Copyright © 2017 Simon BRAMI. All rights reserved.
+//  Created by Axel Drozdzynski on 21/12/2017.
+//  Copyright © 2017 Axel Drozdzynski. All rights reserved.
 //
 
 import Foundation
@@ -28,7 +28,6 @@ class DBViewContentSync {
         userRef.child(key).observe(DataEventType.value, with: { snapshot in
             let snap = snapshot
             let value = snap.value as? String
-            print("NEW key : ", value)
             label.text = value
         })
     }
@@ -39,7 +38,6 @@ class DBViewContentSync {
         userRef.child(key).observe(DataEventType.value, with: { snapshot in
             let snap = snapshot
             let value = snap.value as? String
-            print("NEW key : ", value)
             text.text = value
         })
     }

@@ -18,6 +18,7 @@ class UISyncDataPickerCreator : NSObject, UIPickerViewDataSource, UIPickerViewDe
     let databaseRoot = Database.database().reference()
     let pickerView = UIPickerView()
     var pickerText : UITextField!
+    var titleField : UITextField!
     var view : UIView!
     var values : [String] = ["loading ..."]
     var valueSelected : String = "undefined"
@@ -31,15 +32,30 @@ class UISyncDataPickerCreator : NSObject, UIPickerViewDataSource, UIPickerViewDe
     }
     
     /* creation of picker view display */
-    func create(field : UITextField!, view : UIView!) {
+    func create(field : UITextField!, view : UIView!, key : String!) {
         self.pickerText = field
         self.view = view
-        
+        self.titleField = nil
         let toolbar = UIToolbar()
         let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(self.donePressed1))
         pickerView.delegate = self
         pickerView.dataSource = self
-        getPickerData()
+        getPickerData(key : key)
+        toolbar.setItems([doneButton], animated: false)
+        toolbar.sizeToFit()
+        self.pickerText.inputAccessoryView = toolbar
+        self.pickerText.inputView = self.pickerView
+    }
+    
+    func create(field : UITextField!, view : UIView!, key : String!, titleField : UITextField!) {
+        self.pickerText = field
+        self.view = view
+        self.titleField = titleField
+        let toolbar = UIToolbar()
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(self.donePressed1))
+        pickerView.delegate = self
+        pickerView.dataSource = self
+        getPickerData(key : key)
         toolbar.setItems([doneButton], animated: false)
         toolbar.sizeToFit()
         self.pickerText.inputAccessoryView = toolbar
@@ -49,8 +65,8 @@ class UISyncDataPickerCreator : NSObject, UIPickerViewDataSource, UIPickerViewDe
     /*
      * Following functions get data from firebase and update content of the view
      */
-    func getPickerData() {
-        let sportsRef = databaseRoot.child("sports")
+    func getPickerData(key : String!) {
+        let sportsRef = databaseRoot.child(key)
         
         sportsRef.observe(DataEventType.value, with: { snapshot in
             self.values.removeAll()
@@ -63,6 +79,24 @@ class UISyncDataPickerCreator : NSObject, UIPickerViewDataSource, UIPickerViewDe
         })
         
     }
+    
+    func syncWithUser(key : String!) {
+        let userRef = self.databaseRoot.child("users").child((getUserId())!)
+        
+        if (pickerText == nil) {
+            print("Error pickerText == nil")
+            return
+        }
+        userRef.child(key).observeSingleEvent(of: .value, with: { (snapshot) in
+            let snap = snapshot
+            let value = snap.value as? String
+            self.pickerText.text = value
+            self.valueSelected = value!
+        }) { (error) in
+            print(error.localizedDescription)
+        }
+    }
+    
     
     /*
      * following functions manage pickerview
@@ -85,6 +119,9 @@ class UISyncDataPickerCreator : NSObject, UIPickerViewDataSource, UIPickerViewDe
     
     @objc func donePressed1 () {
         self.pickerText.text = valueSelected
+        if (self.titleField != nil) {
+            self.titleField.text = valueSelected + " Challenge"
+        }
         print ("it's finally ok2")
         self.view.endEditing(true)
     }

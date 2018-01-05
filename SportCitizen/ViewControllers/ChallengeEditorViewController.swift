@@ -22,14 +22,15 @@ class ChallengeEditorViewController: UIViewController {
     var dbw : DBWriter = DBWriter()
     let edi : UIDatePickerCreator = UIDatePickerCreator()
     let custPicker : UISyncDataPickerCreator = UISyncDataPickerCreator()
-    
+    let userInfo = Auth.auth().currentUser
+    var photoURL : String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //getPickerData()
+        getPhotoURL()
         createButton.addTarget(self, action: #selector(self.onClickButton), for: .touchUpInside)
         edi.create(field : self.datePickerText!, view : self.view!)
-        custPicker.create(field : self.sportPickerText!, view : self.view!)
+        custPicker.create(field : self.sportPickerText!, view : self.view!, key : "sports", titleField : self.titleView)
     }
     
     override func didReceiveMemoryWarning() {
@@ -37,12 +38,40 @@ class ChallengeEditorViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func showHomeController(){
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "Home") as! UITabBarController
+        self.present(controller, animated: true, completion: nil)
+    }
+    
+    /* get photoURL of user */
+    func getPhotoURL() {
+        
+        let userRef = self.databaseRoot.child("users").child((userInfo?.uid)!)
+        
+        userRef.child("photoURL").observe(DataEventType.value, with: { snapshot in
+            let snap = snapshot
+            let value = snap.value as? String
+            self.photoURL = value
+        })
+    }
     
     /* event button create click func */
     @objc private func onClickButton() {
-        let values = ["sport" : custPicker.getValue()!, "title" : titleView.text!, "description" : descrView.text!]
+        if (photoURL == nil) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(100), execute: {
+                self.onClickButton()
+            })
+        }
+        else {
+            let values = ["sport" : custPicker.getValue()!, "title" : titleView.text!,
+                      "description" : descrView.text!, "time" : edi.getValue()!,
+                      "location" : "Bordeaux", "creator-user" : dbw.getUserId()!, "photoURL" : photoURL!]
         
-        dbw.editFieldInfo(key: "challenges", values: values)
+            dbw.postWithId(key: "challenges", values: values)
+                self.showHomeController()
+            
+        }
     }
 
 }

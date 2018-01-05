@@ -9,75 +9,37 @@
 import UIKit
 import Firebase
 
-class EditProfileController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate{
+class EditProfileController: UIViewController {
 
     @IBOutlet weak var profileImage: UIImageView!
+
     @IBOutlet weak var bioDescr: UITextView!
-    @IBOutlet weak var favoriteSport: UIPickerView!
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var bioField: UITextView!
+
+    @IBOutlet weak var favSportPicker: UITextField!
     
-    var sports : [String] = ["loading ..."]
-    var favSport : String = "undefined"
     let databaseRoot = Database.database().reference()
     var sync : DBViewContentSync = DBViewContentSync()
     var dbw : DBWriter = DBWriter()
+    let custPicker : UISyncDataPickerCreator = UISyncDataPickerCreator()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        getPickerData()
         sync.addUserRel(text: bioField, key: "bio")
         saveButton.addTarget(self, action: #selector(self.onClickButton), for: .touchUpInside)
+        custPicker.create(field : self.favSportPicker!, view : self.view!, key : "sports")
+        custPicker.syncWithUser(key: "favoriteSport")
     }
-    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-     * Following functions get data from firebase and update content of the view
-     */
-    func getPickerData() {
-        let sportsRef = databaseRoot.child("sports")
-        
-        sportsRef.observe(DataEventType.value, with: { snapshot in
-            self.sports.removeAll()
-            for child in snapshot.children {
-                let snap = child as! DataSnapshot
-                let name = snap.value as! String
-                print("new sport : ", name)
-                self.sports.append(name)
-            }
-            self.favoriteSport.reloadAllComponents()
-        })
-
-    }
-    
-    /*
-     * following functions manage pickerview
-     */
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return sports[row]
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return sports.count
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        favSport = sports[row]
-    }
-    
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
     /* event Click func */
     @objc private func onClickButton() {
-        let values = ["favoriteSport" : favSport, "bio" : bioField.text!]
+        let values = ["favoriteSport" : custPicker.getValue()!, "bio" : bioField.text!]
         
         dbw.editUserInfo(values: values)
     }

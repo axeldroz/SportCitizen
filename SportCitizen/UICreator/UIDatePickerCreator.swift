@@ -18,8 +18,13 @@ class UIDatePickerCreator {
     let datePicker = UIDatePicker()
     var datePickerText: UITextField!
     var view : UIView!
+    var selectedValue : String!
     
     init () {
+    }
+    
+    func getValue() -> String! {
+        return selectedValue
     }
     
     /* create the datePickjer */
@@ -43,6 +48,8 @@ class UIDatePickerCreator {
         dateFormatter.dateFormat = "EEEE MM-dd hh:mm a"
         
         self.datePickerText.text = dateFormatter.string(from: self.datePicker.date)
+        dateFormatter.dateFormat = "EEEE MM-dd hh:mm a"
+        selectedValue = String(datePicker.date.timeIntervalSince1970)
         print ("it's finally ok")
         self.view.endEditing(true)
     }

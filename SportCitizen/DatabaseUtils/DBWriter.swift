@@ -45,6 +45,13 @@ class DBWriter {
         })
     }
     
+    /* fill data with ID */
+    func postWithId(key : String, values : [String : String]) {
+        let ref = databaseRoot.child(key).childByAutoId()
+        
+        ref.setValue(values)
+    }
+    
 
     
 }

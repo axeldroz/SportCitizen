@@ -38,10 +38,39 @@ class DBFeedCollection {
                 newVal["description"] = value.childSnapshot(forPath: "description").value ?? ""
                 newVal["location"] = value.childSnapshot(forPath: "location").value ?? ""
                 newVal["sport"] = value.childSnapshot(forPath: "sport").value ?? ""
+                newVal["creator-user"] = value.childSnapshot(forPath: "creator-user").value ?? ""
+                newVal["chall_id"] = value.childSnapshot(forPath: "chall_id").value ?? ""
                 self.Elements.append(newVal)
             }
             completionHandler(true)
         }) { (error) in
+            print(error.localizedDescription)
+            completionHandler(false)
+        }
+    }
+    
+    /* sync all notifications of the user */
+    func syncNotificationCollection(completionHandler: @escaping (Bool)-> ()){
+        let ref = self.databaseRoot.child("users").child((self.userInfo?.uid)!).child("notifications")
+        
+        //self.notifications.removeAll()
+        ref.queryOrdered(byChild: "date").observe(DataEventType.value, with: { snapshot in
+            for snap in snapshot.children {
+                let value = snap as! DataSnapshot
+                var newVal : Dictionary<String, Any> = Dictionary<String, Any>()
+                newVal["type"] = value.childSnapshot(forPath: "type").value ?? ""
+                newVal["message"] = value.childSnapshot(forPath: "message").value ?? ""
+                newVal["chall_id"] = value.childSnapshot(forPath: "chall_id").value ?? ""
+                newVal["from_id"] = value.childSnapshot(forPath: "from_id").value ?? ""
+                newVal["date"] = value.childSnapshot(forPath: "date").value ?? ""
+                newVal["notif_id"] = value.childSnapshot(forPath: "notif_id").value ?? ""
+                self.Elements.append(newVal)
+                print("tab =", newVal)
+            }
+            print("Handler = true ")
+            completionHandler(true)
+        }) { (error) in
+             print("Handler = false")
             print(error.localizedDescription)
             completionHandler(false)
         }

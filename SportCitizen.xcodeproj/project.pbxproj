@@ -29,9 +29,12 @@
 		2E11B5B11FEAC37D00227A8C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E11B5B01FEAC37D00227A8C /* ProfileViewController.swift */; };
 		2E1443521FEC43CA006427C8 /* ChallengeEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1443511FEC43CA006427C8 /* ChallengeEditorViewController.swift */; };
 		2E1443551FEC4F8D006427C8 /* DBContentViewSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1443541FEC4F8D006427C8 /* DBContentViewSync.swift */; };
+		2E28D1FC1FF54D3F00A5435B /* DBChallengeSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E28D1FB1FF54D3F00A5435B /* DBChallengeSync.swift */; };
+		2E28D2001FF5552F00A5435B /* DBUserSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E28D1FF1FF5552F00A5435B /* DBUserSync.swift */; };
 		2E2ADC391FF2AC1500EC85BA /* UISyncDataPickerCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2ADC381FF2AC1500EC85BA /* UISyncDataPickerCreator.swift */; };
 		2E526AE01FF2565E005A59E9 /* UIDatePickerCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E526ADF1FF2565E005A59E9 /* UIDatePickerCreator.swift */; };
 		2E90DB761FED7AA50097B15D /* DBWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E90DB751FED7AA50097B15D /* DBWriter.swift */; };
+		2E9798C51FF5278F0037A7F9 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9798C41FF5278F0037A7F9 /* NotificationsViewController.swift */; };
 		6821CCC9DAA0EE36EF08E665 /* Pods_SportCitizen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE8EE975B9839560CBF7B389 /* Pods_SportCitizen.framework */; };
 		DF1E8A7174AB6EE98AA0E99F /* Pods_SportCitizenTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D4D70439688851AE1723DFC /* Pods_SportCitizenTests.framework */; };
 /* End PBXBuildFile section */
@@ -83,9 +86,12 @@
 		2E11B5B01FEAC37D00227A8C /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		2E1443511FEC43CA006427C8 /* ChallengeEditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeEditorViewController.swift; sourceTree = "<group>"; };
 		2E1443541FEC4F8D006427C8 /* DBContentViewSync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBContentViewSync.swift; sourceTree = "<group>"; };
+		2E28D1FB1FF54D3F00A5435B /* DBChallengeSync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBChallengeSync.swift; sourceTree = "<group>"; };
+		2E28D1FF1FF5552F00A5435B /* DBUserSync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBUserSync.swift; sourceTree = "<group>"; };
 		2E2ADC381FF2AC1500EC85BA /* UISyncDataPickerCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISyncDataPickerCreator.swift; sourceTree = "<group>"; };
 		2E526ADF1FF2565E005A59E9 /* UIDatePickerCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDatePickerCreator.swift; sourceTree = "<group>"; };
 		2E90DB751FED7AA50097B15D /* DBWriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBWriter.swift; sourceTree = "<group>"; };
+		2E9798C41FF5278F0037A7F9 /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
 		60AC1B7EFA6219C1FB71C72D /* Pods-SportCitizen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SportCitizen.release.xcconfig"; path = "Pods/Target Support Files/Pods-SportCitizen/Pods-SportCitizen.release.xcconfig"; sourceTree = "<group>"; };
 		656344B7BFDEE0FAFD831B26 /* Pods-SportCitizenUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SportCitizenUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SportCitizenUITests/Pods-SportCitizenUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		7150B8D17B85935E005BCEC3 /* Pods-SportCitizenUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SportCitizenUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SportCitizenUITests/Pods-SportCitizenUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -197,6 +203,8 @@
 				2E1443541FEC4F8D006427C8 /* DBContentViewSync.swift */,
 				2E90DB751FED7AA50097B15D /* DBWriter.swift */,
 				2135D0601FF2B0BC00833C91 /* DBFeedCollection.swift */,
+				2E28D1FB1FF54D3F00A5435B /* DBChallengeSync.swift */,
+				2E28D1FF1FF5552F00A5435B /* DBUserSync.swift */,
 			);
 			path = DatabaseUtils;
 			sourceTree = "<group>";
@@ -223,6 +231,7 @@
 				2E11B5AE1FEAC35700227A8C /* ProfileNavController.swift */,
 				2E11B5B01FEAC37D00227A8C /* ProfileViewController.swift */,
 				2E1443511FEC43CA006427C8 /* ChallengeEditorViewController.swift */,
+				2E9798C41FF5278F0037A7F9 /* NotificationsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -546,10 +555,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E9798C51FF5278F0037A7F9 /* NotificationsViewController.swift in Sources */,
+				2E28D1FC1FF54D3F00A5435B /* DBChallengeSync.swift in Sources */,
 				217307741FDEB55F007B213B /* ViewController.swift in Sources */,
 				21AF3F5D1FE182B2007DA98B /* HomeController.swift in Sources */,
 				2E2ADC391FF2AC1500EC85BA /* UISyncDataPickerCreator.swift in Sources */,
 				217307A31FDEBB2F007B213B /* LoginController.swift in Sources */,
+				2E28D2001FF5552F00A5435B /* DBUserSync.swift in Sources */,
 				2173077A1FDEB55F007B213B /* SportCitizen.xcdatamodeld in Sources */,
 				21AF3F611FEA8F38007DA98B /* ImageCollectionViewCell.swift in Sources */,
 				217307B71FE15EA8007B213B /* ChallengesController.swift in Sources */,
