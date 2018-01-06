@@ -18,7 +18,7 @@ class HomeController: UITabBarController {
         tabBarItems[3].imageInsets = UIEdgeInsetsMake(6,0,-6,0)
 
 
-        self.selectedIndex = 1
+        self.selectedIndex = 0
         // Do any additional setup after loading the view.
     }
 

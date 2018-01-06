@@ -39,12 +39,15 @@ class FeedViewController: UIViewController, UICollectionViewDataSource, UICollec
         cell.titleLabel.text = elem["title"] as? String
         cell.DescriptionLabel.text = elem["description"] as? String
         cell.locationLabel.text = elem["location"] as? String
+        cell.idPost = elem["chall_id"] as? String
+
         cell.imageView.layer.cornerRadius = cell.imageView.frame.height/2
         cell.imageView.clipsToBounds = true
         
-        cell.layer.borderWidth = 1
-        cell.layer.borderColor = UIColor.black.cgColor
-
+        let bottomLine = CALayer()
+        bottomLine.frame = CGRect(x: 0.0, y: cell.frame.height - 4, width: cell.frame.width, height: 1.0)
+        bottomLine.backgroundColor = UIColor.lightGray.cgColor
+        cell.layer.addSublayer(bottomLine)
         return cell
     }
 
