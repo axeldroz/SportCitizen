@@ -32,7 +32,7 @@ class DBFeedCollection {
         userRef.queryOrdered(byChild: "title").observe(DataEventType.value, with: { snapshot in
             for snap in snapshot.children {
                 let value = snap as! DataSnapshot
-                print("Feed List : ", value.childSnapshot(forPath: "description").value ?? "")
+                //print("Feed List : ", value.childSnapshot(forPath: "description").value ?? "")
                 var newVal : Dictionary<String, Any> = Dictionary<String, Any>()
                 newVal["title"] = value.childSnapshot(forPath: "title").value ?? ""
                 newVal["description"] = value.childSnapshot(forPath: "description").value ?? ""
@@ -65,7 +65,7 @@ class DBFeedCollection {
                 newVal["date"] = value.childSnapshot(forPath: "date").value ?? ""
                 newVal["notif_id"] = value.childSnapshot(forPath: "notif_id").value ?? ""
                 self.Elements.append(newVal)
-                print("tab =", newVal)
+                //print("tab =", newVal)
             }
             print("Handler = true ")
             completionHandler(true)

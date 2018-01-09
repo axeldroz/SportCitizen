@@ -13,14 +13,32 @@ class FeedViewController: UIViewController, UICollectionViewDataSource, UICollec
 
     var Elements = DBFeedCollection()
     @IBOutlet weak var collectionView: UICollectionView!
-    
+    var refresher:UIRefreshControl!
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        Elements.Elements.removeAll()
+        collectionView.alwaysBounceVertical = true
+
+        self.refresher = UIRefreshControl()
+        self.collectionView!.alwaysBounceVertical = true
+        self.refresher.tintColor = UIColor.red
+        self.refresher.addTarget(self, action: #selector(refreshStream), for: .valueChanged)
+        self.collectionView!.addSubview(refresher)
         loadImages()
         // Do any additional setup after loading the view.
     }
 
+    @objc func refreshStream() {
+        print("refresh")
+        self.Elements.Elements.removeAll()
+        self.Elements.getFeedCollection() { bool in
+            self.collectionView.reloadData()
+        }
+        print("end")
+        self.refresher.endRefreshing()
+        
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
