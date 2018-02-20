@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5v6-K9-Lsx">
-    <device id="retina5_5" orientation="portrait">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,11 +15,11 @@
             <objects>
                 <viewController storyboardIdentifier="Signin" id="5v6-K9-Lsx" customClass="LoginController" customModule="SportCitizen" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VJ2-g7-MRm">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GdQ-uK-iqf">
-                                <rect key="frame" x="119" y="213" width="176" height="57"/>
+                                <rect key="frame" x="72" y="213" width="176" height="57"/>
                                 <color key="backgroundColor" red="0.29037097096443176" green="0.40113371610641479" blue="0.67848223447799683" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="176" id="1fO-M9-qHL"/>
@@ -50,9 +50,9 @@
         <scene sceneID="iz1-6O-I4O">
             <objects>
                 <navigationController id="mlv-r7-Lue" customClass="FeedNavController" customModule="SportCitizen" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="feed" selectedImage="feed" id="tDe-Nf-Wg7"/>
+                    <tabBarItem key="tabBarItem" title="" image="challenge" selectedImage="challenge" id="tDe-Nf-Wg7"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="NLz-I3-lab">
-                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" name="systemOrangeColor" catalog="System" colorSpace="catalog"/>
@@ -71,12 +71,11 @@
             <objects>
                 <viewController id="PoH-7P-QFp" customClass="FeedViewController" customModule="SportCitizen" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fVC-EW-74r">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="HoM-RI-50y">
-                                <rect key="frame" x="0.0" y="64" width="414" height="623"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="HoM-RI-50y">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="10" id="qV8-R5-vgu">
                                     <size key="itemSize" width="413" height="108"/>
@@ -86,36 +85,39 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="5hc-Y3-JbA" customClass="ImageCollectionViewCell" customModule="SportCitizen" customModuleProvider="target">
-                                        <rect key="frame" x="0.66666666666666663" y="0.0" width="413" height="108"/>
+                                        <rect key="frame" x="-46.5" y="0.0" width="413" height="108"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="413" height="108"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ih5-7S-kkt">
-                                                    <rect key="frame" x="16.999999999999847" y="18" width="70" height="70"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ih5-7S-kkt">
+                                                    <rect key="frame" x="64" y="16" width="70" height="72"/>
                                                     <color key="backgroundColor" name="systemOrangeColor" catalog="System" colorSpace="catalog"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="70" id="U9t-05-qZc"/>
+                                                        <constraint firstAttribute="height" constant="72" id="cPj-o1-0ZU"/>
+                                                    </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Lorem Ipsum chips oui bonjour à tous putain de merde" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jL0-xc-0Zj">
-                                                    <rect key="frame" x="114.99999999999984" y="20" width="281" height="21"/>
+                                                    <rect key="frame" x="139" y="20" width="216" height="16"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <color key="textColor" name="systemOrangeColor" catalog="System" colorSpace="catalog"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Location" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fxi-wN-d3S">
-                                                    <rect key="frame" x="4.9999999999998481" y="87" width="97" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <color key="textColor" red="0.74947376939999999" green="0.74947376939999999" blue="0.74947376939999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Lorem Ipsum et les chips à l'ancienne qui font plaiz à tonton" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5yi-sQ-hfF">
-                                                    <rect key="frame" x="114.99999999999984" y="44" width="279" height="44"/>
+                                                    <rect key="frame" x="139" y="47" width="216" height="15"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="12"/>
                                                     <color key="textColor" red="0.74947376943005184" green="0.74947376943005184" blue="0.74947376943005184" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Location" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fxi-wN-d3S">
+                                                    <rect key="frame" x="73" y="91" width="55.5" height="17"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="0.74947376939999999" green="0.74947376939999999" blue="0.74947376939999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -125,7 +127,6 @@
                                             <outlet property="imageView" destination="Ih5-7S-kkt" id="Fpa-K4-Dgc"/>
                                             <outlet property="locationLabel" destination="Fxi-wN-d3S" id="19Q-EP-YVs"/>
                                             <outlet property="titleLabel" destination="jL0-xc-0Zj" id="w7F-I7-WeV"/>
-                                            <segue destination="QaE-2B-vot" kind="show" id="0Ch-HD-MEt"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -136,6 +137,12 @@
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" red="0.93638414140000004" green="0.90633124109999996" blue="0.87841475010000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="HoM-RI-50y" secondAttribute="bottom" id="5Z9-dS-QP5"/>
+                            <constraint firstItem="HoM-RI-50y" firstAttribute="leading" secondItem="wcM-q3-W2G" secondAttribute="leading" id="fSL-Qv-Giw"/>
+                            <constraint firstAttribute="trailing" secondItem="HoM-RI-50y" secondAttribute="trailing" id="ugB-3d-29H"/>
+                            <constraint firstItem="HoM-RI-50y" firstAttribute="top" secondItem="wcM-q3-W2G" secondAttribute="top" id="xPQ-Dl-VTb"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="wcM-q3-W2G"/>
                     </view>
                     <navigationItem key="navigationItem" title="Feed" id="NKG-EJ-JP3">
@@ -153,54 +160,55 @@
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="HoM-RI-50y" id="xFW-HK-BhB"/>
+                        <segue destination="QaE-2B-vot" kind="show" identifier="ShowDetailChallSegue" id="FL8-Aq-zVQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P2a-X1-3aO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5403" y="11"/>
+            <point key="canvasLocation" x="5401.875" y="10.56338028169014"/>
         </scene>
         <!--Challenge Editor View Controller-->
         <scene sceneID="Eq8-3E-M8b">
             <objects>
                 <viewController id="kK6-jt-vjG" customClass="ChallengeEditorViewController" customModule="SportCitizen" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JfI-Z0-wpD">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="peE-4O-soW">
-                                <rect key="frame" x="120" y="415" width="188" height="30"/>
+                                <rect key="frame" x="66" y="269" width="188" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="iIX-Oe-6xv">
-                                <rect key="frame" x="94" y="474" width="240" height="128"/>
+                                <rect key="frame" x="40" y="307" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JnD-QS-4nt">
-                                <rect key="frame" x="306" y="641" width="74" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Create"/>
-                            </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Date of your challenge" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TPq-ZI-HIR">
-                                <rect key="frame" x="120" y="309" width="214" height="30"/>
+                                <rect key="frame" x="53" y="187" width="214" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Choose your sport" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XjY-hm-VCO">
-                                <rect key="frame" x="120" y="162" width="188" height="30"/>
+                                <rect key="frame" x="66" y="110" width="188" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JnD-QS-4nt">
+                                <rect key="frame" x="123" y="467" width="74" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Create"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.91361916065216064" green="0.91379445791244507" blue="0.91360610723495483" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="Lgu-g7-kMn"/>
@@ -215,52 +223,68 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nn2-rZ-3m7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6586" y="-214"/>
+            <point key="canvasLocation" x="6585" y="-214.43661971830986"/>
         </scene>
-        <!--View Controller-->
+        <!--Challenges Detail View Controller-->
         <scene sceneID="KEu-kc-IuA">
             <objects>
-                <viewController id="QaE-2B-vot" sceneMemberID="viewController">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xab-NU-zv8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="QaE-2B-vot" customClass="ChallengesDetailViewController" customModule="SportCitizen" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lmL-7T-xlV">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TITLE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C7B-YA-Hd3">
-                                <rect key="frame" x="183.66666666666666" y="288" width="46.666666666666657" height="20.333333333333314"/>
+                                <rect key="frame" x="137" y="277" width="47" height="20.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" name="systemOrangeColor" catalog="System" colorSpace="catalog"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MfG-xa-OW5">
-                                <rect key="frame" x="137" y="106" width="140" height="140"/>
+                                <rect key="frame" x="90" y="106" width="140" height="140"/>
                                 <color key="backgroundColor" red="1" green="0.1519643792" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="140" id="SJb-js-aaG"/>
                                     <constraint firstAttribute="width" constant="140" id="qXK-k0-bVH"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LOREM IPSUM QUE DU SALE ICI C SPORT CITIZEN" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pZy-0K-fK7">
-                                <rect key="frame" x="2.6666666666666572" y="316.33333333333331" width="408.66666666666674" height="20.333333333333314"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LOREM IPSUM QUE DU SALE ICI C SPORT CITIZEN" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pZy-0K-fK7">
+                                <rect key="frame" x="5" y="317" width="310" height="41"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" red="0.74947376939999999" green="0.74947376939999999" blue="0.74947376939999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DD/MM/YYYY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xCr-i6-kQX">
+                                <rect key="frame" x="5" y="288" width="118.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
+                                <color key="textColor" name="systemOrangeColor" catalog="System" colorSpace="catalog"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="pZy-0K-fK7" firstAttribute="leading" secondItem="lmL-7T-xlV" secondAttribute="leading" constant="5" id="BO5-ec-plZ"/>
                             <constraint firstItem="MfG-xa-OW5" firstAttribute="centerX" secondItem="lmL-7T-xlV" secondAttribute="centerX" id="BRT-mM-P5O"/>
-                            <constraint firstItem="pZy-0K-fK7" firstAttribute="centerX" secondItem="C7B-YA-Hd3" secondAttribute="centerX" id="NqK-OF-Dlg"/>
-                            <constraint firstItem="C7B-YA-Hd3" firstAttribute="centerX" secondItem="MfG-xa-OW5" secondAttribute="centerX" id="V2F-eQ-FcO"/>
+                            <constraint firstItem="C7B-YA-Hd3" firstAttribute="centerX" secondItem="MfG-xa-OW5" secondAttribute="centerX" id="Ej0-2K-NCD"/>
+                            <constraint firstItem="pZy-0K-fK7" firstAttribute="top" secondItem="xCr-i6-kQX" secondAttribute="bottom" constant="8" id="KFg-XG-1O7"/>
+                            <constraint firstItem="pZy-0K-fK7" firstAttribute="centerX" secondItem="C7B-YA-Hd3" secondAttribute="centerX" id="Mo8-m8-jBx"/>
+                            <constraint firstItem="pZy-0K-fK7" firstAttribute="top" secondItem="C7B-YA-Hd3" secondAttribute="bottom" constant="19" id="SuT-U7-1Gg"/>
+                            <constraint firstAttribute="trailing" secondItem="pZy-0K-fK7" secondAttribute="trailing" constant="5" id="WUi-Cj-vPS"/>
                             <constraint firstItem="MfG-xa-OW5" firstAttribute="top" secondItem="n4W-6S-hmz" secondAttribute="top" constant="42" id="bkg-aF-Qgd"/>
-                            <constraint firstItem="C7B-YA-Hd3" firstAttribute="top" secondItem="MfG-xa-OW5" secondAttribute="bottom" constant="42" id="eIw-1Q-eZH"/>
-                            <constraint firstItem="pZy-0K-fK7" firstAttribute="top" secondItem="C7B-YA-Hd3" secondAttribute="bottom" constant="8" id="xbq-jX-abZ"/>
+                            <constraint firstItem="xCr-i6-kQX" firstAttribute="leading" secondItem="n4W-6S-hmz" secondAttribute="leading" constant="5" id="dyv-KI-rTv"/>
+                            <constraint firstItem="C7B-YA-Hd3" firstAttribute="top" secondItem="MfG-xa-OW5" secondAttribute="bottom" constant="31" id="lA6-JN-aaC"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="n4W-6S-hmz"/>
                     </view>
+                    <connections>
+                        <outlet property="dateChallenge" destination="xCr-i6-kQX" id="6VP-aX-LbW"/>
+                        <outlet property="descChallenge" destination="pZy-0K-fK7" id="Mnt-E4-o38"/>
+                        <outlet property="imageUser" destination="MfG-xa-OW5" id="qey-g4-82o"/>
+                        <outlet property="titleChallenge" destination="C7B-YA-Hd3" id="1wj-Vh-X9v"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xab-NU-zv8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6585.507246376812" y="476.9021739130435"/>
+            <point key="canvasLocation" x="6585" y="476.40845070422534"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="gKN-CS-NhD">
@@ -268,7 +292,7 @@
                 <navigationController id="DfP-4d-S5b" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="bellIcon" selectedImage="bellIcon" id="ZpQ-5U-1eQ"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bmn-SS-Vf0">
-                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -284,7 +308,7 @@
             <objects>
                 <viewController id="XwY-ce-Mfs" customClass="NotificationsViewController" customModule="SportCitizen" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZTS-VA-rNU">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="MXD-MB-9xG">
@@ -371,7 +395,7 @@
             <objects>
                 <viewController title="Profile Controller" id="cFL-sq-fuT" customClass="EditProfileController" customModule="SportCitizen" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mhV-w2-VtX">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bio" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jcw-H5-KcC">
@@ -457,7 +481,7 @@
                         <color key="badgeColor" name="systemOrangeColor" catalog="System" colorSpace="catalog"/>
                     </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qTP-IS-Lk8">
-                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" name="systemOrangeColor" catalog="System" colorSpace="catalog"/>
@@ -476,7 +500,7 @@
             <objects>
                 <viewController id="uve-Ol-gEj" customClass="ProfileViewController" customModule="SportCitizen" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ksM-ox-oRC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bio" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tnV-Bw-YHo">
@@ -593,10 +617,10 @@
         <scene sceneID="FZ4-Ev-sqr">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="v2X-jQ-lB8" customClass="ChallengesController" customModule="SportCitizen" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="challenge" id="vnj-2C-dpM"/>
+                    <tabBarItem key="tabBarItem" title="" image="feed" id="vnj-2C-dpM"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="lJE-0s-16Q">
-                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" name="systemOrangeColor" catalog="System" colorSpace="catalog"/>
@@ -619,7 +643,7 @@
             <objects>
                 <viewController id="Amy-T6-Fyy" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nUf-gr-7UU">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93638414140000004" green="0.90633124109999996" blue="0.87841475010000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="M9s-y2-S5n"/>
@@ -632,11 +656,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="bellIcon" width="33" height="33"/>
-        <image name="challenge" width="33" height="33"/>
-        <image name="default-image-profile" width="100" height="100"/>
-        <image name="feed" width="33" height="33"/>
-        <image name="user_male" width="33" height="33"/>
+        <image name="bellIcon" width="50" height="50"/>
+        <image name="challenge" width="50" height="50"/>
+        <image name="default-image-profile" width="150" height="150"/>
+        <image name="feed" width="50" height="50"/>
+        <image name="user_male" width="50" height="50"/>
     </resources>
     <color key="tintColor" name="systemOrangeColor" catalog="System" colorSpace="catalog"/>
 </document>

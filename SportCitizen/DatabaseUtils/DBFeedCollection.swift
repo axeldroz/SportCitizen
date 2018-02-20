@@ -16,8 +16,8 @@ class DBFeedCollection {
     public var MinImage: UIImage!
     public var Location: String!
     public var Sport: String!
-    public var Elements: [Dictionary<String, Any>] = [Dictionary<String, Any>]()
-    
+    private var Elements: [Dictionary<String, Any>] = [Dictionary<String, Any>]()
+    private var SingleElem: Dictionary<String, Any> = Dictionary<String, Any>()
     let databaseRoot: DatabaseReference!
     let userInfo: User!
     
@@ -74,6 +74,39 @@ class DBFeedCollection {
             print(error.localizedDescription)
             completionHandler(false)
         }
+    }
+    
+    func getSingleElement(id: String, completionHandler: @escaping (Bool)-> ()) {
+        let userRef = self.databaseRoot.child("challenges").child(id)
+        
+        userRef.queryOrdered(byChild: "title").observeSingleEvent(of: .value, with: { snapshot in
+                let value = snapshot.value as? NSDictionary
+                var newVal : Dictionary<String, Any> = Dictionary<String, Any>()
+                newVal["title"] = value?["title"]
+                newVal["description"] = value?["description"]
+                newVal["location"] = value?["location"]
+                newVal["sport"] = value?["sport"]
+                newVal["time"] = value?["time"]
+                 newVal["creator-user"] = value?["creator-user"]
+                newVal["chall_id"] = value?["chall_id"]
+                self.SingleElem = newVal
+                completionHandler(true)
+        }) { (error) in
+            print(error.localizedDescription)
+            completionHandler(false)
+        }
+    }
+    
+    func getSingleElem() -> Dictionary<String, Any> {
+        return SingleElem
+    }
+    
+    func getElements() -> [Dictionary<String, Any>] {
+        return Elements;
+    }
+    
+    func removeElements() {
+        Elements.removeAll();
     }
     
 }

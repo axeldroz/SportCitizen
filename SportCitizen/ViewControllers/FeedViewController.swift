@@ -14,6 +14,7 @@ class FeedViewController: UIViewController, UICollectionViewDataSource, UICollec
     var Elements = DBFeedCollection()
     @IBOutlet weak var collectionView: UICollectionView!
     var refresher:UIRefreshControl!
+    var targetChallenge: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +31,7 @@ class FeedViewController: UIViewController, UICollectionViewDataSource, UICollec
 
     @objc func refreshStream() {
         print("refresh")
-        self.Elements.Elements.removeAll()
+        self.Elements.removeElements()
         self.Elements.getFeedCollection() { bool in
             self.collectionView.reloadData()
         }
@@ -44,14 +45,21 @@ class FeedViewController: UIViewController, UICollectionViewDataSource, UICollec
         // Dispose of any resources that can be recreated.
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let DestinationController : ChallengesDetailViewController = segue.destination as! ChallengesDetailViewController
+        if (targetChallenge != nil) {
+            DestinationController.setIdChallenge(value: targetChallenge!)
+        }
+        
+    }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.Elements.Elements.count
+        return self.Elements.getElements().count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! ImageCollectionViewCell
         
-        let elem = Elements.Elements[indexPath.row]
-        let sync = DBUserSync(userID : elem["creator-user"] as! String!)
+        let elem = Elements.getElements()[indexPath.row]
+        let sync = DBUserSync(userID : elem["creator-user"] as? String!)
         //cell.imageView.image = image
         sync.addPictureRel(image : cell.imageView)
         cell.titleLabel.text = elem["title"] as? String
@@ -59,16 +67,30 @@ class FeedViewController: UIViewController, UICollectionViewDataSource, UICollec
         cell.locationLabel.text = elem["location"] as? String
         cell.idPost = elem["chall_id"] as? String
 
+        // Making the circle shape of the image.
         cell.imageView.layer.cornerRadius = cell.imageView.frame.height/2
         cell.imageView.clipsToBounds = true
         
-        let bottomLine = CALayer()
+        // Creates line under each feed element.
+        /*let bottomLine = CALayer()
         bottomLine.frame = CGRect(x: 0.0, y: cell.frame.height - 4, width: cell.frame.width, height: 1.0)
         bottomLine.backgroundColor = UIColor.lightGray.cgColor
-        cell.layer.addSublayer(bottomLine)
+        cell.layer.addSublayer(bottomLine)*/
         return cell
     }
 
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let tmp = Elements.getElements()
+        var index: Int = 0
+        for elem in tmp {
+            if (index == indexPath.item){
+                targetChallenge = elem["chall_id"] as? String
+            }
+            index += 1
+        }
+        performSegue(withIdentifier: "ShowDetailChallSegue", sender: self)
+    }
+    
     func loadImages(){
        self.Elements.getFeedCollection() { bool in
             self.collectionView.reloadData()

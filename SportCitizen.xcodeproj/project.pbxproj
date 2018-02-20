@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2135D0611FF2B0BC00833C91 /* DBFeedCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2135D0601FF2B0BC00833C91 /* DBFeedCollection.swift */; };
+		215B11BA203C4EBD00139438 /* ChallengesDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215B11B9203C4EBD00139438 /* ChallengesDetailViewController.swift */; };
+		215B11BD203C7F7D00139438 /* TimeConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215B11BC203C7F7D00139438 /* TimeConverter.swift */; };
 		217307721FDEB55F007B213B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217307711FDEB55F007B213B /* AppDelegate.swift */; };
 		217307741FDEB55F007B213B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217307731FDEB55F007B213B /* ViewController.swift */; };
 		217307771FDEB55F007B213B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 217307751FDEB55F007B213B /* Main.storyboard */; };
@@ -60,6 +62,8 @@
 		0D4D70439688851AE1723DFC /* Pods_SportCitizenTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SportCitizenTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E619206787B36C2ACD80058 /* Pods_SportCitizenUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SportCitizenUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2135D0601FF2B0BC00833C91 /* DBFeedCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBFeedCollection.swift; sourceTree = "<group>"; };
+		215B11B9203C4EBD00139438 /* ChallengesDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengesDetailViewController.swift; sourceTree = "<group>"; };
+		215B11BC203C7F7D00139438 /* TimeConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeConverter.swift; sourceTree = "<group>"; };
 		2173076E1FDEB55F007B213B /* SportCitizen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SportCitizen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		217307711FDEB55F007B213B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		217307731FDEB55F007B213B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -139,6 +143,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		215B11BB203C7F4C00139438 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				215B11BC203C7F7D00139438 /* TimeConverter.swift */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
 		217307651FDEB55F007B213B = {
 			isa = PBXGroup;
 			children = (
@@ -164,6 +176,7 @@
 		217307701FDEB55F007B213B /* SportCitizen */ = {
 			isa = PBXGroup;
 			children = (
+				215B11BB203C7F4C00139438 /* Tools */,
 				2E526ADE1FF2561F005A59E9 /* UICreator */,
 				2E90DB771FED7ED10097B15D /* ViewControllers */,
 				2E1443531FEC4F38006427C8 /* DatabaseUtils */,
@@ -232,6 +245,7 @@
 				2E11B5B01FEAC37D00227A8C /* ProfileViewController.swift */,
 				2E1443511FEC43CA006427C8 /* ChallengeEditorViewController.swift */,
 				2E9798C41FF5278F0037A7F9 /* NotificationsViewController.swift */,
+				215B11B9203C4EBD00139438 /* ChallengesDetailViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -563,6 +577,7 @@
 				217307A31FDEBB2F007B213B /* LoginController.swift in Sources */,
 				2E28D2001FF5552F00A5435B /* DBUserSync.swift in Sources */,
 				2173077A1FDEB55F007B213B /* SportCitizen.xcdatamodeld in Sources */,
+				215B11BD203C7F7D00139438 /* TimeConverter.swift in Sources */,
 				21AF3F611FEA8F38007DA98B /* ImageCollectionViewCell.swift in Sources */,
 				217307B71FE15EA8007B213B /* ChallengesController.swift in Sources */,
 				2E1443521FEC43CA006427C8 /* ChallengeEditorViewController.swift in Sources */,
@@ -574,6 +589,7 @@
 				2E11B5AF1FEAC35700227A8C /* ProfileNavController.swift in Sources */,
 				217307B91FE15EFC007B213B /* FeedNavController.swift in Sources */,
 				2135D0611FF2B0BC00833C91 /* DBFeedCollection.swift in Sources */,
+				215B11BA203C4EBD00139438 /* ChallengesDetailViewController.swift in Sources */,
 				2E526AE01FF2565E005A59E9 /* UIDatePickerCreator.swift in Sources */,
 				217307BB1FE1604C007B213B /* EditProfileController.swift in Sources */,
 			);
@@ -744,7 +760,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 6542Z2K5FV;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -767,7 +783,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 6542Z2K5FV;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
