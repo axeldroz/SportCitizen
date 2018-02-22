@@ -50,6 +50,8 @@ class DBWriter {
         let ref = databaseRoot.child(key).childByAutoId()
         
         ref.setValue(values)
+        let id = ref.key
+        databaseRoot.child(key).child(id).updateChildValues(["chall_id": id])
     }
     
 

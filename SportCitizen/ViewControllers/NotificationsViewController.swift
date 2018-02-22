@@ -19,7 +19,7 @@ class NotificationsViewController : UIViewController, UICollectionViewDataSource
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.feedco.Elements.removeAll()
+        self.feedco.removeElements()
         self.feedco.syncNotificationCollection() { bool in
             self.collectionViewNot.reloadData()
         }
@@ -33,13 +33,13 @@ class NotificationsViewController : UIViewController, UICollectionViewDataSource
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.feedco.Elements.count
+        return self.feedco.getElements().count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! ImageCollectionViewCell
         
-        let elem = self.feedco.Elements[indexPath.row]
+        let elem = self.feedco.getElements()[indexPath.row]
         let sync = DBUserSync(userID : elem["from_id"] as! String!)
         //cell.imageView.image = image
         sync.addPictureRel(image: cell.imageView)
