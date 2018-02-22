@@ -32,6 +32,7 @@
 		2E28D1FC1FF54D3F00A5435B /* DBChallengeSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E28D1FB1FF54D3F00A5435B /* DBChallengeSync.swift */; };
 		2E28D2001FF5552F00A5435B /* DBUserSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E28D1FF1FF5552F00A5435B /* DBUserSync.swift */; };
 		2E2ADC391FF2AC1500EC85BA /* UISyncDataPickerCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2ADC381FF2AC1500EC85BA /* UISyncDataPickerCreator.swift */; };
+		2E4271561FF56307005C1EA0 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E4271551FF56307005C1EA0 /* CoreLocation.framework */; };
 		2E526AE01FF2565E005A59E9 /* UIDatePickerCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E526ADF1FF2565E005A59E9 /* UIDatePickerCreator.swift */; };
 		2E90DB761FED7AA50097B15D /* DBWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E90DB751FED7AA50097B15D /* DBWriter.swift */; };
 		2E9798C51FF5278F0037A7F9 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9798C41FF5278F0037A7F9 /* NotificationsViewController.swift */; };
@@ -89,6 +90,7 @@
 		2E28D1FB1FF54D3F00A5435B /* DBChallengeSync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBChallengeSync.swift; sourceTree = "<group>"; };
 		2E28D1FF1FF5552F00A5435B /* DBUserSync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBUserSync.swift; sourceTree = "<group>"; };
 		2E2ADC381FF2AC1500EC85BA /* UISyncDataPickerCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISyncDataPickerCreator.swift; sourceTree = "<group>"; };
+		2E4271551FF56307005C1EA0 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		2E526ADF1FF2565E005A59E9 /* UIDatePickerCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDatePickerCreator.swift; sourceTree = "<group>"; };
 		2E90DB751FED7AA50097B15D /* DBWriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBWriter.swift; sourceTree = "<group>"; };
 		2E9798C41FF5278F0037A7F9 /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E4271561FF56307005C1EA0 /* CoreLocation.framework in Frameworks */,
 				6821CCC9DAA0EE36EF08E665 /* Pods_SportCitizen.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -132,6 +135,7 @@
 		1ACEBF7C6301A3F8EF3D259B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2E4271551FF56307005C1EA0 /* CoreLocation.framework */,
 				EE8EE975B9839560CBF7B389 /* Pods_SportCitizen.framework */,
 				0D4D70439688851AE1723DFC /* Pods_SportCitizenTests.framework */,
 				0E619206787B36C2ACD80058 /* Pods_SportCitizenUITests.framework */,
