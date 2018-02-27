@@ -66,7 +66,7 @@ class ChallengeEditorViewController: UIViewController {
         else {
             let values = ["sport" : custPicker.getValue()!, "title" : titleView.text!,
                       "description" : descrView.text!, "time" : edi.getValue()!,
-                      "location" : "Bordeaux", "creator-user" : dbw.getUserId()!, "photoURL" : photoURL!]
+                      "location" : "Bordeaux", "creator_user" : dbw.getUserId()!, "photoURL" : photoURL!]
         
             dbw.postWithId(key: "challenges", values: values)
                 self.showHomeController()

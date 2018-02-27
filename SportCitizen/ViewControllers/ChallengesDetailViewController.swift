@@ -49,7 +49,7 @@ class ChallengesDetailViewController: UIViewController {
     public func displayDetails() {
         let elem = Db.getSingleElem()
         
-        let sync = DBUserSync(userID : elem["creator-user"] as? String!)
+        let sync = DBUserSync(userID : elem["creator_user"] as? String!)
         sync.addPictureRel(image : self.imageUser)
         
         // Making the circle shape of the image.

@@ -27,6 +27,9 @@ class ProfileViewController: UIViewController {
         sync.addUserRel(image: pictureView, key: "photoURL")
         sync.addUserRel(label : favSportView, key : "favoriteSport")
         sync.addUserRel(text: bioView, key : "bio")
+        
+        pictureView.layer.cornerRadius = pictureView.frame.height/2
+        pictureView.clipsToBounds = true
     }
 
     override func didReceiveMemoryWarning() {

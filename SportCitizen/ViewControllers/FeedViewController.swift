@@ -72,10 +72,10 @@ class FeedViewController: UIViewController, UICollectionViewDataSource, UICollec
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "ShowDetailChallSegue"){
         if (targetChallenge != nil) {
-        let DestinationController : ChallengesDetailViewController = segue.destination as! ChallengesDetailViewController
+            let DestinationController : ChallengesDetailViewController = segue.destination as! ChallengesDetailViewController
         
-            DestinationController.setIdChallenge(value: targetChallenge!)
-        }
+                DestinationController.setIdChallenge(value: targetChallenge!)
+            }
         }
         
     }
@@ -86,7 +86,7 @@ class FeedViewController: UIViewController, UICollectionViewDataSource, UICollec
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! ImageCollectionViewCell
         cell.contentView.translatesAutoresizingMaskIntoConstraints = false
         let elem = Elements.getElements()[indexPath.row]
-        let sync = DBUserSync(userID : elem["creator-user"] as? String!)
+        let sync = DBUserSync(userID : elem["creator_user"] as? String!)
         //cell.imageView.image = image
         sync.addPictureRel(image : cell.imageView)
         cell.titleLabel.text = elem["title"] as? String
