@@ -59,7 +59,7 @@ class ChallengesDetailViewController: UIViewController {
         descChallenge.text = elem["description"] as? String
         let valDate = elem["time"] as? String
         if (valDate != nil){
-            dateChallenge.text = TimeConverter.timeIntervalToString(stringInterval: valDate!)
+            dateChallenge.text = TimeConverter.timeIntervalToEngWithHour(stringInterval: valDate!)
         }
     }
 }

@@ -8,8 +8,10 @@
 
 import UIKit
 import Firebase
+import CoreLocation
 
-class FeedViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class FeedViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, CLLocationManagerDelegate {
+    var locationManager : CLLocationManager! = nil
 
     var Elements = DBFeedCollection()
     @IBOutlet weak var collectionView: UICollectionView!
@@ -18,7 +20,16 @@ class FeedViewController: UIViewController, UICollectionViewDataSource, UICollec
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // location ask
+        initLocation()
+        
         collectionView.alwaysBounceVertical = true
+    
+        let flowLayout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
+        
+        flowLayout.estimatedItemSize = CGSize(width: view.frame.width - 8, height: 110)
+        flowLayout.sectionInset = UIEdgeInsetsMake(8, 8, 0, 0)
 
         self.refresher = UIRefreshControl()
         self.collectionView!.alwaysBounceVertical = true
@@ -28,7 +39,20 @@ class FeedViewController: UIViewController, UICollectionViewDataSource, UICollec
         loadImages()
         // Do any additional setup after loading the view.
     }
-
+    
+    private func initLocation() {
+        locationManager = CLLocationManager()
+        locationManager.delegate = self;
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation])
+    {
+        print("ehhhhh OUIIII")
+    }
+    
     @objc func refreshStream() {
         print("refresh")
         self.Elements.removeElements()
@@ -46,9 +70,12 @@ class FeedViewController: UIViewController, UICollectionViewDataSource, UICollec
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let DestinationController : ChallengesDetailViewController = segue.destination as! ChallengesDetailViewController
+        if (segue.identifier == "ShowDetailChallSegue"){
         if (targetChallenge != nil) {
+        let DestinationController : ChallengesDetailViewController = segue.destination as! ChallengesDetailViewController
+        
             DestinationController.setIdChallenge(value: targetChallenge!)
+        }
         }
         
     }
@@ -57,7 +84,7 @@ class FeedViewController: UIViewController, UICollectionViewDataSource, UICollec
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! ImageCollectionViewCell
-        
+        cell.contentView.translatesAutoresizingMaskIntoConstraints = false
         let elem = Elements.getElements()[indexPath.row]
         let sync = DBUserSync(userID : elem["creator-user"] as? String!)
         //cell.imageView.image = image

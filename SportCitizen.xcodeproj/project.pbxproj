@@ -10,6 +10,7 @@
 		2135D0611FF2B0BC00833C91 /* DBFeedCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2135D0601FF2B0BC00833C91 /* DBFeedCollection.swift */; };
 		215B11BA203C4EBD00139438 /* ChallengesDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215B11B9203C4EBD00139438 /* ChallengesDetailViewController.swift */; };
 		215B11BD203C7F7D00139438 /* TimeConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215B11BC203C7F7D00139438 /* TimeConverter.swift */; };
+		215B11BF204435F300139438 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 215B11BE204435F300139438 /* CoreLocation.framework */; };
 		217307721FDEB55F007B213B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217307711FDEB55F007B213B /* AppDelegate.swift */; };
 		217307741FDEB55F007B213B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217307731FDEB55F007B213B /* ViewController.swift */; };
 		217307771FDEB55F007B213B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 217307751FDEB55F007B213B /* Main.storyboard */; };
@@ -64,6 +65,7 @@
 		2135D0601FF2B0BC00833C91 /* DBFeedCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBFeedCollection.swift; sourceTree = "<group>"; };
 		215B11B9203C4EBD00139438 /* ChallengesDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengesDetailViewController.swift; sourceTree = "<group>"; };
 		215B11BC203C7F7D00139438 /* TimeConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeConverter.swift; sourceTree = "<group>"; };
+		215B11BE204435F300139438 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		2173076E1FDEB55F007B213B /* SportCitizen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SportCitizen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		217307711FDEB55F007B213B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		217307731FDEB55F007B213B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				215B11BF204435F300139438 /* CoreLocation.framework in Frameworks */,
 				6821CCC9DAA0EE36EF08E665 /* Pods_SportCitizen.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -136,6 +139,7 @@
 		1ACEBF7C6301A3F8EF3D259B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				215B11BE204435F300139438 /* CoreLocation.framework */,
 				EE8EE975B9839560CBF7B389 /* Pods_SportCitizen.framework */,
 				0D4D70439688851AE1723DFC /* Pods_SportCitizenTests.framework */,
 				0E619206787B36C2ACD80058 /* Pods_SportCitizenUITests.framework */,
