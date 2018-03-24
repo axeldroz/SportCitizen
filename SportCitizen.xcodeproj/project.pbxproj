@@ -27,6 +27,7 @@
 		21AF3F5D1FE182B2007DA98B /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AF3F5C1FE182B2007DA98B /* HomeController.swift */; };
 		21AF3F5F1FEA8C09007DA98B /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AF3F5E1FEA8C09007DA98B /* FeedViewController.swift */; };
 		21AF3F611FEA8F38007DA98B /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AF3F601FEA8F38007DA98B /* ImageCollectionViewCell.swift */; };
+		21FB4E442066ADAB005A0784 /* NotifDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FB4E432066ADAB005A0784 /* NotifDetailViewController.swift */; };
 		25E1AF876DD9E7B83EB4E0AD /* Pods_SportCitizenUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E619206787B36C2ACD80058 /* Pods_SportCitizenUITests.framework */; };
 		2E11B5AF1FEAC35700227A8C /* ProfileNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E11B5AE1FEAC35700227A8C /* ProfileNavController.swift */; };
 		2E11B5B11FEAC37D00227A8C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E11B5B01FEAC37D00227A8C /* ProfileViewController.swift */; };
@@ -88,6 +89,7 @@
 		21AF3F5C1FE182B2007DA98B /* HomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		21AF3F5E1FEA8C09007DA98B /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		21AF3F601FEA8F38007DA98B /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		21FB4E432066ADAB005A0784 /* NotifDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifDetailViewController.swift; sourceTree = "<group>"; };
 		2E11B5AE1FEAC35700227A8C /* ProfileNavController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileNavController.swift; sourceTree = "<group>"; };
 		2E11B5B01FEAC37D00227A8C /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		2E1443511FEC43CA006427C8 /* ChallengeEditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeEditorViewController.swift; sourceTree = "<group>"; };
@@ -250,6 +252,7 @@
 				2E1443511FEC43CA006427C8 /* ChallengeEditorViewController.swift */,
 				2E9798C41FF5278F0037A7F9 /* NotificationsViewController.swift */,
 				215B11B9203C4EBD00139438 /* ChallengesDetailViewController.swift */,
+				21FB4E432066ADAB005A0784 /* NotifDetailViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -593,6 +596,7 @@
 				2E11B5AF1FEAC35700227A8C /* ProfileNavController.swift in Sources */,
 				217307B91FE15EFC007B213B /* FeedNavController.swift in Sources */,
 				2135D0611FF2B0BC00833C91 /* DBFeedCollection.swift in Sources */,
+				21FB4E442066ADAB005A0784 /* NotifDetailViewController.swift in Sources */,
 				215B11BA203C4EBD00139438 /* ChallengesDetailViewController.swift in Sources */,
 				2E526AE01FF2565E005A59E9 /* UIDatePickerCreator.swift in Sources */,
 				217307BB1FE1604C007B213B /* EditProfileController.swift in Sources */,

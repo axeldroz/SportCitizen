@@ -20,7 +20,6 @@ class ChallengesDetailViewController: UIViewController {
     var Db = DBFeedCollection()
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(IdChallenge ?? "nop")
         self.Db.getSingleElement(id: IdChallenge!){ bool in
             self.displayDetails()
         }

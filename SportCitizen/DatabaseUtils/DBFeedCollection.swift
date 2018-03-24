@@ -97,6 +97,26 @@ class DBFeedCollection {
         }
     }
     
+    func getNotifById(id: String, completionHandler: @escaping (Bool)-> ()) {
+        let userRef = self.databaseRoot.child("users").child((self.userInfo?.uid)!).child("notifications").child(id)
+        
+        userRef.queryOrdered(byChild: "date").observeSingleEvent(of: .value, with: { snapshot in
+            let value = snapshot.value as? NSDictionary
+            var newVal : Dictionary<String, Any> = Dictionary<String, Any>()
+            newVal["message"] = value?["message"]
+            newVal["from_id"] = value?["from_id"]
+            newVal["date"] = value?["date"]
+            newVal["type"] = value?["type"]
+            newVal["chall_id"] = value?["chall_id"]
+            newVal["notif_id"] = value?["notif_id"]
+            self.SingleElem = newVal
+            completionHandler(true)
+        }) { (error) in
+            print(error.localizedDescription)
+            completionHandler(false)
+        }
+    }
+    
     func getSingleElem() -> Dictionary<String, Any> {
         return SingleElem
     }

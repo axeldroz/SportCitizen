@@ -237,7 +237,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nn2-rZ-3m7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6585" y="-214.43661971830986"/>
+            <point key="canvasLocation" x="7190" y="-244"/>
         </scene>
         <!--Challenges Detail View Controller-->
         <scene sceneID="KEu-kc-IuA">
@@ -298,7 +298,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xab-NU-zv8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6585" y="476.40845070422534"/>
+            <point key="canvasLocation" x="7190" y="436"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="gKN-CS-NhD">
@@ -394,6 +394,7 @@
                     <navigationItem key="navigationItem" title="Notifications" id="SpJ-63-V6U"/>
                     <connections>
                         <outlet property="collectionViewNot" destination="MXD-MB-9xG" id="4hg-rB-hhq"/>
+                        <segue destination="jbO-VY-dr4" kind="show" identifier="ShowDetailNotifSegue" id="AYa-yR-YzH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="abY-Ao-g62" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -684,6 +685,76 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IVj-B5-nXa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5403" y="-739"/>
+        </scene>
+        <!--Notif Detail View Controller-->
+        <scene sceneID="aI1-Mu-OFg">
+            <objects>
+                <viewController id="jbO-VY-dr4" customClass="NotifDetailViewController" customModule="SportCitizen" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="t9E-dG-G6J">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TITLE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MvF-IR-gQv">
+                                <rect key="frame" x="184" y="277" width="47" height="20.666666666666686"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" name="systemOrangeColor" catalog="System" colorSpace="catalog"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zm4-AQ-IhD">
+                                <rect key="frame" x="137" y="106" width="140" height="140"/>
+                                <color key="backgroundColor" red="1" green="0.1519643792" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="140" id="RwM-8b-SOJ"/>
+                                    <constraint firstAttribute="height" constant="140" id="y6U-dq-OYO"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LOREM IPSUM QUE DU SALE ICI C SPORT CITIZEN" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fZI-V9-gf7">
+                                <rect key="frame" x="5" y="337.66666666666669" width="404" height="40.666666666666686"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" red="0.74947376939999999" green="0.74947376939999999" blue="0.74947376939999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DD/MM/YYYY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H43-VC-Y4w">
+                                <rect key="frame" x="5.0000000000000071" y="308.66666666666669" width="118.66666666666669" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
+                                <color key="textColor" name="systemOrangeColor" catalog="System" colorSpace="catalog"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AGE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ZO-Ng-c5l">
+                                <rect key="frame" x="354.66666666666669" y="276" width="34.333333333333314" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" name="systemOrangeColor" catalog="System" colorSpace="catalog"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="fZI-V9-gf7" firstAttribute="centerX" secondItem="MvF-IR-gQv" secondAttribute="centerX" id="DYd-gS-TS8"/>
+                            <constraint firstItem="fZI-V9-gf7" firstAttribute="top" secondItem="H43-VC-Y4w" secondAttribute="bottom" constant="8" id="Fbw-wF-HyN"/>
+                            <constraint firstItem="MvF-IR-gQv" firstAttribute="top" secondItem="zm4-AQ-IhD" secondAttribute="bottom" constant="31" id="H1s-SX-l9a"/>
+                            <constraint firstItem="fZI-V9-gf7" firstAttribute="leading" secondItem="t9E-dG-G6J" secondAttribute="leading" constant="5" id="Jjh-9l-tM0"/>
+                            <constraint firstItem="zm4-AQ-IhD" firstAttribute="centerX" secondItem="t9E-dG-G6J" secondAttribute="centerX" id="MLa-hD-7gm"/>
+                            <constraint firstItem="MvF-IR-gQv" firstAttribute="centerX" secondItem="zm4-AQ-IhD" secondAttribute="centerX" id="Q2p-oB-A2I"/>
+                            <constraint firstItem="H43-VC-Y4w" firstAttribute="leading" secondItem="FBy-xR-sKQ" secondAttribute="leading" constant="5" id="QzS-8O-oo5"/>
+                            <constraint firstItem="fZI-V9-gf7" firstAttribute="top" secondItem="7ZO-Ng-c5l" secondAttribute="bottom" constant="40" id="RdS-3Q-AhY"/>
+                            <constraint firstItem="fZI-V9-gf7" firstAttribute="top" secondItem="MvF-IR-gQv" secondAttribute="bottom" constant="40" id="Vsi-O0-F44"/>
+                            <constraint firstItem="zm4-AQ-IhD" firstAttribute="top" secondItem="FBy-xR-sKQ" secondAttribute="top" constant="42" id="iZW-nk-maB"/>
+                            <constraint firstAttribute="trailing" secondItem="fZI-V9-gf7" secondAttribute="trailing" constant="5" id="jb1-VV-qLJ"/>
+                            <constraint firstItem="FBy-xR-sKQ" firstAttribute="trailing" secondItem="7ZO-Ng-c5l" secondAttribute="trailing" constant="25" id="pyC-lf-4KQ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="FBy-xR-sKQ"/>
+                    </view>
+                    <connections>
+                        <outlet property="ageUser" destination="7ZO-Ng-c5l" id="uWn-TW-s2K"/>
+                        <outlet property="dateNotif" destination="H43-VC-Y4w" id="Clm-oJ-ZuE"/>
+                        <outlet property="imageUser" destination="zm4-AQ-IhD" id="FSN-ah-qby"/>
+                        <outlet property="messageNotif" destination="fZI-V9-gf7" id="Wqw-44-VkC"/>
+                        <outlet property="titleNotif" destination="MvF-IR-gQv" id="gaN-P5-b01"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pZI-Yf-Alr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6271" y="709"/>
         </scene>
     </scenes>
     <resources>

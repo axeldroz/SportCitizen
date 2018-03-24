@@ -15,15 +15,15 @@ class NotificationsViewController : UIViewController, UICollectionViewDataSource
 
     @IBOutlet weak var collectionViewNot: UICollectionView!
     
-    var feedco : DBFeedCollection = DBFeedCollection()
-    
+    var Elements : DBFeedCollection = DBFeedCollection()
+    var targetNotif: String?
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.feedco.removeElements()
-        self.feedco.syncNotificationCollection() { bool in
+        self.Elements.removeElements()
+        self.Elements.syncNotificationCollection() { bool in
             self.collectionViewNot.reloadData()
         }
-        //loadImages()
         // Do any additional setup after loading the view.
     }
     
@@ -32,24 +32,54 @@ class NotificationsViewController : UIViewController, UICollectionViewDataSource
         // Dispose of any resources that can be recreated.
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "ShowDetailNotifSegue"){
+            if (targetNotif != nil) {
+                let DestinationController : NotifDetailViewController = segue.destination as! NotifDetailViewController
+                
+                DestinationController.setIdNotif(value: targetNotif!)
+                print("ID BIEN SET ")
+            }
+        }
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.feedco.getElements().count
+        return self.Elements.getElements().count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! ImageCollectionViewCell
         
-        let elem = self.feedco.getElements()[indexPath.row]
+        let elem = self.Elements.getElements()[indexPath.row]
+        print(elem["chall_id"] as! String!)
+        print(elem["type"] as! String!)
+        print(elem["from_id"] as! String!)
+
         let sync = DBUserSync(userID : elem["from_id"] as! String!)
         //cell.imageView.image = image
         sync.addPictureRel(image: cell.imageView)
         cell.titleLabel.text = elem["message"] as? String
         cell.DescriptionLabel.text = elem["message"] as? String
+        cell.idPost = elem["chall_id"] as? String
+
         //cell.locationLabel.text = elem["location"] as? String
         cell.imageView.layer.cornerRadius = cell.imageView.frame.height/2
         cell.imageView.clipsToBounds = true
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let tmp = Elements.getElements()
+        var index: Int = 0
+        for elem in tmp {
+            if (index == indexPath.item){
+                targetNotif = elem["notif_id"] as? String
+            }
+            index += 1
+        }
+        print("Before SEGUE NOTIF")
+        performSegue(withIdentifier: "ShowDetailNotifSegue", sender: self)
     }
     
     
