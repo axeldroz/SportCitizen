@@ -28,9 +28,9 @@ class FeedViewController: UIViewController, UICollectionViewDataSource, UICollec
     
         let flowLayout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
         
-        flowLayout.estimatedItemSize = CGSize(width: view.frame.width - 8, height: 110)
-        flowLayout.sectionInset = UIEdgeInsetsMake(8, 8, 0, 0)
-
+        flowLayout.estimatedItemSize = CGSize(width: view.frame.width - 16, height: 110)
+        flowLayout.sectionInset = UIEdgeInsetsMake(8, 8, 8, 8)
+        flowLayout.minimumLineSpacing = 6
         self.refresher = UIRefreshControl()
         self.collectionView!.alwaysBounceVertical = true
         self.refresher.tintColor = UIColor.red
@@ -52,6 +52,7 @@ class FeedViewController: UIViewController, UICollectionViewDataSource, UICollec
     {
         print("ehhhhh OUIIII")
     }
+    
     
     @objc func refreshStream() {
         print("refresh")
@@ -79,6 +80,14 @@ class FeedViewController: UIViewController, UICollectionViewDataSource, UICollec
         }
         
     }
+    
+    /*func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let cellsAcross: CGFloat = 3
+        let spaceBetweenCells: CGFloat = 1
+        let dim = (collectionView.bounds.width - (cellsAcross - 1) * spaceBetweenCells) / cellsAcross
+        return CGSize(width: collectionView.bounds.width, height: 110)
+    }*/
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.Elements.getElements().count
     }
@@ -98,6 +107,17 @@ class FeedViewController: UIViewController, UICollectionViewDataSource, UICollec
         cell.imageView.layer.cornerRadius = cell.imageView.frame.height/2
         cell.imageView.clipsToBounds = true
         
+        cell.backgroundColor = UIColor(hex: "fff5e6")
+        //cell.layer.borderWidth = 1
+        cell.layer.cornerRadius = 4
+        cell.layer.borderColor = UIColor.lightGray.cgColor
+        
+        
+        cell.layer.shadowColor = UIColor.lightGray.cgColor;
+        cell.layer.shadowOffset = CGSize(width: 0, height: 2)
+        cell.layer.shadowRadius = 2
+        cell.layer.shadowOpacity = 1
+
         // Creates line under each feed element.
         /*let bottomLine = CALayer()
         bottomLine.frame = CGRect(x: 0.0, y: cell.frame.height - 4, width: cell.frame.width, height: 1.0)
@@ -119,6 +139,7 @@ class FeedViewController: UIViewController, UICollectionViewDataSource, UICollec
     }
     
     func loadImages(){
+        self.Elements.removeElements()
        self.Elements.getFeedCollection() { bool in
             self.collectionView.reloadData()
         }
@@ -138,5 +159,26 @@ class FeedViewController: UIViewController, UICollectionViewDataSource, UICollec
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let controller = storyboard.instantiateViewController(withIdentifier: "Signin")
         self.present(controller, animated: true, completion: nil)
+    }
+}
+
+extension UIColor {
+    convenience init(hex: String) {
+        let scanner = Scanner(string: hex)
+        scanner.scanLocation = 0
+        
+        var rgbValue: UInt64 = 0
+        
+        scanner.scanHexInt64(&rgbValue)
+        
+        let r = (rgbValue & 0xff0000) >> 16
+        let g = (rgbValue & 0xff00) >> 8
+        let b = rgbValue & 0xff
+        
+        self.init(
+            red: CGFloat(r) / 0xff,
+            green: CGFloat(g) / 0xff,
+            blue: CGFloat(b) / 0xff, alpha: 1
+        )
     }
 }
