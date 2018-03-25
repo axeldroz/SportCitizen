@@ -15,16 +15,38 @@ class NotifDetailViewController: UIViewController {
     @IBOutlet weak var imageUser: UIImageView!
     @IBOutlet weak var dateNotif: UILabel!
     @IBOutlet weak var messageNotif: UILabel!
+    @IBOutlet weak var userBio: UILabel!
     @IBOutlet weak var ageUser: UILabel!
+    @IBOutlet weak var acceptButton: UIButton!
+    @IBOutlet weak var declineButton: UIButton!
+    @IBOutlet weak var remindButton: UIButton!
     
     private var IdNotif: String?
     private var Db = DBFeedCollection()
-
+    private var DbWriter = DBWriter()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.Db.getNotifById(id: IdNotif!){ bool in
             self.displayDetails()
+            let elem = self.Db.getSingleElem()
+            if (elem["type"] as? String != "joinchall"){
+                self.acceptButton.isHidden = true
+                self.declineButton.isHidden = true
+                self.remindButton.isHidden = true
+                print(elem["type"])
+            }
+            if (elem["type"] as? String == "joinchall"){
+                self.acceptButton.isHidden = false
+                self.declineButton.isHidden = false
+                self.remindButton.isHidden = false
+                print(elem["type"])
+            }
         }
+        
+        acceptButton.addTarget(self, action: #selector(self.onAcceptClick), for: .touchUpInside)
+        declineButton.addTarget(self, action: #selector(self.onDeclineClick), for: .touchUpInside)
+        remindButton.addTarget(self, action: #selector(self.onRemindClick), for: .touchUpInside)
         // Do any additional setup after loading the view.
     }
 
@@ -45,17 +67,37 @@ class NotifDetailViewController: UIViewController {
         sync.getUserInformations(){ bool in
             self.titleNotif.text = sync.Name
             self.ageUser.text = sync.Age
-            print("age :", sync.Age)
+            self.userBio.text = sync.Bio
         }
         // Making the circle shape of the image.
         imageUser.layer.cornerRadius = imageUser.frame.height/2
         imageUser.clipsToBounds = true
         messageNotif.text = elem["message"] as? String
         let valDate = elem["date"] as? String
-        print(valDate)
         if (valDate != nil){
             dateNotif.text = TimeConverter.timeIntervalToEngWithHour(stringInterval: valDate!)
         }
     }
+    
+    
+    // Handlers for onClick events
+    @objc private func onAcceptClick() {
+        let elem = Db.getSingleElem()
 
+        DbWriter.answerChallenge(challengeId: elem["chall_id"] as? String, codeAnswer: 1){ bool in
+            
+        }
+    }
+
+    @objc private func onDeclineClick() {
+        let elem = Db.getSingleElem()
+        
+        DbWriter.answerChallenge(challengeId: elem["chall_id"] as? String, codeAnswer: 2){ bool in
+            
+        }
+    }
+    
+    @objc private func onRemindClick() {
+        
+    }
 }

@@ -33,8 +33,10 @@ class DBUserSync : DBViewContentSync {
         self.cRef.queryOrdered(byChild: "name").observeSingleEvent(of: .value, with: { snapshot in
             let value = snapshot.value as? NSDictionary
             self.Name = value?["name"] as? String
-            self.FavSport = value?["bio"] as? String
-            self.Age = (value?["age"] as? String)! + "yo"
+            self.FavSport = value?["favoriteSport"] as? String
+            self.Bio = value?["bio"] as? String
+            let age = (value?["age"] as? CLong)!
+            self.Age = String(age) + " yo"
             completionHandler(true)
         }) { (error) in
             print(error.localizedDescription)

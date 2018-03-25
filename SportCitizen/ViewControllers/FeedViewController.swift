@@ -50,7 +50,6 @@ class FeedViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation])
     {
-        print("ehhhhh OUIIII")
     }
     
     
@@ -60,7 +59,7 @@ class FeedViewController: UIViewController, UICollectionViewDataSource, UICollec
         self.Elements.getFeedCollection() { bool in
             self.collectionView.reloadData()
         }
-        print("end")
+        print("end refreshing")
         self.refresher.endRefreshing()
         
     }
@@ -106,22 +105,17 @@ class FeedViewController: UIViewController, UICollectionViewDataSource, UICollec
         cell.imageView.layer.cornerRadius = cell.imageView.frame.height/2
         cell.imageView.clipsToBounds = true
         
-        cell.backgroundColor = UIColor(hex: "fff5e6")
+        //cell.backgroundColor = UIColor(hex: "fff5e6")
         //cell.layer.borderWidth = 1
         cell.layer.cornerRadius = 4
         cell.layer.borderColor = UIColor.lightGray.cgColor
         
         
-        cell.layer.shadowColor = UIColor.lightGray.cgColor;
-        cell.layer.shadowOffset = CGSize(width: 0, height: 2)
-        cell.layer.shadowRadius = 2
-        cell.layer.shadowOpacity = 1
+        cell.imageView.layer.shadowColor = UIColor.lightGray.cgColor;
+        cell.imageView.layer.shadowOffset = CGSize(width: 0, height: 2)
+        cell.imageView.layer.shadowRadius = 2
+        cell.imageView.layer.shadowOpacity = 1
 
-        // Creates line under each feed element.
-        /*let bottomLine = CALayer()
-        bottomLine.frame = CGRect(x: 0.0, y: cell.frame.height - 4, width: cell.frame.width, height: 1.0)
-        bottomLine.backgroundColor = UIColor.lightGray.cgColor
-        cell.layer.addSublayer(bottomLine)*/
         return cell
     }
 

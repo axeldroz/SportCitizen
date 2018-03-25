@@ -65,7 +65,6 @@ class DBFeedCollection {
                 newVal["date"] = value.childSnapshot(forPath: "date").value ?? ""
                 newVal["notif_id"] = value.childSnapshot(forPath: "notif_id").value ?? ""
                 self.Elements.append(newVal)
-                //print("tab =", newVal)
             }
             print("Handler = true ")
             completionHandler(true)
