@@ -82,18 +82,20 @@ class NotifDetailViewController: UIViewController {
     
     // Handlers for onClick events
     @objc private func onAcceptClick() {
-        let elem = Db.getSingleElem()
-
-        DbWriter.answerChallenge(challengeId: elem["chall_id"] as? String, codeAnswer: 1){ bool in
-            
+        Db.getNotifById(id: IdNotif!){bool in
+            let elem = self.Db.getSingleElem()
+            self.DbWriter.answerChallenge(idNotif: self.IdNotif, challengeId: elem["chall_id"] as? String, codeAnswer: 1){ bool in
+                _ = self.navigationController?.popToRootViewController(animated: true)
+            }
         }
     }
 
     @objc private func onDeclineClick() {
-        let elem = Db.getSingleElem()
-        
-        DbWriter.answerChallenge(challengeId: elem["chall_id"] as? String, codeAnswer: 2){ bool in
-            
+        Db.getNotifById(id: IdNotif!){bool in
+            let elem = self.Db.getSingleElem()
+            self.DbWriter.answerChallenge(idNotif: self.IdNotif, challengeId: elem["chall_id"] as? String, codeAnswer: 2){ bool in
+                _ = self.navigationController?.popToRootViewController(animated: true)
+            }
         }
     }
     

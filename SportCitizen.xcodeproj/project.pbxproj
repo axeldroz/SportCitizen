@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		212688232068F212001122A9 /* ChallengesFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212688222068F212001122A9 /* ChallengesFeedViewController.swift */; };
 		2135D0611FF2B0BC00833C91 /* DBFeedCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2135D0601FF2B0BC00833C91 /* DBFeedCollection.swift */; };
 		215B11BA203C4EBD00139438 /* ChallengesDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215B11B9203C4EBD00139438 /* ChallengesDetailViewController.swift */; };
 		215B11BD203C7F7D00139438 /* TimeConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215B11BC203C7F7D00139438 /* TimeConverter.swift */; };
@@ -63,6 +64,7 @@
 /* Begin PBXFileReference section */
 		0D4D70439688851AE1723DFC /* Pods_SportCitizenTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SportCitizenTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E619206787B36C2ACD80058 /* Pods_SportCitizenUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SportCitizenUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		212688222068F212001122A9 /* ChallengesFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengesFeedViewController.swift; sourceTree = "<group>"; };
 		2135D0601FF2B0BC00833C91 /* DBFeedCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBFeedCollection.swift; sourceTree = "<group>"; };
 		215B11B9203C4EBD00139438 /* ChallengesDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengesDetailViewController.swift; sourceTree = "<group>"; };
 		215B11BC203C7F7D00139438 /* TimeConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeConverter.swift; sourceTree = "<group>"; };
@@ -149,6 +151,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		2126882120680808001122A9 /* NavControllers */ = {
+			isa = PBXGroup;
+			children = (
+				21AF3F5C1FE182B2007DA98B /* HomeController.swift */,
+				217307B81FE15EFC007B213B /* FeedNavController.swift */,
+				2E11B5AE1FEAC35700227A8C /* ProfileNavController.swift */,
+			);
+			path = NavControllers;
+			sourceTree = "<group>";
+		};
 		215B11BB203C7F4C00139438 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
@@ -182,6 +194,7 @@
 		217307701FDEB55F007B213B /* SportCitizen */ = {
 			isa = PBXGroup;
 			children = (
+				2126882120680808001122A9 /* NavControllers */,
 				215B11BB203C7F4C00139438 /* Tools */,
 				2E526ADE1FF2561F005A59E9 /* UICreator */,
 				2E90DB771FED7ED10097B15D /* ViewControllers */,
@@ -240,19 +253,17 @@
 		2E90DB771FED7ED10097B15D /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				21AF3F5C1FE182B2007DA98B /* HomeController.swift */,
 				217307A21FDEBB2F007B213B /* LoginController.swift */,
 				217307B61FE15EA8007B213B /* ChallengesController.swift */,
-				217307B81FE15EFC007B213B /* FeedNavController.swift */,
 				217307BA1FE1604C007B213B /* EditProfileController.swift */,
 				21AF3F5E1FEA8C09007DA98B /* FeedViewController.swift */,
 				21AF3F601FEA8F38007DA98B /* ImageCollectionViewCell.swift */,
-				2E11B5AE1FEAC35700227A8C /* ProfileNavController.swift */,
 				2E11B5B01FEAC37D00227A8C /* ProfileViewController.swift */,
 				2E1443511FEC43CA006427C8 /* ChallengeEditorViewController.swift */,
 				2E9798C41FF5278F0037A7F9 /* NotificationsViewController.swift */,
 				215B11B9203C4EBD00139438 /* ChallengesDetailViewController.swift */,
 				21FB4E432066ADAB005A0784 /* NotifDetailViewController.swift */,
+				212688222068F212001122A9 /* ChallengesFeedViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -585,6 +596,7 @@
 				2E28D2001FF5552F00A5435B /* DBUserSync.swift in Sources */,
 				2173077A1FDEB55F007B213B /* SportCitizen.xcdatamodeld in Sources */,
 				215B11BD203C7F7D00139438 /* TimeConverter.swift in Sources */,
+				212688232068F212001122A9 /* ChallengesFeedViewController.swift in Sources */,
 				21AF3F611FEA8F38007DA98B /* ImageCollectionViewCell.swift in Sources */,
 				217307B71FE15EA8007B213B /* ChallengesController.swift in Sources */,
 				2E1443521FEC43CA006427C8 /* ChallengeEditorViewController.swift in Sources */,

@@ -76,7 +76,7 @@ class NotificationsViewController : UIViewController, UICollectionViewDataSource
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! ImageCollectionViewCell
         
-        let elem = self.Elements.getElements()[indexPath.row]
+        var elem = self.Elements.getElements()[indexPath.row]
         let sync = DBUserSync(userID : elem["from_id"] as! String!)
         sync.getUserInformations(){ Bool in
             cell.titleLabel.text = sync.Name

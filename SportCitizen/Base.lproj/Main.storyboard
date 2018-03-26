@@ -678,28 +678,12 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </toolbar>
                     <connections>
-                        <segue destination="Amy-T6-Fyy" kind="relationship" relationship="rootViewController" id="4uE-4B-RY6"/>
+                        <segue destination="4f7-bg-KSj" kind="relationship" relationship="rootViewController" id="lBp-s7-p1t"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v4w-oY-4hc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4441" y="-738"/>
-        </scene>
-        <!--Challenges-->
-        <scene sceneID="ZKj-yV-HUq">
-            <objects>
-                <viewController id="Amy-T6-Fyy" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="nUf-gr-7UU">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.93638414140000004" green="0.90633124109999996" blue="0.87841475010000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        <viewLayoutGuide key="safeArea" id="M9s-y2-S5n"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Challenges" id="U4I-d8-POX"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="IVj-B5-nXa" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5403" y="-739"/>
         </scene>
         <!--Notif Detail View Controller-->
         <scene sceneID="aI1-Mu-OFg">
@@ -802,6 +786,91 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pZI-Yf-Alr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="6269.5652173913049" y="708.42391304347836"/>
+        </scene>
+        <!--My Challenges-->
+        <scene sceneID="FsP-i1-qQl">
+            <objects>
+                <viewController id="4f7-bg-KSj" customClass="ChallengesFeedViewController" customModule="SportCitizen" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qfZ-4a-FtC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="wRT-ZC-xsf">
+                                <rect key="frame" x="0.0" y="64" width="414" height="672"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="10" id="jxo-su-aZz">
+                                    <size key="itemSize" width="412" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" reuseIdentifier="Cell" id="E2j-t2-GWD" customClass="ImageCollectionViewCell" customModule="SportCitizen" customModuleProvider="target">
+                                        <rect key="frame" x="1" y="0.0" width="412" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="412" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fdW-f9-FWM">
+                                                    <rect key="frame" x="0.0" y="16" width="70" height="72"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" name="systemOrangeColor" catalog="System" colorSpace="catalog"/>
+                                                </imageView>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Lorem Ipsum et les chips à l'ancienne qui font plaiz à tonton" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XQd-gf-39H">
+                                                    <rect key="frame" x="84" y="47" width="319" height="68"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="12"/>
+                                                    <color key="textColor" red="0.74947376939999999" green="0.74947376939999999" blue="0.74947376939999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Location" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zew-xB-Ggk">
+                                                    <rect key="frame" x="-18" y="91" width="106" height="17"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                    <color key="textColor" red="0.74947376939999999" green="0.74947376939999999" blue="0.74947376939999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Lorem Ipsum chips oui bonjour à tous putain de merde" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Hj-of-ZNo">
+                                                    <rect key="frame" x="83" y="20" width="329" height="16"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <color key="textColor" name="systemOrangeColor" catalog="System" colorSpace="catalog"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <connections>
+                                            <outlet property="DescriptionLabel" destination="XQd-gf-39H" id="bWS-66-4jj"/>
+                                            <outlet property="imageView" destination="fdW-f9-FWM" id="Jdi-qm-b9c"/>
+                                            <outlet property="locationLabel" destination="Zew-xB-Ggk" id="D5B-a0-k2M"/>
+                                            <outlet property="titleLabel" destination="4Hj-of-ZNo" id="FeB-1U-Uzc"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="4f7-bg-KSj" id="yPl-2r-y2Q"/>
+                                    <outlet property="delegate" destination="4f7-bg-KSj" id="z25-Ex-F1D"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.93638414140000004" green="0.90633124109999996" blue="0.87841475010000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="wRT-ZC-xsf" firstAttribute="leading" secondItem="7hI-WV-wC8" secondAttribute="leading" id="5FD-ES-hvL"/>
+                            <constraint firstAttribute="bottom" secondItem="wRT-ZC-xsf" secondAttribute="bottom" id="nd6-Jz-wMO"/>
+                            <constraint firstItem="wRT-ZC-xsf" firstAttribute="top" secondItem="7hI-WV-wC8" secondAttribute="top" id="oeT-TK-lj9"/>
+                            <constraint firstAttribute="trailing" secondItem="wRT-ZC-xsf" secondAttribute="trailing" id="x7T-ST-3EE"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="7hI-WV-wC8"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="My Challenges" id="wcy-G0-7zs"/>
+                    <connections>
+                        <outlet property="collectionView" destination="wRT-ZC-xsf" id="5QT-KQ-IIY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MR4-hF-vKl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5399" y="-739"/>
         </scene>
     </scenes>
     <resources>

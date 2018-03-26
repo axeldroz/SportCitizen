@@ -29,7 +29,7 @@ class DBFeedCollection {
     func getFeedCollection(completionHandler: @escaping (Bool)-> ()){
         let userRef = self.databaseRoot.child("challenges")
 
-        userRef.queryOrdered(byChild: "title").observe(DataEventType.value, with: { snapshot in
+        userRef.queryOrdered(byChild: "time").observe(DataEventType.value, with: { snapshot in
             for snap in snapshot.children {
                 let value = snap as! DataSnapshot
                 //print("Feed List : ", value.childSnapshot(forPath: "description").value ?? "")
@@ -40,7 +40,7 @@ class DBFeedCollection {
                 newVal["sport"] = value.childSnapshot(forPath: "sport").value ?? ""
                 newVal["creator_user"] = value.childSnapshot(forPath: "creator_user").value ?? ""
                 newVal["chall_id"] = value.childSnapshot(forPath: "chall_id").value ?? ""
-                self.Elements.append(newVal)
+                self.Elements.insert(newVal, at: 0)
             }
             completionHandler(true)
         }) { (error) in
@@ -64,7 +64,7 @@ class DBFeedCollection {
                 newVal["from_id"] = value.childSnapshot(forPath: "from_id").value ?? ""
                 newVal["date"] = value.childSnapshot(forPath: "date").value ?? ""
                 newVal["notif_id"] = value.childSnapshot(forPath: "notif_id").value ?? ""
-                self.Elements.append(newVal)
+                self.Elements.insert(newVal, at: 0)
             }
             print("Handler = true ")
             completionHandler(true)
@@ -109,6 +109,46 @@ class DBFeedCollection {
             newVal["chall_id"] = value?["chall_id"]
             newVal["notif_id"] = value?["notif_id"]
             self.SingleElem = newVal
+            completionHandler(true)
+        }) { (error) in
+            print(error.localizedDescription)
+            completionHandler(false)
+        }
+    }
+    
+    func getMyChallengesCollection(completionHandler: @escaping (Bool)-> ()){
+        let userID = Auth.auth().currentUser?.uid
+
+        var userRef = self.databaseRoot.child("users").child(userID!).child("my_challenges")
+        var listKey = [String]()
+        userRef.observe(DataEventType.value, with: { snapshot in
+            for snap in snapshot.children {
+                let value = snap as! DataSnapshot
+                listKey.append(value.key)
+            }
+            userRef = self.databaseRoot.child("challenges")
+            userRef.queryOrdered(byChild: "time").observe(DataEventType.value, with: { snapshot in
+                for snap in snapshot.children {
+                    let value = snap as! DataSnapshot
+                    //print("Feed List : ", value.childSnapshot(forPath: "description").value ?? "")
+                    var newVal : Dictionary<String, Any> = Dictionary<String, Any>()
+                    if listKey.contains(value.key){
+                        newVal["title"] = value.childSnapshot(forPath: "title").value ?? ""
+                        newVal["description"] = value.childSnapshot(forPath: "description").value ?? ""
+                        newVal["location"] = value.childSnapshot(forPath: "location").value ?? ""
+                        newVal["sport"] = value.childSnapshot(forPath: "sport").value ?? ""
+                        newVal["creator_user"] = value.childSnapshot(forPath: "creator_user").value ?? ""
+                        newVal["chall_id"] = value.childSnapshot(forPath: "chall_id").value ?? ""
+                        self.Elements.insert(newVal, at: 0)
+                    }
+                }
+                completionHandler(true)
+            }) { (error) in
+                print(error.localizedDescription)
+                completionHandler(false)
+            }
+            
+            
             completionHandler(true)
         }) { (error) in
             print(error.localizedDescription)
