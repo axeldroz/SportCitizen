@@ -14,6 +14,8 @@ import Firebase
  */
 class DBWriter {
     let databaseRoot = Database.database().reference()
+    private var cRef : DatabaseReference?
+    private var nRef : DatabaseReference?
     
     init() {
         
@@ -52,8 +54,87 @@ class DBWriter {
         ref.setValue(values)
         let id = ref.key
         databaseRoot.child(key).child(id).updateChildValues(["chall_id": id])
+        databaseRoot.child("users").child((getUserId())!).child("my_challenges").child(id).setValue(id)
     }
     
-
+    func joinChallenge(challengeId: String!, userMessage: String!, completionHandler: @escaping (Bool)-> ()){
+        self.cRef = Database.database().reference().child("challenges").child(challengeId)
+        self.nRef = Database.database().reference().child("users")
+        
+        var userTarget: String?
+        var values: [String : String] = [String : String]()
+        cRef?.queryOrdered(byChild: "title").observeSingleEvent(of: .value, with: { snapshot in
+            let value = snapshot.value as? NSDictionary
+            userTarget = value?["creator_user"] as? String
+            
+            // Bind values of notification
+            values = ["chall_id" : challengeId, "message": userMessage, "type": "joinchall", "from_id": self.getUserId()!, "date": String(NSDate().timeIntervalSince1970)]
+            let ref = self.nRef?.child(userTarget!).child("notifications").childByAutoId()
+            ref?.setValue(values)
+            let id = ref?.key
+            self.nRef?.child(userTarget!).child("notifications").child(id!).updateChildValues(["notif_id": id!])
+            completionHandler(true)
+        }) { (error) in
+            print(error.localizedDescription)
+            completionHandler(false)
+        }
+    }
+    
+    func answerChallenge(idNotif: String!, challengeId: String!, codeAnswer: Int, completionHandler: @escaping (Bool)-> ()) {
+        self.cRef = Database.database().reference().child("challenges").child(challengeId)
+        self.nRef = Database.database().reference().child("users")
+        var userMessage: String?
+        var typeNotif: String?
+        let sync = DBUserSync(userID : getUserId())
+        
+        print(challengeId)
+        // Get user informations first
+        sync.getUserInformations(){bool in
+            
+            // Set message to send
+            switch(codeAnswer){
+            case 1:
+                userMessage = sync.Name! + " accepted you in his challenge!"
+                typeNotif = "challaccept"
+                break
+            case 2:
+                userMessage = sync.Name! + " declined your apply. Sorry!"
+                typeNotif = "challdecline"
+                break
+            default:
+                break
+            }
+            
+            var userTarget: String?
+            var values: [String : String] = [String : String]()
+            // Get Informations relative to the user that sent the notification
+            self.nRef?.child(self.getUserId()!).child("notifications").child(idNotif).queryOrdered(byChild: "date").observeSingleEvent(of: .value, with: { snapshot in
+                let value = snapshot.value as? NSDictionary
+                
+                // Save his Id
+                userTarget = value?["from_id"] as? String
+                
+                // Bind values of notification
+                values = ["chall_id" : challengeId, "message": userMessage!, "type": typeNotif!, "from_id": self.getUserId()!, "date": String(NSDate().timeIntervalSince1970)]
+                
+                //Send new notification answer
+                if (codeAnswer == 1){
+                    print(challengeId, "+++ ", userTarget!)
+                self.databaseRoot.child("users").child(userTarget!).child("my_challenges").child(challengeId).setValue(challengeId)
+                }
+                let ref = self.nRef?.child(userTarget!).child("notifications").childByAutoId()
+                ref?.setValue(values)
+                let id = ref?.key
+                
+                // Set the notification Id
+                self.nRef?.child(userTarget!).child("notifications").child(id!).updateChildValues(["notif_id": id!])
+                completionHandler(true)
+            }) { (error) in
+                print(error.localizedDescription)
+                completionHandler(false)
+            }
+        }
+        
+    }
     
 }

@@ -14,13 +14,17 @@ class ChallengesDetailViewController: UIViewController {
     @IBOutlet weak var titleChallenge: UILabel!
     @IBOutlet weak var descChallenge: UILabel!
     @IBOutlet weak var dateChallenge: UILabel!
+    @IBOutlet weak var messageText: UITextView!
+    @IBOutlet weak var joinButton: UIButton!
+    
+    private var Dbw = DBWriter()
     
     private var IdChallenge: String?
     
     var Db = DBFeedCollection()
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(IdChallenge ?? "nop")
+        joinButton.addTarget(self, action: #selector(self.onJoinChallengeClick), for: .touchUpInside)
         self.Db.getSingleElement(id: IdChallenge!){ bool in
             self.displayDetails()
         }
@@ -49,7 +53,7 @@ class ChallengesDetailViewController: UIViewController {
     public func displayDetails() {
         let elem = Db.getSingleElem()
         
-        let sync = DBUserSync(userID : elem["creator-user"] as? String!)
+        let sync = DBUserSync(userID : elem["creator_user"] as? String!)
         sync.addPictureRel(image : self.imageUser)
         
         // Making the circle shape of the image.
@@ -59,7 +63,13 @@ class ChallengesDetailViewController: UIViewController {
         descChallenge.text = elem["description"] as? String
         let valDate = elem["time"] as? String
         if (valDate != nil){
-            dateChallenge.text = TimeConverter.timeIntervalToString(stringInterval: valDate!)
+            dateChallenge.text = TimeConverter.timeIntervalToEngWithHour(stringInterval: valDate!)
+        }
+    }
+    
+    @objc private func onJoinChallengeClick() {
+        Dbw.joinChallenge(challengeId: IdChallenge, userMessage: messageText.text){ bool in
+
         }
     }
 }

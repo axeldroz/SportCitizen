@@ -49,7 +49,9 @@ class LoginController: UIViewController {
                 let databaseRoot = Database.database().reference()
                 let userInfo = Auth.auth().currentUser
                 let userRef = databaseRoot.child("users").child((userInfo?.uid)!)
-                let values = ["email": userInfo?.email, "name": userInfo?.displayName, "photoURL": userInfo?.photoURL?.absoluteString] as! [String : String]
+                print((userInfo?.providerData[0].uid)!)
+                let photoURL = "https://graph.facebook.com/" + (userInfo?.providerData[0].uid)! + "/picture?type=large"
+                let values = ["email": userInfo?.email, "name": userInfo?.displayName, "photoURL": /*userInfo?.photoURL?.absoluteString*/photoURL] as! [String : String]
                 
                 userRef.updateChildValues(values, withCompletionBlock: {(error, ref) in
                     if error != nil {

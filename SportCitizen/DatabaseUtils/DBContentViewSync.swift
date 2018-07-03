@@ -27,8 +27,14 @@ class DBViewContentSync {
         
         userRef.child(key).observe(DataEventType.value, with: { snapshot in
             let snap = snapshot
-            let value = snap.value as? String
-            label.text = value
+            if (key == "age"){
+                let value = snap.value as? CLong!
+                label.text = String(value!)
+            }
+            else {
+                let value = snap.value as? String
+                label.text = value
+            }
         })
     }
     

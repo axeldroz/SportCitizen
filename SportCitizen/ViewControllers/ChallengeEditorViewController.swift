@@ -105,8 +105,7 @@ class ChallengeEditorViewController: UIViewController, CLLocationManagerDelegate
         else {
             let values = ["sport" : custPicker.getValue()!, "title" : titleView.text!,
                       "description" : descrView.text!, "time" : edi.getValue()!,
-                      "location" : "Bordeaux", "creator-user" : dbw.getUserId()!, "photoURL" : photoURL!,
-                      "city" : "ok"]
+                      "location" : "Bordeaux", "creator_user" : dbw.getUserId()!, "photoURL" : photoURL!]
         
             dbw.postWithId(key: "challenges", values: values)
                 self.showHomeController()

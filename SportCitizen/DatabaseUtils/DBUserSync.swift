@@ -17,11 +17,31 @@ class DBUserSync : DBViewContentSync {
     
     private var userID : String!
     private var cRef : DatabaseReference
+    public var Name : String?
+    public var FavSport : String?
+    public var Bio : String?
+    public var Age : String?
     
     init(userID : String!) {
         self.userID = userID
         self.cRef = Database.database().reference().child("users").child(userID)
+        
         super.init()
+    }
+    
+    func getUserInformations(completionHandler: @escaping (Bool)-> ()) {
+        self.cRef.queryOrdered(byChild: "name").observeSingleEvent(of: .value, with: { snapshot in
+            let value = snapshot.value as? NSDictionary
+            self.Name = value?["name"] as? String
+            self.FavSport = value?["favoriteSport"] as? String
+            self.Bio = value?["bio"] as? String
+            let age = (value?["age"] as? CLong)!
+            self.Age = String(age) + " yo"
+            completionHandler(true)
+        }) { (error) in
+            print(error.localizedDescription)
+            completionHandler(false)
+        }
     }
     
     /* sync ImageView with photoURL of user */

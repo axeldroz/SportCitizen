@@ -31,7 +31,7 @@ class DBChallengeSync : DBViewContentSync {
     
     /* sync ImageView with photoURL of creator */
     func addPictureRel(image : UIImageView) {
-       cRef.child("creator-user").observe(DataEventType.value, with: { snapshot in
+       cRef.child("creator_user").observe(DataEventType.value, with: { snapshot in
             let snap = snapshot
             let name = snap.value as? String
         let usersync = DBUserSync(userID : name)
