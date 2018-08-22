@@ -37,7 +37,6 @@
 		2E28D1FC1FF54D3F00A5435B /* DBChallengeSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E28D1FB1FF54D3F00A5435B /* DBChallengeSync.swift */; };
 		2E28D2001FF5552F00A5435B /* DBUserSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E28D1FF1FF5552F00A5435B /* DBUserSync.swift */; };
 		2E2ADC391FF2AC1500EC85BA /* UISyncDataPickerCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2ADC381FF2AC1500EC85BA /* UISyncDataPickerCreator.swift */; };
-		2E4271561FF56307005C1EA0 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E4271551FF56307005C1EA0 /* CoreLocation.framework */; };
 		2E526AE01FF2565E005A59E9 /* UIDatePickerCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E526ADF1FF2565E005A59E9 /* UIDatePickerCreator.swift */; };
 		2E90DB761FED7AA50097B15D /* DBWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E90DB751FED7AA50097B15D /* DBWriter.swift */; };
 		2E9798C51FF5278F0037A7F9 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9798C41FF5278F0037A7F9 /* NotificationsViewController.swift */; };
@@ -100,7 +99,6 @@
 		2E28D1FB1FF54D3F00A5435B /* DBChallengeSync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBChallengeSync.swift; sourceTree = "<group>"; };
 		2E28D1FF1FF5552F00A5435B /* DBUserSync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBUserSync.swift; sourceTree = "<group>"; };
 		2E2ADC381FF2AC1500EC85BA /* UISyncDataPickerCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISyncDataPickerCreator.swift; sourceTree = "<group>"; };
-		2E4271551FF56307005C1EA0 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		2E526ADF1FF2565E005A59E9 /* UIDatePickerCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDatePickerCreator.swift; sourceTree = "<group>"; };
 		2E90DB751FED7AA50097B15D /* DBWriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBWriter.swift; sourceTree = "<group>"; };
 		2E9798C41FF5278F0037A7F9 /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
@@ -295,7 +293,6 @@
 				2173076B1FDEB55F007B213B /* Frameworks */,
 				2173076C1FDEB55F007B213B /* Resources */,
 				56E9740931777E2296769B8A /* [CP] Embed Pods Frameworks */,
-				51C52E7340A2E1FE205D1F17 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -314,8 +311,6 @@
 				217307811FDEB55F007B213B /* Sources */,
 				217307821FDEB55F007B213B /* Frameworks */,
 				217307831FDEB55F007B213B /* Resources */,
-				A6418FEFB4323042CD948756 /* [CP] Embed Pods Frameworks */,
-				CF3B075E4EA308CC776141D8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -335,8 +330,6 @@
 				2173078C1FDEB55F007B213B /* Sources */,
 				2173078D1FDEB55F007B213B /* Frameworks */,
 				2173078E1FDEB55F007B213B /* Resources */,
-				BF8E008F6609762C08D39C47 /* [CP] Embed Pods Frameworks */,
-				4663CE47CF5B872EB7806071 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -423,36 +416,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		4663CE47CF5B872EB7806071 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SportCitizenUITests/Pods-SportCitizenUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		51C52E7340A2E1FE205D1F17 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SportCitizen/Pods-SportCitizen-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		56E9740931777E2296769B8A /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -517,51 +480,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A6418FEFB4323042CD948756 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SportCitizenTests/Pods-SportCitizenTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		BF8E008F6609762C08D39C47 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SportCitizenUITests/Pods-SportCitizenUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		CF3B075E4EA308CC776141D8 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SportCitizenTests/Pods-SportCitizenTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E43FE39308B94550B16FB297 /* [CP] Check Pods Manifest.lock */ = {
